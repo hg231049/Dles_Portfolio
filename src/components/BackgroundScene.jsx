@@ -4,39 +4,50 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
+// 리프레시 간격을 조절하여 감지 성능 향상
+ScrollTrigger.config({ ignoreMobileResize: true });
 const BackgroundScene = ({ scrollContainer }) => {
   const dayRef = useRef(null);
   const springRef = useRef(null);
   const fieldRef = useRef(null);
 
   useGSAP(() => {
-    // 1. scrollContainer.current가 있는지 반드시 확인
-    if (!scrollContainer || !scrollContainer.current) return;
+  // 1. 모든 요소가 로드된 후(이미지 포함) 좌표 재계산
+  const refreshGSAP = () => {
+    ScrollTrigger.refresh();
+  };
 
-    // 부모 컨테이너 안에 있는 실제 섹션들을 모두 찾습니다.
-    // 예: 부모 안에 <section className="step">... </section> 구조라고 가정
-    const sections = scrollContainer.current.querySelectorAll(".section-step");
+  window.addEventListener("load", refreshGSAP);
 
-    sections.forEach((section, index) => {
-        // 각 레이어 참조를 배열로 관리하거나 조건문 처리
+  // 2. 약간의 시간차(0.1초)를 주어 DOM이 확실히 렌더링된 후 섹션 찾기
+  const timer = setTimeout(() => {
+    const sections = document.querySelectorAll(".section-step");
+    
+    if (sections.length > 0) {
+      sections.forEach((section, index) => {
         const targets = [dayRef.current, springRef.current, fieldRef.current];
         const target = targets[index];
+        if (!target) return;
 
-        if (target) {
         gsap.to(target, {
-            opacity: 1,
-            ease: "none",
-            scrollTrigger: {
-            trigger: section,      // ★ 각 섹션이 감지기(Trigger)가 됨
-            start: "top top",   // 섹션의 머리가 화면 중앙에 올 때 시작
-            end: "bottom center",  // 섹션의 꼬리가 화면 중앙에 오면 끝
-            scrub: true,
-            }
+          opacity: 1,
+          scrollTrigger: {
+            trigger: section,
+            start: "top center",
+            end: "bottom center",
+            scrub: 1.5,
+          }
         });
-        }
-    });
-    }, { dependencies: [scrollContainer] });
+      });
+    }
+  }, 100);
+
+  return () => {
+    window.removeEventListener("load", refreshGSAP);
+    clearTimeout(timer);
+    ScrollTrigger.getAll().forEach(t => t.kill()); // 정리
+  };
+}, { dependencies: [scrollContainer] });
 
   return (
     <>
