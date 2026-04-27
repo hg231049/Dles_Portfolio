@@ -24,25 +24,25 @@ const History = () => {
     <div className="">
       <ol className="relative border-l border-white/20 ml-4 space-y-10">
         {steps.map((step, index) => (
-          <li key={index} className="relative pl-12 group">
+          <li key={index} className="relative pl-6 lg:pl-12 group">
             {/* 타임라인 도트 (Dot) */}
-            <div className="absolute -left-[9px] top-2">
-              <span className="relative flex h-4 w-4">
+            <div className="absolute -left-[5px] top-2">
+              <span className="relative flex h-2 w-2 lg:h-4 lg:w-4">
                 {/* 애니메이션 펄스 효과 */}
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-color opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-4 w-4 bg-sunrise-color shadow-[0_0_15px_#fb923c]"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 lg:h-4 lg:w-4 bg-sunrise-color shadow-[0_0_15px_#fb923c]"></span>
               </span>
             </div>
 
             {/* 본문 컨텐츠 */}
             <div className="flex flex-col items-start">
               {/* 타이틀 */}
-              <h4 className="text-[20px] font-bold text-white mb-4 transition-colors group-hover:text-sunrise-color">
+              <h4 className="text-[16px] lg:text-[20px] font-bold text-white mb-4 transition-colors group-hover:text-sunrise-color">
                 {step.title}
               </h4>
 
               {/* 설명 리스트 */}
-              <ul className="list-disc list-outside ml-6 space-y-2 text-gray-200 text-[16px] leading-normal">
+              <ul className="list-disc list-outside ml-3 lg:ml-6 space-y-2 text-gray-200 text-[13px] lg:text-[16px] leading-normal">
                 {step.desc.map((item, i) => (
                   <li key={i} className="pl-2">{item}</li>
                 ))}

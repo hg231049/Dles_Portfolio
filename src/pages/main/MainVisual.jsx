@@ -61,19 +61,19 @@ const MainVisual = () => {
       className="intro-section section-step h-screen flex flex-col items-center justify-center relative overflow-hidden"
     >
 
-      <div className="hidden text-center z-10 px-4">
-        <p className="intro-sub text-blue-400 tracking-[0.3em] mb-6 text-sm md:text-base font-light uppercase opacity-80">
+      <div className="text-center z-10 px-4">
+        <p className="intro-sub text-blue-400 tracking-[0.3em] mb-6 text-[14px] lg:text-base font-light uppercase opacity-80">
           From Code to Light: Illuminating User Experience
         </p>
         
-        <h1 className="intro-title text-white text-5xl md:text-8xl font-bold leading-[1.2] tracking-tight">
+        <h1 className="intro-title text-white text-3xl lg:text-8xl font-bold leading-[1.2] tracking-tight">
           <div className="mb-2">{splitText("어둠 속의 코드로")}</div>
           <span className="highlight-text inline-block text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-purple-500">
             {splitText("내일의 경험을 밝힙니다.")}
           </span>
         </h1>
 
-        <p className="intro-desc text-gray-400 mt-10 text-base md:text-lg font-light tracking-wide">
+        <p className="intro-desc text-gray-400 mt-10 text-[12px] lg:text-lg font-light tracking-wide">
           스크롤을 내려 어둠 속에서 피어나는 가능성을 확인하세요.
         </p>
       </div>
@@ -84,12 +84,12 @@ const MainVisual = () => {
       {/* 마우스 스크롤 효과 */}
       <div className="scroll-icon-wrap absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center z-10 pointer-events-none">
         {/* 마우스 형태 */}
-        <div className="mouse-icon relative w-6 h-10 border-2 border-white/40 rounded-full">
+        <div className="mouse-icon relative w-5 h-8 border-1 lg:w-6 lg:h-10 lg:border-2 border-white/40 rounded-full">
           {/* 마우스 휠 - 애니메이션*/}
           <div className="mouse-wheel absolute top-2 left-1/2 -translate-x-1/2 w-1 h-2 bg-white/60 rounded-full" />
         </div>
         {/* 스크롤 텍스트*/}
-        <span className="text-xs text-white/30 mt-2 tracking-widest uppercase">Scroll</span>
+        <span className="text-[10px] text-white/30 mt-2 tracking-widest uppercase">Scroll</span>
       </div>
       
     </section>

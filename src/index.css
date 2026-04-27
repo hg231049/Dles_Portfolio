@@ -19,12 +19,14 @@
   --color-spring-color:#D81B60;
   --color-field-color:#2E7D32;
   --color-ground-color:#E0C097;
+  --color-text-color:#121212;
+  --color-subText-color:#5c5c5c;
   --max-width-inner: 1680px;
 }
 
 @layer components {
   .inner {
-    @apply max-w-(--max-width-inner) mx-auto px-[20px] w-full overflow-hidden box-border;
+    @apply max-w-(--max-width-inner) mx-auto px-[20px] w-full  box-border;
   }
 }
 

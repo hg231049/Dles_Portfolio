@@ -77,7 +77,7 @@ const BackgroundScene = ({ scrollContainer }) => {
         <div 
           ref={sunriseRef} 
           className="fixed inset-0 -z-20 opacity-0" 
-          style={{ background: "linear-gradient(180deg, #201e30 0%, #ff9e80 100%)" }} 
+          style={{ background: "linear-gradient(180deg, #201e30 15%, #ff9e80 100%)" }} 
         />
 
         {/* 3. 낮 */}
