@@ -1,0 +1,20 @@
+const Mindset = () => { 
+    return (
+        <div className=" space-y-12">
+     
+            <div className="qa-area space-y-8">
+                <div className="">
+                    <p className="text-sunrise-color text-[20px] font-medium">Q. 퍼블리싱에서 가장 중요하게 생각하는 것?</p>
+                    <p className="text-white mt-2 leading-relaxed">A. 디자인의 의도를 완벽하게 구현하면서도,<br /> 누구나 접근 가능한 시맨틱 마크업을 지향합니다.</p>
+                </div>
+                <div className="">
+                    <p className="text-sunrise-color text-[20px] font-medium">Q. 어떤 동료가 되고 싶은가요?</p>
+                    <p className="text-white mt-2 leading-relaxed">A. 단순히 코드를 치는 사람이 아니라, <br /> 디자인과 개발 사이의 가교 역할을 하는 소통 전문가가 되고 싶습니다.</p>
+                </div>
+            </div>
+        </div>
+        
+    )
+}
+
+export default Mindset;

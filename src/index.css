@@ -13,16 +13,18 @@
 } 
 @theme {
   /* 여기서 바로 변수를 등록하면 Tailwind 클래스가 생성됩니다 */
-  --color-brand-color: #002454;
-  --color-sub-color:#E5CDB5;
-  --color-point-color:#80BAFF;
-  --color-sale-color:#FE2B00;
-  --max-width-inner: 1440px;
+  --color-night-color: #002454;
+  --color-sunrise-color:#FFCC80;
+  --color-day-color:#1A237E  ;
+  --color-spring-color:#D81B60;
+  --color-field-color:#2E7D32;
+  --color-ground-color:#E0C097;
+  --max-width-inner: 1680px;
 }
 
 @layer components {
   .inner {
-    @apply max-w-(--max-width-inner) mx-auto px-[20px] w-full overflow-hidden;
+    @apply max-w-(--max-width-inner) mx-auto px-[20px] w-full overflow-hidden box-border;
   }
 }
 
@@ -46,4 +48,62 @@ body::after{content:"";position:absolute;inset:0;pointer-events:none;background-
     height: 100%;
     z-index: -1; /* 콘텐츠 뒤로 보냄 */
     background: linear-gradient(180deg, #020111 0%, #191621 100%); /* 초기 상태: 밤 */
+}
+
+/* MainVisual.css */
+
+/* 마우스 아이콘 전체적인 투명도 조절 */
+.scroll-icon-wrap {
+  will-change: transform, opacity;
+}
+
+/* 마우스 휠 애니메이션 */
+.mouse-wheel {
+  animation: wheel-move 2s ease-out infinite;
+}
+
+@keyframes wheel-move {
+  0% {
+    top: 6px;       /* 위쪽 위치 */
+    opacity: 0;      /* 투명하게 시작 */
+  }
+  30% {
+    top: 6px;
+    opacity: 1;      /* 나타남 */
+  }
+  100% {
+    top: 25px;      /* 아래쪽으로 이동 */
+    opacity: 0;      /* 사라짐 */
+  }
+}
+/* active 상태로 밝아지는 키프레임 */
+@keyframes dotPulse{
+    0%{
+        transform: translateY(0) scale(1);
+        border-color: rgba(123,198,255,.45);
+        box-shadow: 0 0 0 6px rgba(80,170,255,.08);
+        filter: brightness(1);
+    }
+    /* 켜지는 구간 (짧게) */
+    8%{
+        transform: translateY(0) scale(1.15);
+        border-color: rgba(123,198,255,1);
+        box-shadow:
+        0 0 0 8px rgba(80,170,255,.22),
+        0 0 18px rgba(80,170,255,.35);
+        filter: brightness(1.25);
+    }
+    22%{
+        transform: translateY(0) scale(1.05);
+        border-color: rgba(149, 209, 255, 0.8);
+        box-shadow: 0 0 0 7px rgba(80,170,255,.14);
+        filter: brightness(1.05);
+    }
+    /* 나머지는 다시 기본 */
+    100%{
+        transform: translateY(0) scale(1);
+        border-color: rgba(123,198,255,.45);
+        box-shadow: 0 0 0 6px rgba(80,170,255,.08);
+        filter: brightness(1);
+    }
 }

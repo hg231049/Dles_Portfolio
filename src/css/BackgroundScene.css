@@ -1,0 +1,73 @@
+/* BackgroundScene.css */
+
+/* 공통 고정 배경 */
+.fixed {
+  will-change: opacity, background;
+  transform: translateZ(0); /* GPU 가속 */
+}
+
+/* --- 별 효과 (기존과 동일) --- */
+.stars-effect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(1.5px 1.5px at 20px 30px, #add8e6, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #add8e6, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 90px 40px, #add8e6, rgba(0,0,0,0));
+  background-size: 250px 250px;
+  background-repeat: repeat;
+  opacity: 0.6;
+  animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.5; }
+}
+
+/* --- ★ 새로운 풍성한 꽃잎 효과 (JSX map 방식) --- */
+.petals-container {
+  pointer-events: none; /* 클릭 방지 */
+}
+
+.petal {
+  position: absolute;
+  top: -10vh; /* 화면 위에서 시작 */
+  background: rgba(255, 182, 193, 0.8); /* 연분홍 */
+  border-radius: 50% 0 50% 50%; /* 꽃잎 모양처럼 살짝 뾰족하게 */
+  opacity: 0;
+  /* 살랑살랑 떨어지는 애니메이션 */
+  animation: petal-fall linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes petal-fall {
+  0% {
+    /* 화면 위에서 투명하게 시작 */
+    transform: translateY(0) translateX(0) rotate(0deg) skewX(0deg);
+    opacity: 0;
+  }
+  10% {
+    /* 화면에 들어오면 보이게 */
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    /* 화면 아래로, 오른쪽으로, 회전하며 이동 */
+    transform: translateY(110vh) translateX(200px) rotate(720deg) skewX(20deg);
+    opacity: 0; /* 바닥에 닿기 전 사라짐 */
+  }
+}
+
+/* 땅 레이어에 얹을 미세한 노이즈 */
+.ground-effect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: url("https://www.transparenttextures.com/patterns/pollen.png"); /* 미세한 점 패턴 */
+  pointer-events: none;
+}
