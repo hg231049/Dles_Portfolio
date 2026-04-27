@@ -22,11 +22,12 @@ const steps = [
 const History = () => {
   return (
     <div className="">
+      <div className="sub-title  mb-10 pb-6 border-b border-[#f6f6f638] text-white text-[18px] lg:text-[20px] font-bold"> 1-2. HISTORY</div>
       <ol className="relative border-l border-white/20 ml-4 space-y-10">
         {steps.map((step, index) => (
           <li key={index} className="relative pl-6 lg:pl-12 group">
             {/* 타임라인 도트 (Dot) */}
-            <div className="absolute -left-[5px] top-2">
+            <div className="absolute -left-[4px] lg:-left-[8px] top-2">
               <span className="relative flex h-2 w-2 lg:h-4 lg:w-4">
                 {/* 애니메이션 펄스 효과 */}
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-color opacity-75"></span>
