@@ -1,6 +1,6 @@
 const EtcProject = () => { 
     return (
-        <section className="section-step h-screen flex items-center justify-center">
+        <section className="section-step relative h-screen flex justify-center">
             <div className="inner">
                 <div className="main-title p-[60px_0_80px] text-center">
                     <p className='text-field-color lg:text-[25px] font-medium'>지속적인 기록들</p>

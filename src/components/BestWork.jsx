@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef,useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -8,6 +8,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BestWork = () => {
   const sectionRef = useRef(null);
+  const [isMore,setIsMore] = useState(false);
+
+  const openPopup = (work) => {
+    setIsMore(work);
+    document.body.style.overflow = 'hidden';
+  }
+const closePopup = (work) => {
+    setIsMore(null);
+    document.body.style.overflow = 'auto';
+  }
 
   const Work_list = [
     { 
@@ -18,7 +28,23 @@ const BestWork = () => {
         thumb: bestWork1,
         thumbMo:bestWorkMo1,
      },
-     // ... 데이터들
+     { 
+        id:2, 
+        name: "슬룸(SLOOM)", 
+        date: "25.04.22~25.05.27", 
+        link:"https://sleeplab.co.kr/home-backup",
+        thumb: bestWork1,
+        thumbMo:bestWorkMo1,
+     },
+     { 
+        id:2, 
+        name: "슬룸(SLOOM)", 
+        date: "25.04.22~25.05.27", 
+        link:"https://sleeplab.co.kr/home-backup",
+        thumb: bestWork1,
+        thumbMo:bestWorkMo1,
+     },
+
   ];
 
   useGSAP(() => {
@@ -30,6 +56,7 @@ const BestWork = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         pin: true,
+        pinSpacing: true, 
         scrub: 1,
         start: "top top",
         // 1000px 정도의 여유를 주어 마지막 카드에서 멈춤 효과
@@ -41,10 +68,10 @@ const BestWork = () => {
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#0a0a0a] py-20">
-      <div className="h-screen flex items-center">
+    <div ref={sectionRef} className="relative overflow-hidden z-10" >
+      <div className="min-h-screen flex items-center">
         {/* 가로 트랙 */}
-        <div id="horizontal-track" className="flex gap-[10vw] px-[10vw] items-center will-change-transform">
+        <div id="horizontal-track" className="flex gap-[150px] will-change-transform">
 
           {Work_list.map((item, idx) => (
             <div 
@@ -59,7 +86,7 @@ const BestWork = () => {
                            <img
                                 src={item.thumb}
                                 alt={item.name}
-                                className='w-full hover:translate-y-[-50%] transition-transform duration-[3s] ease-in-out cursor-pointer'
+                                className='w-full hover:translate-y-[-50%] transition-transform duration-[3s] ease-in-out cursor-pointer align-top'
                             />
                         </a>
                     </span>
@@ -78,17 +105,42 @@ const BestWork = () => {
 
                 {/* 텍스트 정보 영역 */}
                 <div className="description mt-12 space-y-2">
-                    <h3 className="text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">{item.name}</h3>
+                    <h3 className="text-3xl font-bold text-text-color group-hover:text-spring-color transition-colors">{item.name}</h3>
                     <span className="text-gray-500 font-mono">{item.date}</span>
                 </div>
+                {/* 팝업 버튼 */}
+                <div className="more-btn mt-10">
+                    <button 
+                  onClick={() => openPopup(item)} 
+                  className='inline-block px-6 py-3 text-spring-color border border-spring-color rounded-[50px] hover:text-white hover:bg-spring-color transition-all font-medium cursor-pointer'
+                >
+                  자세히보기</button>
+                </div>
             </div>
-          ))}
-
+            ))}
+            
           {/* 마지막 여백용 Spacer */}
           <div className="flex-shrink-0 w-[10vw] md:w-[20vw]" aria-hidden="true"></div>
         </div>
+        {/* 팝업 모달 (Portal 없이도 섹션 바깥쪽에 배치하면 됨) */}
+            {isMore && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+                {/* 배경 어둡게 */}
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={closePopup}></div>
+                
+                {/* 팝업 본체 */}
+                <div className="relative w-full max-w-2xl max-h-[80vh] bg-white rounded-[30px] p-10 overflow-y-auto shadow-2xl">
+                    <button className="absolute top-6 right-6 text-2xl cursor-pointer" onClick={closePopup}>✕</button>
+                    <h2 className="text-3xl font-bold mb-4">{isMore.name}</h2>
+                    <p className="text-gray-500 mb-6 font-mono">{isMore.date}</p>
+                    <div className="text-gray-700 leading-relaxed text-lg">
+                    {isMore.detail}
+                    </div>
+                </div>
+                </div>
+            )}
       </div>
-    </section>
+    </div>
   );
 };
 
