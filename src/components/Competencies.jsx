@@ -62,7 +62,7 @@ const Competencies = () => {
                 <h3 className="text-[16px] lg:text-xl font-bold text-text-color group-hover:text-day-color transition-colors leading-tight">
                   {item.name}
                 </h3>
-                <p className="w-[85%] text-subText-color text-[14px] lg:text-sm whitespace-pre-line leading-relaxed ">
+                <p className="w-[85%] min-h-[45.5px] text-subText-color text-[14px] lg:text-sm whitespace-pre-line leading-relaxed ">
                   {item.subTitle}
                 </p>
                 {/* 토글 버튼: 우측 하단 배치 */}
@@ -76,7 +76,7 @@ const Competencies = () => {
 
             {/* 4. 상세 내용 (펼쳐짐) */}
             <div className="description p-5 border-t border-dotted border-[#cdcdcd]">
-              <ul className="list-disc list-outside ml-4 space-y-3 text-subText-color text-sm leading-relaxed">
+              <ul className=" list-disc list-outside ml-4 space-y-3 text-subText-color text-sm leading-relaxed">
                 {item.desc.map((descItem, idx) => (
                   <li 
                     key={idx}

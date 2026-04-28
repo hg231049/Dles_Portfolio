@@ -4,9 +4,9 @@ import History from '../../components/History';
 
 const Introduce = () => { 
     return (
-        <section className="section-step min-h- flex justify-center">
+        <section className="section-step min-h- flex justify-center p-[50px_0] lg:p-[100px_0]">
             <div className="inner">
-                <div className="main-title p-[50px_0_40px] text-left lg:p-[100px_0_80px] lg:text-center">
+                <div className="main-title p-[0_0_40px] text-left lg:p-[0_0_80px] lg:text-center">
                     <p className='text-sunrise-color text-[18px] lg:text-[25px] font-medium'>01. 나의 뿌리와 걸어온 길</p>
                     <h2 className='text-[#F8FAFC] text-[35px] lg:text-[55px] font-black'>Root & Route</h2>
                 </div>

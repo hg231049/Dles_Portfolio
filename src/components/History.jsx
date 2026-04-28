@@ -21,13 +21,13 @@ const steps = [
 
 const History = () => {
   return (
-    <div className="">
-      <div className="sub-title  mb-10 pb-6 border-b border-[#f6f6f638] text-white text-[18px] lg:text-[20px] font-bold"> 1-2. HISTORY</div>
+    <div className="lg:[text-shadow:0_1px_2px_rgba(0,0,0,0.9)]">
+      <div className="sub-title  mb-10 pb-6 border-b border-[#f6f6f638] text-sunrise-color text-[18px] lg:text-[20px] font-bold"> HISTORY</div>
       <ol className="relative border-l border-white/20 ml-4 space-y-10">
         {steps.map((step, index) => (
           <li key={index} className="relative pl-6 lg:pl-12 group">
             {/* 타임라인 도트 (Dot) */}
-            <div className="absolute -left-[4px] lg:-left-[8px] top-2">
+            <div className="absolute -left-[4px] lg:-left-[8px] top-0">
               <span className="relative flex h-2 w-2 lg:h-4 lg:w-4">
                 {/* 애니메이션 펄스 효과 */}
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-color opacity-75"></span>
@@ -38,12 +38,12 @@ const History = () => {
             {/* 본문 컨텐츠 */}
             <div className="flex flex-col items-start">
               {/* 타이틀 */}
-              <h4 className="text-[16px] lg:text-[20px] font-bold text-white mb-4 transition-colors group-hover:text-sunrise-color">
+              <h4 className="text-[16px] lg:text-[20px] font-bold text-text-color lg:text-white mb-4 transition-colors group-hover:text-sunrise-color ">
                 {step.title}
               </h4>
 
               {/* 설명 리스트 */}
-              <ul className="list-disc list-outside ml-3 lg:ml-6 space-y-2 text-gray-200 text-[13px] lg:text-[16px] leading-normal">
+              <ul className="list-disc list-outside ml-3 lg:ml-6 space-y-2 text-subText-color  lg:text-white text-[13px] lg:text-[16px] leading-normal">
                 {step.desc.map((item, i) => (
                   <li key={i} className="pl-2">{item}</li>
                 ))}

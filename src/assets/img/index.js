@@ -11,5 +11,7 @@ import skill10 from './skill-editplus.jpg';
 import dashboardThumb from './dashboard-thumb.png';
 import codeThumb from './code-thumb.png';
 import proposalThumb from './Proposal-thumb.png';
+import bestWork1 from './sloom-thumb.png';
+import bestWorkMo1 from './sloom-m-thumb.png';
 
-export { skill1,skill2,skill3,skill4,skill5,skill6,skill7,skill8,skill9,skill10,dashboardThumb,codeThumb,proposalThumb };
+export { skill1,skill2,skill3,skill4,skill5,skill6,skill7,skill8,skill9,skill10,dashboardThumb,codeThumb,proposalThumb,bestWork1,bestWorkMo1 };

@@ -78,34 +78,9 @@ body {
     opacity: 0;      /* 사라짐 */
   }
 }
-/* active 상태로 밝아지는 키프레임 */
-@keyframes dotPulse{
-    0%{
-        transform: translateY(0) scale(1);
-        border-color: rgba(123,198,255,.45);
-        box-shadow: 0 0 0 6px rgba(80,170,255,.08);
-        filter: brightness(1);
-    }
-    /* 켜지는 구간 (짧게) */
-    8%{
-        transform: translateY(0) scale(1.15);
-        border-color: rgba(123,198,255,1);
-        box-shadow:
-        0 0 0 8px rgba(80,170,255,.22),
-        0 0 18px rgba(80,170,255,.35);
-        filter: brightness(1.25);
-    }
-    22%{
-        transform: translateY(0) scale(1.05);
-        border-color: rgba(149, 209, 255, 0.8);
-        box-shadow: 0 0 0 7px rgba(80,170,255,.14);
-        filter: brightness(1.05);
-    }
-    /* 나머지는 다시 기본 */
-    100%{
-        transform: translateY(0) scale(1);
-        border-color: rgba(123,198,255,.45);
-        box-shadow: 0 0 0 6px rgba(80,170,255,.08);
-        filter: brightness(1);
-    }
+
+@keyframes TransYSM { 
+	0% { transform:translateY(0) } 
+	50% { transform:translateY(-400px) } 
+	100% { transform:translateY(0) } 
 }
