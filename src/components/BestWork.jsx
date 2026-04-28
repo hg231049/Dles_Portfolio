@@ -7,7 +7,6 @@ import { bestWork1, bestWorkMo1 } from '../assets/img';
 gsap.registerPlugin(ScrollTrigger);
 
 const BestWork = () => {
-  const sectionRef = useRef(null);
   const [isMore,setIsMore] = useState(false);
 
   const openPopup = (work) => {
@@ -50,31 +49,12 @@ const closePopup = (work) => {
 
   ];
 
-  useGSAP(() => {
-    const track = document.querySelector("#horizontal-track");
-  
-    gsap.to(track, {
-      x: () => -(track.scrollWidth - window.innerWidth), 
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: true,
-        pinSpacing: true, 
-        scrub: 1,
-        start: "top top",
-        // 1000px 정도의 여유를 주어 마지막 카드에서 멈춤 효과
-        end: () => "+=" + (track.scrollWidth + 1000), 
-        invalidateOnRefresh: true,
-      },
-    });
-
-  }, { scope: sectionRef });
 
   return (
-    <div ref={sectionRef} className="relative overflow-hidden z-10" >
-      <div className="min-h-screen flex items-center">
+    <div className="relative overflow-hidden z-10 p-0 lg:m-[50px_0_0]" >
+      <div className="min-h-[60vh] flex items-center">
         {/* 가로 트랙 */}
-        <div id="horizontal-track" className="flex gap-[150px] will-change-transform">
+        <div id="horizontal-track" className="flex pl-[50px] gap-[50px] lg:gap-[150px] will-change-transform">
 
           {Work_list.map((item, idx) => (
             <div 
@@ -82,9 +62,9 @@ const closePopup = (work) => {
               className="card group flex-shrink-0 w-[70vw] md:w-[50vw] lg:w-[40vw]"
             >
                 {/* 썸네일 영역: 상대 수치 대신 고정 비율 컨테이너 권장 */}
-                <div className="thumb relative block w-full aspect-[4/3]">
+                <div className="thumb relative block w-full aspect-[4/2]">
                     {/* PC 썸네일 */}
-                    <span className="pc-thumb block w-full h-full border-[1px] border-white/20 rounded-[20px] overflow-hidden bg-gray-900 shadow-2xl">
+                    <span className="pc-thumb block w-full h-full border-[2px] border-white/20 rounded-[8px] lg:rounded-[20px] overflow-hidden bg-gray-900 shadow-2xl">
                         <a href={item.link} target="_blank" rel="noreferrer" className="block w-full h-full overflow-hidden">
                            <img
                                 src={item.thumb}
@@ -95,7 +75,7 @@ const closePopup = (work) => {
                     </span>
 
                     {/* MO 썸네일: absolute 위치 조정 */}
-                    <span className="mo-thumb absolute -bottom-10 -right-10 w-[30%] aspect-[9/19] border-[1px] border-white/20 rounded-[15px] overflow-hidden bg-gray-800 shadow-2xl hidden md:block">
+                    <span className="mo-thumb absolute -bottom-10 -right-10 w-[30%] aspect-[9/13] border-[1px] border-white/20 rounded-[15px] overflow-hidden bg-gray-800 shadow-2xl hidden md:block">
                         <a href={item.link} target="_blank" rel="noreferrer" className="block w-full h-full overflow-hidden">
                             <img
                                 src={item.thumbMo}
@@ -107,15 +87,15 @@ const closePopup = (work) => {
                 </div>
 
                 {/* 텍스트 정보 영역 */}
-                <div className="description mt-12 space-y-2">
-                    <h3 className="text-3xl font-bold text-text-color group-hover:text-spring-color transition-colors">{item.name}</h3>
-                    <span className="text-gray-500 font-mono">{item.date}</span>
+                <div className="description mt-5 lg:mt-12 space-y-2">
+                    <h3 className="text-[18px] lg:text-3xl font-bold text-text-color group-hover:text-spring-color transition-colors">{item.name}</h3>
+                    <span className="text-[14px] lg:text-[18px] text-gray-500 font-mono">{item.date}</span>
                 </div>
                 {/* 팝업 버튼 */}
-                <div className="more-btn mt-10">
+                <div className="more-btn mt-5 lg:mt-10">
                     <button 
                   onClick={() => openPopup(item)} 
-                  className='inline-block px-6 py-3 text-spring-color border border-spring-color rounded-[50px] hover:text-white hover:bg-spring-color transition-all font-medium cursor-pointer'
+                  className='inline-block px-5 py-1 lg:px-8 lg:py-2 text-text-color text-[14px] lg:text-[16px] border border-text-color rounded-[50px] hover:text-white hover:border-spring-color hover:bg-spring-color transition-all font-medium cursor-pointer'
                 >
                   자세히보기</button>
                 </div>
@@ -132,52 +112,52 @@ const closePopup = (work) => {
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={closePopup}></div>
             
             {/* 팝업 본체 */}
-            <div className="relative w-full max-w-2xl max-h-[85vh] bg-white rounded-[40px] p-8 md:p-12 overflow-y-auto shadow-2xl">
+            <div className="relative w-full max-w-2xl max-h-[85vh] bg-white rounded-[15px] lg:rounded-[40px] p-8 md:p-12 overflow-y-auto shadow-2xl">
             <button className="absolute top-8 right-8 text-2xl cursor-pointer hover:rotate-90 transition-transform" onClick={closePopup}>✕</button>
             
             {/* 제목 및 날짜 */}
             <div className="mb-10 border-b border-gray-100 pb-6">
-                <h2 className="text-3xl font-bold mb-2 text-slate-800">{isMore.name}</h2>
-                <p className="text-spring-color font-mono font-medium">{isMore.date}</p>
+                <h2 className="w-[90%] text-[20px] lg:text-3xl font-bold mb-2 text-slate-800">{isMore.name}</h2>
+                <p className="text-[14px] lg:text-[20px] text-spring-color font-mono font-medium">{isMore.date}</p>
             </div>
 
             {/* 상세 내용 리스트 */}
             <div className="space-y-10">
                 {/* Project Overview */}
                 <section>
-                <h4 className="text-xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+                <h4 className="text-[16px] lg:text-xl font-bold mb-4 flex items-center gap-2 text-slate-800">
                     <span className="w-1.5 h-6 bg-spring-color rounded-full inline-block"></span>
                     📌 Project Overview
                 </h4>
-                <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                <ul className="text-[13px] lg:text-[16px] list-disc list-outside ml-5 space-y-2 text-gray-600">
                     {isMore.overview?.map((text, i) => (
-                    <li key={i} dangerouslySetInnerHTML={{ __html: text }} />
+                    <li key={i} dangerouslySetInnerHTML={{ __html: text }} className='[&_strong]:block' />
                     ))}
                 </ul>
                 </section>
 
                 {/* Tech Stack */}
                 <section>
-                <h4 className="text-xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+                <h4 className="text-[16px] lg:text-xl  font-bold mb-4 flex items-center gap-2 text-slate-800">
                     <span className="w-1.5 h-6 bg-spring-color rounded-full inline-block"></span>
                     🛠 Tech Stack
                 </h4>
-                <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                <ul className="text-[13px] lg:text-[16px] list-disc list-outside ml-5 space-y-2 text-gray-600">
                     {isMore.stack?.map((text, i) => (
-                    <li key={i} dangerouslySetInnerHTML={{ __html: text }} />
+                    <li key={i} dangerouslySetInnerHTML={{ __html: text }} className='[&_strong]:block'/>
                     ))}
                 </ul>
                 </section>
 
                 {/* Key Experience & Results */}
                 <section>
-                <h4 className="text-xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+                <h4 className="text-[16px] lg:text-xl  font-bold mb-4 flex items-center gap-2 text-slate-800">
                     <span className="w-1.5 h-6 bg-spring-color rounded-full inline-block"></span>
                     🚀 Key Experience & Results
                 </h4>
-                <ul className="list-disc list-outside ml-5 space-y-3 text-gray-600">
+                <ul className="text-[13px] lg:text-[16px] list-disc list-outside ml-5 space-y-3 text-gray-600">
                     {isMore.results?.map((text, i) => (
-                    <li key={i} dangerouslySetInnerHTML={{ __html: text }} className="leading-relaxed" />
+                    <li key={i} dangerouslySetInnerHTML={{ __html: text }} className="leading-relaxed [&_strong]:md:block" />
                     ))}
                 </ul>
                 </section>
@@ -187,7 +167,7 @@ const closePopup = (work) => {
             <div className="mt-12 text-center">
                 <a 
                 href={isMore.link} target="_blank" rel="noreferrer"
-                className="px-10 py-3 bg-text-color text-white rounded-full hover:bg-spring-color transition-colors cursor-pointer font-bold"
+                className="px-5 py-2 lg:px-10 lg:py-3 text-[13px] lg:text-[16px] bg-text-color text-white rounded-full hover:bg-spring-color transition-colors cursor-pointer font-bold"
                 >
                 보러가기
                 </a>

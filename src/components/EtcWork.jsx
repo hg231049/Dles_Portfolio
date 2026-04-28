@@ -57,12 +57,12 @@ const EtcWork = () => {
         {EtcWork_List.map((item) => (
           <details open
             key={item.id} 
-            className="card group bg-white/25 backdrop-blur-md shadow-md rounded-2xl overflow-hidden transition-all duration-300 h-fit"
+            className="card group bg-white/25 backdrop-blur-md shadow-md rounded-[8px] lg:rounded-[15px] overflow-hidden transition-all duration-300 h-fit"
           >
             {/* 3. 카드형 Summary 디자인 */}
             <summary className="p-5 cursor-pointer list-none outline-none select-none space-y-4">
               {/* 썸네일: 카드 상단 배치 */}
-              <div className="competency-thumb w-full aspect-video bg-white/5 rounded-xl overflow-hidden ">
+              <div className="competency-thumb w-full aspect-video bg-white/5 rounded-[8px] lg:rounded-[15px] overflow-hidden ">
                 <img 
                   src={item.thumb} 
                   alt={item.name} 
