@@ -68,7 +68,7 @@ const BackgroundScene = ({ scrollContainer }) => {
   <div className="background-wrap">
     {/* 1. 밤 (가장 밑바닥 - 베이스) */}
     <div 
-      className="fixed inset-0 -z-[60]"
+      className="fixed inset-0 stars-effect -z-[60]"
       style={{ background: "linear-gradient(180deg, #0f0f0f 0%, #232323 100%)" }} 
     />
     
