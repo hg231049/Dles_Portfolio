@@ -13,5 +13,8 @@ import codeThumb from './code-thumb.png';
 import proposalThumb from './Proposal-thumb.png';
 import bestWork1 from './sloom-thumb.png';
 import bestWorkMo1 from './sloom-m-thumb.png';
+import EtcWork1 from './todolist_app_thumb.png';
+import EtcWork2 from './forecast_app_thumb.png';
+import EtcWork3 from './sloom_app_thumb.png';
 
-export { skill1,skill2,skill3,skill4,skill5,skill6,skill7,skill8,skill9,skill10,dashboardThumb,codeThumb,proposalThumb,bestWork1,bestWorkMo1 };
+export { skill1,skill2,skill3,skill4,skill5,skill6,skill7,skill8,skill9,skill10,dashboardThumb,codeThumb,proposalThumb,bestWork1,bestWorkMo1,EtcWork1,EtcWork2,EtcWork3 };
