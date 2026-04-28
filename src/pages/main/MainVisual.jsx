@@ -61,7 +61,7 @@ const MainVisual = () => {
       className="intro-section section-step h-screen flex flex-col items-center justify-center relative overflow-hidden"
     >
 
-      <div className="text-center z-10 px-4">
+      <div className="text-center mt-[-80px] z-10 px-4">
         <p className="intro-sub text-blue-400 tracking-[0.3em] mb-6 text-[14px] lg:text-base font-light uppercase opacity-80">
           From Code to Light: Illuminating User Experience
         </p>

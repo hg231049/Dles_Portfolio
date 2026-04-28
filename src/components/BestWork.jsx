@@ -22,11 +22,14 @@ const closePopup = (work) => {
   const Work_list = [
     { 
         id:1, 
-        name: "슬룸(SLOOM)", 
-        date: "25.04.22~25.05.27", 
+        name: "슬룸(SLOOM) 리뉴얼 및 최적화", 
+        date: "2025.04.22 ~ 2025.05.27 (약 5주)", 
         link:"https://sleeplab.co.kr/home-backup",
         thumb: bestWork1,
         thumbMo:bestWorkMo1,
+        overview:["<strong>내용:</strong> 기존 적응형 사이트를 반응형 UI/UX로 전면 리뉴얼 및 검색 최적화(SEO) 단행","<strong>플랫폼:</strong> 아임웹 (E-commerce)","<strong>기여도: 퍼블리싱 100% (개인 프로젝트 규모)</strong> "],
+        stack:["<strong>언어: </strong> HTML5, CSS3, JavaScript","<strong>라이브러리:</strong>  Owl Carousel (메인 슬라이더 및 제품 리스트 인터랙션 구현)","<strong>툴: </strong> Photoshop (에셋 최적화 및 가이드 제작)"],
+        results:["<strong>반응형 전환:</strong>  고정 레이아웃(적응형)에서 유연한 Grid 시스템 기반의 반응형으로 구조를 전면 재설계하여 모바일 사용자 경험 최적화.","<strong>기능 확장:</strong>  솔루션(아임웹) 내 제한적인 기능을 커스텀 스크립트로 구현하여 마케팅 프로모션 및 이벤트 페이지의 자유도 확보.","<strong>웹 성능 및 SEO:</strong> 시맨틱 마크업 준수와 이미지 에셋 최적화로 성능 지표를 개선하여 메인 키워드 노출 빈도 향상."],
      },
      { 
         id:2, 
@@ -122,23 +125,76 @@ const closePopup = (work) => {
           {/* 마지막 여백용 Spacer */}
           <div className="flex-shrink-0 w-[10vw] md:w-[20vw]" aria-hidden="true"></div>
         </div>
-        {/* 팝업 모달 (Portal 없이도 섹션 바깥쪽에 배치하면 됨) */}
-            {isMore && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
-                {/* 배경 어둡게 */}
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={closePopup}></div>
-                
-                {/* 팝업 본체 */}
-                <div className="relative w-full max-w-2xl max-h-[80vh] bg-white rounded-[30px] p-10 overflow-y-auto shadow-2xl">
-                    <button className="absolute top-6 right-6 text-2xl cursor-pointer" onClick={closePopup}>✕</button>
-                    <h2 className="text-3xl font-bold mb-4">{isMore.name}</h2>
-                    <p className="text-gray-500 mb-6 font-mono">{isMore.date}</p>
-                    <div className="text-gray-700 leading-relaxed text-lg">
-                    {isMore.detail}
-                    </div>
-                </div>
-                </div>
-            )}
+        {/* 팝업 모달 */}
+        {isMore && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+            {/* 배경 어둡게 */}
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={closePopup}></div>
+            
+            {/* 팝업 본체 */}
+            <div className="relative w-full max-w-2xl max-h-[85vh] bg-white rounded-[40px] p-8 md:p-12 overflow-y-auto shadow-2xl">
+            <button className="absolute top-8 right-8 text-2xl cursor-pointer hover:rotate-90 transition-transform" onClick={closePopup}>✕</button>
+            
+            {/* 제목 및 날짜 */}
+            <div className="mb-10 border-b border-gray-100 pb-6">
+                <h2 className="text-3xl font-bold mb-2 text-slate-800">{isMore.name}</h2>
+                <p className="text-spring-color font-mono font-medium">{isMore.date}</p>
+            </div>
+
+            {/* 상세 내용 리스트 */}
+            <div className="space-y-10">
+                {/* Project Overview */}
+                <section>
+                <h4 className="text-xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+                    <span className="w-1.5 h-6 bg-spring-color rounded-full inline-block"></span>
+                    📌 Project Overview
+                </h4>
+                <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                    {isMore.overview?.map((text, i) => (
+                    <li key={i} dangerouslySetInnerHTML={{ __html: text }} />
+                    ))}
+                </ul>
+                </section>
+
+                {/* Tech Stack */}
+                <section>
+                <h4 className="text-xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+                    <span className="w-1.5 h-6 bg-spring-color rounded-full inline-block"></span>
+                    🛠 Tech Stack
+                </h4>
+                <ul className="list-disc list-outside ml-5 space-y-2 text-gray-600">
+                    {isMore.stack?.map((text, i) => (
+                    <li key={i} dangerouslySetInnerHTML={{ __html: text }} />
+                    ))}
+                </ul>
+                </section>
+
+                {/* Key Experience & Results */}
+                <section>
+                <h4 className="text-xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+                    <span className="w-1.5 h-6 bg-spring-color rounded-full inline-block"></span>
+                    🚀 Key Experience & Results
+                </h4>
+                <ul className="list-disc list-outside ml-5 space-y-3 text-gray-600">
+                    {isMore.results?.map((text, i) => (
+                    <li key={i} dangerouslySetInnerHTML={{ __html: text }} className="leading-relaxed" />
+                    ))}
+                </ul>
+                </section>
+            </div>
+
+            {/* 결과물 보러가기 */}
+            <div className="mt-12 text-center">
+                <a 
+                href={isMore.link} target="_blank" rel="noreferrer"
+                className="px-10 py-3 bg-text-color text-white rounded-full hover:bg-spring-color transition-colors cursor-pointer font-bold"
+                >
+                보러가기
+                </a>
+            </div>
+            </div>
+        </div>
+        )}
       </div>
     </div>
   );
