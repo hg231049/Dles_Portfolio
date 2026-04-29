@@ -58,18 +58,33 @@ const EtcWork_List = [
       "<strong>상태 관리 최적화:</strong> 부모 컴포넌트에서 Props 전달을 통해 섹션별 디자인 옵션(순위 노출 여부, 요약 설명 등)을 선언적으로 제어했습니다."
     ],
   },
+  { 
+    id: 4,
+    name: "포트폴리오",
+    date : "(26.04.24~26.04.30)", 
+    link:"https://dles-portfolio.vercel.app/",
+    thumb: EtcWork3,
+    desc: [
+      "React 앱 포트폴리오 - React,Tailwind CSS, GSAP library,shadcn/ui library, vercel", 
+      "React & Tailwind CSS와 다양한 라이브러리를 활용해 제작한 포트폴리오 앱입니다.",
+      " GSAP library를 활용해 밤-노을-낮-봄-들판-땅 으로 이어지는 타임라인을 구성했습니다 ",
+      "그리드와 tailwind를 활용해 반응형으로 제작. ",
+      "<strong>데이터 관리:</strong> GitHub와 Vercel을 연동하여 지속적 통합 및 배포(CI/CD) 환경을 구축했습니다"
+      
+    ],
+  },
 ];
 
 
 const ToyWork = () => { 
   return (
 
-      <div className="competency grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto">
+      <div className="competency grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mx-auto">
         {EtcWork_List.map((item) => (
           <Drawer key={item.id}>
             {/* 1. 트리거: 카드의 전체 외형을 버튼처럼 사용 */}
             <DrawerTrigger asChild>
-              <div className="card group bg-black/25 backdrop-blur-md shadow-md rounded-[8px] lg:rounded-[15px] overflow-hidden transition-all duration-300 h-fit cursor-pointer p-5 space-y-4">
+              <div className="card group bg-white/25 backdrop-blur-md shadow-md rounded-[8px] lg:rounded-[15px] overflow-hidden transition-all duration-300 h-fit cursor-pointer p-5 space-y-4 [&_.date]:text-subText-color [&:nth-child(n+3)_.label]:text-white [&:nth-child(n+3)_.date]:text-white/50 [&_.label]:text-text-color [&_.date]:text-subText-color lg:[&:nth-child(n+3)_.label]:text-text-color lg:[&:nth-child(n+3)_.date]:text-subText-color">
                 {/* 썸네일 */}
                 <div className="competency-thumb w-full aspect-video bg-white/5 rounded-[8px] lg:rounded-[15px] overflow-hidden">
                   <img 
@@ -80,11 +95,11 @@ const ToyWork = () => {
                 </div>
                 
                 {/* 타이틀 영역 */}
-                <div className="relative space-y-2 text-left [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]">
-                  <h3 className="text-[16px] lg:text-xl font-bold text-white leading-tight">
+                <div className="relative space-y-2 text-left">
+                  <h3 className="label text-[16px] lg:text-xl font-bold leading-tight">
                     {item.name}
                   </h3>
-                  <p className="w-[85%] min-h-[45.5px] text-white/80 text-[14px] lg:text-sm whitespace-pre-line leading-relaxed ">
+                  <p className="date w-[85%] min-h-[45.5px] text-[14px] lg:text-sm whitespace-pre-line leading-relaxed ">
                     {item.date}
                   </p>
                   {/* 플러스 아이콘이나 돋보기 아이콘 등으로 교체하면 좋습니다 */}
@@ -98,7 +113,7 @@ const ToyWork = () => {
             </DrawerTrigger>
 
             {/* 2. 상세 내용 Drawer */}
-            <DrawerContent className="bg-white/60 backdrop-blur-md border-none text-text-color overflow-y-scroll">
+            <DrawerContent className="bg-white/70 backdrop-blur-md border-none text-text-color overflow-y-scroll">
               <div className="mx-auto w-full max-w-[860px] p-6">
                 <DrawerHeader className="px-0">
                   <DrawerTitle className="text-2xl text-text-color font-bold">{item.name}</DrawerTitle>

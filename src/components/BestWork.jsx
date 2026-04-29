@@ -62,7 +62,7 @@ const closePopup = (work) => {
               className="card group flex-shrink-0 w-[70vw] md:w-[50vw] lg:w-[40vw]"
             >
                 {/* 썸네일 영역: 상대 수치 대신 고정 비율 컨테이너 권장 */}
-                <div className="thumb relative block w-full aspect-[4/2]">
+                <div className="thumb relative block w-full aspect-[4/3] lg:aspect-[4/2]">
                     {/* PC 썸네일 */}
                     <span className="pc-thumb block w-full h-full border-[2px] border-white/20 rounded-[8px] lg:rounded-[20px] overflow-hidden bg-gray-900 shadow-2xl">
                         <a href={item.link} target="_blank" rel="noreferrer" className="block w-full h-full overflow-hidden">
@@ -75,7 +75,7 @@ const closePopup = (work) => {
                     </span>
 
                     {/* MO 썸네일: absolute 위치 조정 */}
-                    <span className="mo-thumb absolute -bottom-10 -right-10 w-[30%] aspect-[9/13] border-[1px] border-white/20 rounded-[15px] overflow-hidden bg-gray-800 shadow-2xl hidden md:block">
+                    <span className="mo-thumb absolute -bottom-3 -right-3 lg:-bottom-10 lg:-right-10 w-[30%] aspect-[9/13] border-[1px] border-white/20 rounded-[8px] lg:rounded-[15px] overflow-hidden bg-gray-800 shadow-2xl">
                         <a href={item.link} target="_blank" rel="noreferrer" className="block w-full h-full overflow-hidden">
                             <img
                                 src={item.thumbMo}
@@ -87,7 +87,7 @@ const closePopup = (work) => {
                 </div>
 
                 {/* 텍스트 정보 영역 */}
-                <div className="description mt-5 lg:mt-12 space-y-2">
+                <div className="description mt-10 lg:mt-12 space-y-2">
                     <h3 className="text-[18px] lg:text-3xl font-bold text-text-color group-hover:text-spring-color transition-colors">{item.name}</h3>
                     <span className="text-[14px] lg:text-[18px] text-gray-500 font-mono">{item.date}</span>
                 </div>

@@ -4,12 +4,13 @@ import Competencies from '../../components/Competencies';
 const Skill = () => { 
     return (
         <section className="section-step min-h-screen flex justify-center p-[50px_0] lg:p-[100px_0]">
-            <div className="inner">
+            <div className="inner relative">
                 <div className="main-title p-[0_0_40px] lg:p-[0_0_80px] text-center">
                     <p className='text-day-color text-[16px] lg:text-[25px] font-medium'>02.기술 스택과 핵심역량</p>
                     <h2 className='text-[#1E293B] text-[25px] lg:text-[55px] font-bold'>Skill & Core Competencies</h2>
                 </div>
                 <Stack/>
+                <div className="line absolute top-[26%] lg:top-[44%] left-1/2 translate-1/2 w-[1px] h-[60px] bg-day-color"></div>
                 <Competencies/>
             </div>
         </section>

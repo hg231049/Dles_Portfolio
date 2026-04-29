@@ -40,7 +40,7 @@ const Competencies_list = [
 const Competencies = () => { 
   return (
 
-        <div className="competency grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto">
+        <div className="competency grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto p-[100px_0_0]">
         {Competencies_list.map((item) => (
           <details 
             key={item.id} 
