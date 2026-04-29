@@ -1,4 +1,5 @@
-import EtcWork from '../../components/EtcWork';
+import ToyWork from '../../components/ToyWork';
+
 
 const EtcProject = () => { 
     return (
@@ -8,7 +9,7 @@ const EtcProject = () => {
                     <p className='text-field-color text-[16px] lg:text-[25px] font-medium'>지속적인 기록들</p>
                     <h2 className='text-[#064E3B] text-[25px] lg:text-[55px] font-bold'>Continuous Records</h2>
                 </div>
-                <EtcWork/>
+                <ToyWork/>
             </div>
         </section>
         
