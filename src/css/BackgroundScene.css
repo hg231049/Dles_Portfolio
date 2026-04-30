@@ -1,5 +1,63 @@
 /* BackgroundScene.css */
+.background-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: -50;
+}
 
+.scene {
+  position: absolute;
+  inset: 0;
+}
+
+/* 밤 */
+.bg-night {
+  background: linear-gradient(180deg, #0d1020 0%, #1b2236 100%);
+}
+
+/* 노을 */
+.bg-sunset {
+  background: linear-gradient(180deg, #2c2334 10%, #d98a67 100%);
+}
+
+/* 낮 */
+.bg-day {
+  background: linear-gradient(180deg, #cfe8f6 0%, #f8fcff 100%);
+}
+
+/* 봄 */
+.bg-spring {
+  background: linear-gradient(180deg, #d9e8ff 0%, #fff2ee 100%);
+}
+
+/* 들판 */
+.bg-field {
+  background: linear-gradient(180deg, #b7ddb0 0%, #edf8ea 100%);
+}
+
+/* 땅 */
+.bg-ground {
+  background: linear-gradient(180deg, #3a2b20 0%, #1a120b 100%);
+}
+
+/* 꽃잎 */
+.petal {
+  position: absolute;
+  top: -20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
 /* 공통 고정 배경 */
 .fixed {
   will-change: opacity, background;
@@ -11,10 +69,10 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(1.5px 1.5px at 20px 30px, #add8e6, rgba(0,0,0,0)),
-    radial-gradient(2px 2px at 40px 70px, #add8e6, rgba(0,0,0,0)),
-    radial-gradient(1.5px 1.5px at 90px 40px, #add8e6, rgba(0,0,0,0));
+  background-image:
+    radial-gradient(1.5px 1.5px at 20px 30px, #add8e6, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 40px 70px, #add8e6, rgba(0, 0, 0, 0)),
+    radial-gradient(1.5px 1.5px at 90px 40px, #add8e6, rgba(0, 0, 0, 0));
   background-size: 250px 250px;
   background-repeat: repeat;
   opacity: 0.6;
@@ -22,8 +80,12 @@
 }
 
 @keyframes twinkle {
-  0% { opacity: 0.3; }
-  100% { opacity: 0.5; }
+  0% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }
 
 /* --- ★ 새로운 풍성한 꽃잎 효과 (JSX map 방식) --- */
