@@ -1,53 +1,72 @@
-import React from 'react';
+import React from "react";
 
 const steps = [
   {
-    title: "이젠컴퓨터학원 웹퍼블리싱과정 이수(2021 6개월간)",
-    desc: ["웹퍼블리싱/웹디자인 교육", "그래픽기술자격(GTQ) 1급 취득","워드프로세서,컴퓨터 활용능력 1급 취득"],
+    company: "이젠컴퓨터학원",
+    title: "웹퍼블리싱 과정 수료",
+    period: "2021 · 6개월",
+    desc: ["HTML / CSS / JS 기초 학습", "GTQ 1급, 워드프로세서 취득"],
   },
   {
-    title: "디자인교과서 2022.02.21~2024.06.30 (28개월)",
-    desc: ["카페24,고도몰과 같은 이커머스 플랫폼을 경험", "스킨 제작 및 고객사 맞춤 홈페이지 제작"],
+    company: "디자인교과서",
+    title: "웹퍼블리셔 근무",
+    period: "2022.02 ~ 2024.06 (28개월)",
+    desc: ["카페24 · 고도몰 운영", "고객사 맞춤 홈페이지 제작"],
   },
   {
-    title: "올릿 2025.03.26~ ",
-    desc: ["자사 브랜드 3곳 리뉴얼","중심 브랜드 사이트 최적화 및 seo관리", "자사 브랜드 4곳 이상 유지보수 및 관리"],
+    company: "올릿",
+    title: "웹퍼블리셔 재직중",
+    period: "2025.03 ~ 현재",
+    desc: ["브랜드 사이트 리뉴얼", "SEO 최적화", "유지보수 및 운영 관리"],
   },
   {
-    title: "react 인프런 교육 강의 및 tailwind 공부",
-    desc: ["React를 기초 개념을 배우고 이를 적용한 앱 제작","감정일기장, 투두리스트 제작 및 배포","tailwind css 독학하며 react에 적용하며 학습중"],
+    company: "Self Growth",
+    title: "React · Tailwind 학습",
+    period: "2025.08 ~ 현재",
+    desc: ["토이 프로젝트 제작", "컴포넌트 구조 학습", "배포 경험 축적"],
   },
 ];
 
 const History = () => {
   return (
     <div className="[text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-      <div className="sub-title  mb-10 pb-6 border-b border-[#f6f6f638] text-sunrise-color text-[18px] lg:text-[20px] font-bold"> HISTORY</div>
+      <div className="mb-10 pb-6 border-b border-white/20 text-sunrise-color text-[18px] lg:text-[20px] font-bold">
+        HISTORY
+      </div>
+
       <ol className="relative border-l border-white/20 ml-4 space-y-10">
         {steps.map((step, index) => (
           <li key={index} className="relative pl-6 lg:pl-12 group">
-            {/* 타임라인 도트 (Dot) */}
-            <div className="absolute -left-[4px] lg:-left-[8px] top-0">
-              <span className="relative flex h-2 w-2 lg:h-4 lg:w-4">
-                {/* 애니메이션 펄스 효과 */}
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-color opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 lg:h-4 lg:w-4 bg-sunrise-color shadow-[0_0_15px_#fb923c]"></span>
+            {/* dot */}
+            <div className="absolute -left-[6px] lg:-left-[9px] top-1">
+              <span className="relative flex h-3 w-3 lg:h-4 lg:w-4">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-color opacity-60"></span>
+                <span className="relative inline-flex h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-sunrise-color"></span>
               </span>
             </div>
 
-            {/* 본문 컨텐츠 */}
-            <div className="flex flex-col items-start">
+            <div>
+              {/* 회사명 */}
+              <p className="text-sunrise-color text-sm lg:text-base font-semibold mb-1">
+                {step.company}
+              </p>
+
               {/* 타이틀 */}
-              <h4 className="text-[16px] lg:text-[20px] font-bold text-white mb-4 transition-colors group-hover:text-sunrise-color ">
+              <h4 className="text-white text-[16px] lg:text-[20px] font-bold mb-2 group-hover:text-sunrise-color transition-colors">
                 {step.title}
               </h4>
 
-              {/* 설명 리스트 */}
-              <ul className="list-disc list-outside ml-3 lg:ml-6 space-y-2 text-white text-[13px] lg:text-[16px] leading-normal">
-                {step.desc.map((item, i) => (
-                  <li key={i} className="pl-2">{item}</li>
-                ))}
-              </ul>
+              {/* 기간 */}
+              <p className="text-white/60 text-sm mb-4">{step.period}</p>
+
+              {/* 설명 */}
+              {step.desc && (
+                <ul className="list-disc ml-4 space-y-2 text-white text-[13px] lg:text-[15px]">
+                  {step.desc.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              )}
             </div>
           </li>
         ))}

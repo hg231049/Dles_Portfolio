@@ -81,7 +81,7 @@ const ToyWork = () => {
         <Drawer key={item.id}>
           {/* 1. 트리거: 카드의 전체 외형을 버튼처럼 사용 */}
           <DrawerTrigger asChild>
-            <div className="card group bg-white/25 backdrop-blur-md shadow-md rounded-[8px] lg:rounded-[15px] overflow-hidden transition-all duration-300 h-fit cursor-pointer p-5 space-y-4 [&_.date]:text-subText-color [&:nth-child(n+3)_.label]:text-white [&:nth-child(n+3)_.date]:text-white/50 [&_.label]:text-text-color [&_.date]:text-subText-color lg:[&:nth-child(n+3)_.label]:text-text-color lg:[&:nth-child(n+3)_.date]:text-subText-color">
+            <div className="card group bg-white/80 border border-green-100 shadow-md rounded-[8px] lg:rounded-[15px] overflow-hidden transition-all duration-300 h-fit cursor-pointer p-5 space-y-4 [&_.date]:text-subText-color [&:nth-child(n+3)_.label]:text-white [&:nth-child(n+3)_.date]:text-white/50 [&_.label]:text-text-color [&_.date]:text-subText-color lg:[&:nth-child(n+3)_.label]:text-text-color lg:[&:nth-child(n+3)_.date]:text-subText-color">
               {/* 썸네일 */}
               <div className="competency-thumb w-full aspect-video bg-white/5 rounded-[8px] lg:rounded-[15px] overflow-hidden">
                 <img
@@ -110,8 +110,8 @@ const ToyWork = () => {
           </DrawerTrigger>
 
           {/* 2. 상세 내용 Drawer */}
-          <DrawerContent className="bg-white/70 backdrop-blur-md border-none text-text-color">
-            <div className="mx-auto w-full max-w-[860px] p-6  overflow-y-scroll">
+          <DrawerContent className="bg-white/70 backdrop-blur-md border-none text-text-color ">
+            <div className="mx-auto w-full max-w-[860px] p-6 overflow-y-scroll scroll-hidden">
               <DrawerHeader className="px-0">
                 <DrawerTitle className="text-2xl text-text-color font-bold">
                   {item.name}

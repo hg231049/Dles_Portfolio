@@ -1,21 +1,33 @@
-import Stack from '../../components/Stack';
-import Competencies from '../../components/Competencies';
+import Stack from "../../components/Stack";
+import Competencies from "../../components/Competencies";
+import SectionTitle from "../../components/SectionTitle";
 
-const Skill = () => { 
-    return (
-        <section className="section-step min-h-screen flex justify-center p-[50px_0] lg:p-[100px_0]">
-            <div className="inner relative">
-                <div className="main-title p-[0_0_40px] lg:p-[0_0_80px] text-center">
-                    <p className='text-day-color text-[16px] lg:text-[25px] font-medium'>02.기술 스택과 핵심역량</p>
-                    <h2 className='text-[#1E293B] text-[25px] lg:text-[55px] font-bold'>Skill & Core Competencies</h2>
-                </div>
-                <Stack/>
-                <div className="line absolute top-[26%] lg:top-[44%] left-1/2 translate-1/2 w-[1px] h-[60px] bg-day-color"></div>
-                <Competencies/>
-            </div>
-        </section>
-        
-    )
-}
+const Skill = () => {
+  return (
+    <section
+      id="skill"
+      className="section-step min-h-screen flex justify-center py-12 lg:py-24"
+    >
+      <div className="inner relative w-full">
+        <SectionTitle
+          step="02"
+          label="기술로 증명하는 역량"
+          title="Skills & Strengths"
+          align="center"
+          color="text-[#0F172A]"
+          subColor="text-day-color"
+        />
+
+        <Stack />
+
+        <div className="flex justify-center py-10 lg:py-14">
+          <span className="w-px h-16 bg-gradient-to-b from-day-color via-day-color/40 to-transparent"></span>
+        </div>
+
+        <Competencies />
+      </div>
+    </section>
+  );
+};
 
 export default Skill;

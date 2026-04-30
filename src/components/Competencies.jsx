@@ -1,95 +1,89 @@
-import React from 'react';
-import { dashboardThumb,codeThumb,proposalThumb } from '../assets/img';
+import React from "react";
+import { dashboardThumb, codeThumb, proposalThumb } from "../assets/img";
 
-const Competencies_list = [
-  { 
+const competencyList = [
+  {
     id: 1,
-    name: "기술적 SEO 및 웹 성능 최적화",
-    subTitle : "Lighthouse 기반 성능 지표 개선 및 시맨틱 마크업을 통한 메인 키워드 노출 5.2배 달성(GSC기준)", 
-    thumb: dashboardThumb,
-    desc: [
-      "<strong>데이터 기반 SEO 전략 </strong>구글 서치 콘솔(GSC) 데이터를 분석하여 '마사지기' 등 핵심 키워드의 검색 노출을 극대화하는 시맨틱 마크업 구조 설계 및 메타데이터 최적화 수행", 
-      "<strong>Lighthouse 성능 관리</strong>서버 사이드 제어가 제한적인 환경에서 웹 표준 및 접근성 가이드를 준수하며, 이미지 최적화와 리소스 경량화를 통해 Lighthouse 핵심 성능 지표(LCP, CLS 등) 개선",
-      "<strong>크로스 브라우징 및 QA</strong>다양한 디바이스와 브라우저 환경에서 동일한 사용자 경험을 제공하기 위한 철저한 검수 및 코드 안정성 확보"
+    badge: "+5.2x",
+    title: "SEO & Performance",
+    subtitle: "검색 노출 확대 및 웹 성능 지표 개선",
+    thumbs: dashboardThumb,
+    points: [
+      "시맨틱 마크업 구조 개선 및 메타데이터 최적화",
+      "Lighthouse 기준 LCP / CLS 등 핵심 지표 개선",
+      "검색 콘솔 데이터를 기반으로 키워드 노출 성과 관리",
     ],
   },
-  { 
+  {
     id: 2,
-    name: "UI 모듈화 및 중앙 집중식 코드 관리",
-    subTitle : "반복 요소의 공통 컴포넌트화를 통한 유지보수 리소스 40% 절감 및 UI 일관성 확보", 
-    thumb: codeThumb,
-    desc: [
-      "<strong>비즈니스 로직 자산화</strong>타이머 세팅, 프로모션 뱃지 등 사이트 전반에 반복되는 동적 요소를 독립적인 공통 모듈로 분리하여 구축", 
-      "<strong>유지보수 포인트 단일화</strong>수백 개의 상품 페이지에 흩어져 있던 코드를 하나의 공통 소스(Single Source of Truth)로 통합하여, 단 한 번의 수정으로 전체 사이트에 즉각 반영되는 구조 설계",
-      "<strong>운영 효율성 극대화</strong>신규 이벤트 페이지 구축 시 기존 컴포넌트를 재사용함으로써 퍼블리싱 리드 타임 단축 및 휴먼 에러 방지"
+    badge: "-40%",
+    title: "Reusable UI System",
+    subtitle: "반복 요소 공통화로 운영 효율 향상",
+    thumbs: codeThumb,
+    points: [
+      "이벤트 / 상품 영역 공통 컴포넌트화",
+      "수정 포인트 단일화로 유지보수 시간 절감",
+      "일관된 UI 운영으로 휴먼 에러 최소화",
     ],
   },
-  { 
+  {
     id: 3,
-    name: "비즈니스 목표를 고려한 전략적 기획 참여",
-    subTitle : "기획 단계부터의 기술 검토를 통한 구현 리스크 최소화 및 운영 효율 개선", 
-    thumb: proposalThumb,
-    desc: [
-      "<strong>기획 단계 기술 컨설팅</strong>퍼블리싱 전문가로서 기획 초기 단계에 참여하여 디자인 시안의 웹 표준 준수 여부 및 기술적 구현 가능성(Feasibility)을 사전에 검토", 
-      "<strong>사용자 경험(UX) 역제안</strong>다각도 시각을 바탕으로, 단순 구현을 넘어 관리자 운영 편의성과 사용자 유입 경로를 고려한 UI 구조 제안",
-      "<strong>파트너사 협업 리딩 및 퍼블리싱 QA 관리</strong>기획 의도와 실제 구현물 간의 간극을 조율하고, 내부 시스템 통합 시 발생할 수 있는 기술적 부채 사전에 차단 및 파트너사 기술 리뷰 및 피드백 전담"
+    badge: "Lead",
+    title: "Strategic Collaboration",
+    subtitle: "기획 단계부터 참여하는 퍼블리셔",
+    thumbs: proposalThumb,
+    points: [
+      "디자인 시안 구현 가능성 사전 검토",
+      "UX 관점의 개선안 제안",
+      "파트너사 협업 및 퍼블리싱 QA 진행",
     ],
   },
 ];
 
-const Competencies = () => { 
+export const Competencies = () => {
   return (
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {competencyList.map((item) => (
+        <div
+          key={item.id}
+          className="rounded-md md:rounded-xl bg-white/45 backdrop-blur-md border border-white/40 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+        >
+          <div className="thumbs mb-4 overflow-hidden rounded-sm md:rounded-sm">
+            <img src={item.thumbs} alt={item.title} />
+          </div>
+          {/* badge */}
+          <div className="mb-4">
+            <span className="inline-flex items-center rounded-full bg-day-color px-3 py-1 text-xs font-bold text-white tracking-wider">
+              {item.badge}
+            </span>
+          </div>
 
-        <div className="competency grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto p-[100px_0_0]">
-        {Competencies_list.map((item) => (
-          <details 
-            key={item.id} 
-            className="card group bg-white/35 backdrop-blur-md shadow-md rounded-[8px] lg:rounded-[15px] overflow-hidden transition-all duration-300 h-fit"
-          >
-            {/* 3. 카드형 Summary 디자인 */}
-            <summary className="p-5 cursor-pointer list-none outline-none select-none space-y-4">
-              {/* 썸네일: 카드 상단 배치 */}
-              <div className="competency-thumb w-full aspect-video bg-white/5 rounded-[8px] lg:rounded-[15px] overflow-hidden ">
-                <img 
-                  src={item.thumb} 
-                  alt={item.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                />
-              </div>
-              
-              {/* 타이틀 영역 */}
-              <div className="relative space-y-2">
-                <h3 className="text-[16px] lg:text-xl font-bold text-text-color group-hover:text-day-color transition-colors leading-tight">
-                  {item.name}
-                </h3>
-                <p className="w-[85%] min-h-[45.5px] text-subText-color text-[14px] lg:text-sm whitespace-pre-line leading-relaxed ">
-                  {item.subTitle}
-                </p>
-                {/* 토글 버튼: 우측 하단 배치 */}
-                <div className="absolute bottom-0 right-0">
-                    <div className="more-btn text-xl font-light text-subText w-8 h-8 flex items-center justify-center bg-white rounded-full transition-all duration-300 group-open:rotate-45">
-                    +
-                    </div>
-                </div>
-              </div>
-            </summary>
+          {/* title */}
+          <h3 className="text-xl font-black text-text-color">{item.title}</h3>
 
-            {/* 4. 상세 내용 (펼쳐짐) */}
-            <div className="description p-5 border-t border-dotted border-[#cdcdcd]">
-              <ul className=" list-disc list-outside ml-4 space-y-3 text-subText-color text-sm leading-relaxed">
-                {item.desc.map((descItem, idx) => (
-                  <li 
-                    key={idx}
-                    dangerouslySetInnerHTML={{ __html: descItem }} 
-                    className='[&_>strong]:block'
-                  />
-                ))}
-              </ul>
-            </div>
-          </details>
-        ))}
-      </div>
+          <p className="mt-2 text-sm text-subText-color leading-relaxed min-h-[44px]">
+            {item.subtitle}
+          </p>
+
+          {/* line */}
+          <div className="my-5 h-px w-full bg-day-color/20"></div>
+
+          {/* list */}
+          <ul className="space-y-3">
+            {item.points.map((point, idx) => (
+              <li
+                key={idx}
+                className="flex gap-3 text-sm leading-relaxed text-text-color"
+              >
+                <span className="mt-[7px] block w-1.5 h-1.5 rounded-full bg-day-color shrink-0"></span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
   );
-}
+};
 
 export default Competencies;

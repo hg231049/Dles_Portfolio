@@ -1,42 +1,74 @@
-import { skill1,skill2,skill3,skill4,skill5,skill6,skill7,skill8,skill9,skill10 } from '../assets/img';
+import {
+  skill1,
+  skill2,
+  skill3,
+  skill4,
+  skill5,
+  skill6,
+  skill7,
+  skill8,
+  skill9,
+  skill10,
+} from "../assets/img";
 
-const Skill_list = [
-    { id: 1, name: "javascript", icon:skill1 },
-    { id: 2, name: "react",icon:skill2 },
-    { id: 3, name: "tailwind css",  icon:skill3},
-    { id: 4, name: "vscode", icon:skill4 },
-    { id: 5, name: "vercel", icon:skill5 },
-    { id: 6, name: "github", icon:skill6 },
-    { id: 7, name: "figma",icon:skill7 },
-    { id: 8, name: "photosho",  icon:skill8},
-    { id: 9, name: "adobexd", icon:skill9 },
-    { id: 10, name: "editplus", icon:skill10 },
+const skillGroups = [
+  {
+    title: "Frontend",
+    items: [
+      { id: 1, name: "JavaScript", icon: skill1 },
+      { id: 2, name: "React", icon: skill2 },
+      { id: 3, name: "Tailwind CSS", icon: skill3 },
+    ],
+  },
+  {
+    title: "Tools",
+    items: [
+      { id: 4, name: "VSCode", icon: skill4 },
+      { id: 5, name: "Vercel", icon: skill5 },
+      { id: 6, name: "GitHub", icon: skill6 },
+      { id: 7, name: "Figma", icon: skill7 },
+      { id: 8, name: "Photoshop", icon: skill8 },
+      { id: 9, name: "Adobe XD", icon: skill9 },
+      { id: 10, name: "EditPlus", icon: skill10 },
+    ],
+  },
 ];
 
-
-const Stack = () => { 
-    return (
-        <div >
-            <div className="skill-box mb-15 text-center">
-                <ul className="tools inline-grid grid-cols-4 lg:grid-cols-5 gap-3 lg:gap-4 items-start justify-items-center">
-                    {Skill_list.map((item, index) => (
-                        <li key={index} className="flex flex-col items-center group cursor-pointer">
-                        {/* 아이콘 컨테이너 */}
-                        <span className="block w-[50px] h-[50px] rounded-[8px] lg:w-[60px] lg:h-[60px] lg:rounded-[15px] overflow-hidden bg-white/5 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-2">
-                            <img src={item.icon} alt={item.name} className="w-full h-full object-contain" />
-                        </span>
-                        
-                        {/* 기술명 */}
-                        <p className="mt-2 lg:mt-3 text-sm md:text-base font-medium text-gray-700 group-hover:text-day-color transition-colors">
-                            {item.name}
-                        </p>
-                        </li>
-                    ))}
-                    </ul>
+export const Stack = () => {
+  return (
+    <div className="space-y-10">
+      {skillGroups.map((group, idx) => (
+        <div key={idx}>
+          <div className="mb-5 text-center">
+            <p className="inline-block text-day-color text-sm lg:text-base font-bold tracking-[0.25em] uppercase">
+              {group.title}
+            </p>
           </div>
+
+          <ul className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-5">
+            {group.items.map((item) => (
+              <li
+                key={item.id}
+                className="group rounded-2xl bg-white shadow-md border border-slate-100  p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              >
+                <div className="w-12 h-12 lg:w-14 lg:h-14 mx-auto rounded-xl bg-white flex items-center justify-center overflow-hidden">
+                  <img
+                    src={item.icon}
+                    alt={item.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                <p className="mt-3 text-[13px] lg:text-sm font-semibold text-text-color group-hover:text-day-color transition-colors">
+                  {item.name}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
-        
-    )
-}
+      ))}
+    </div>
+  );
+};
 
 export default Stack;

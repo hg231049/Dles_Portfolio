@@ -11,20 +11,24 @@
   }
 
   @keyframes gradient-flow {
-    0% { background-position: 200% center; }
-    100% { background-position: 0% center; }
+    0% {
+      background-position: 200% center;
+    }
+    100% {
+      background-position: 0% center;
+    }
   }
-} 
+}
 @theme {
   /* 여기서 바로 변수를 등록하면 Tailwind 클래스가 생성됩니다 */
   --color-night-color: #002454;
-  --color-sunrise-color:#FFCC80;
-  --color-day-color:#1A237E  ;
-  --color-spring-color:#D81B60;
-  --color-field-color:#2E7D32;
-  --color-ground-color:#E0C097;
-  --color-text-color:#121212;
-  --color-subText-color:#5c5c5c;
+  --color-sunrise-color: #ffcc80;
+  --color-day-color: #1a237e;
+  --color-spring-color: #d81b60;
+  --color-field-color: #2e7d32;
+  --color-ground-color: #e0c097;
+  --color-text-color: #121212;
+  --color-subText-color: #5c5c5c;
   --max-width-inner: 1680px;
 }
 
@@ -36,26 +40,48 @@
 
 body {
   position: relative;
-  font-family: 'Exo', sans-serif;
+  font-family: "Exo", sans-serif;
   /* 안티앨리어싱(글자를 매끄럽게) 설정도 같이 해주면 좋아요 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 /*body::after{content:"";position:absolute;inset:0;pointer-events:none;background-image: url("data:image/svg+xml;utf8,\<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150'>\<filter id='n'>\<feTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='1'/>\</filter>\<rect width='100%' height='100%' filter='url(%23n)' fill='rgba(0,0,0,0.25)'/>\</svg>");mix-blend-mode: overlay;opacity:1;z-index:0;}*/
 .suit {
-  font-family: 'SUITE', sans-serif;
+  font-family: "SUITE", sans-serif;
+}
+/* 스크롤바 숨기기  */
+.scroll {
+  -ms-overflow-style: none; /* IE */
+  scrollbar-width: none; /* Firefox */
+}
+.scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera, Edge */
+}
+.scroll-hidden {
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 /* 배경이 변할 도화지를 고정시킵니다 */
 .bg-gradient-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* 콘텐츠 뒤로 보냄 */
-    background: linear-gradient(180deg, #020111 0%, #191621 100%); /* 초기 상태: 밤 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 콘텐츠 뒤로 보냄 */
+  background: linear-gradient(
+    180deg,
+    #020111 0%,
+    #191621 100%
+  ); /* 초기 상태: 밤 */
 }
-[data-vaul-drawer][data-vaul-drawer-direction=bottom]::after { display: none;}
+[data-vaul-drawer][data-vaul-drawer-direction="bottom"]::after {
+  display: none;
+}
 /* MainVisual.css */
 
 /* 마우스 아이콘 전체적인 투명도 조절 */
@@ -70,28 +96,34 @@ body {
 
 @keyframes wheel-move {
   0% {
-    top: 6px;       /* 위쪽 위치 */
-    opacity: 0;      /* 투명하게 시작 */
+    top: 6px; /* 위쪽 위치 */
+    opacity: 0; /* 투명하게 시작 */
   }
   30% {
     top: 6px;
-    opacity: 1;      /* 나타남 */
+    opacity: 1; /* 나타남 */
   }
   100% {
-    top: 25px;      /* 아래쪽으로 이동 */
-    opacity: 0;      /* 사라짐 */
+    top: 25px; /* 아래쪽으로 이동 */
+    opacity: 0; /* 사라짐 */
   }
 }
 
-@keyframes TransYSM { 
-	0% { transform:translateY(0) } 
-	50% { transform:translateY(-400px) } 
-	100% { transform:translateY(0) } 
+@keyframes TransYSM {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-400px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @theme inline {
   --font-heading: var(--font-sans);
-  --font-sans: 'Geist Variable', sans-serif;
+  --font-sans: "Geist Variable", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
