@@ -110,8 +110,8 @@ const ToyWork = () => {
           </DrawerTrigger>
 
           {/* 2. 상세 내용 Drawer */}
-          <DrawerContent className="bg-white/70 backdrop-blur-md border-none text-text-color max-h-[90vh] flex flex-col">
-            <div className="mx-auto w-full max-w-[860px] p-6 overflow-y-auto">
+          <DrawerContent className="bg-white/70 backdrop-blur-md border-none text-text-color h-[90vh] flex flex-col">
+            <div className="mx-auto w-full max-w-[860px] p-6 flex-1 min-h-0 overflow-y-auto overscroll-contain">
               <DrawerHeader className="px-0">
                 <DrawerTitle className="text-2xl text-text-color font-bold">
                   {item.name}
