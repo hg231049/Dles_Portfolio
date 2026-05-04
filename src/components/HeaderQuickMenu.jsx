@@ -49,9 +49,9 @@ const HeaderQuickMenu = () => {
                 {/* tooltip */}
                 <span
                   className={`
-                    absolute left-1/2 -translate-x-1/2 -top-9
+                    absolute left-1/2 -translate-x-1/2 -bottom-6
                     whitespace-nowrap rounded-full
-                    px-1 py-1 text-[11px] tracking-[0.25em]
+                    px-2 py-1 text-[11px] tracking-[0.25em]
                     ${item.color} text-white/80 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]
                     transition-all duration-300 pointer-events-none
                     ${

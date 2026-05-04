@@ -73,7 +73,7 @@ const MainVisual = () => {
         </p>
 
         {/* 메인 타이틀 */}
-        <h1 className="intro-title text-white text-3xl lg:text-8xl leading-[1.2] tracking-tight">
+        <h1 className="intro-title text-white text-3xl lg:text-6xl leading-[1.2] tracking-tight">
           <div className="mb-2">{splitText("밤, 가장 선명한 시작")}</div>
 
           <span className="highlight-text inline-block  font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-purple-500">
