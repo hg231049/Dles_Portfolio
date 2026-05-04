@@ -8,7 +8,7 @@ const Work = () => {
       id="project"
       className="section-step min-h-[100vh] flex justify-center p-[50px_0] lg:p-[100px_0] z-10"
     >
-      <div id="horizontal-section">
+      <div className="inner">
         <SectionTitle
           step="03"
           label="실력으로 피워낸 작업물"

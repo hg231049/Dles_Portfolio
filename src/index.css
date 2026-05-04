@@ -29,7 +29,7 @@
   --color-ground-color: #e0c097;
   --color-text-color: #121212;
   --color-subText-color: #5c5c5c;
-  --max-width-inner: 1680px;
+  --max-width-inner: 1840px;
 }
 
 @layer components {
@@ -58,6 +58,26 @@ body::after {
   opacity: 0.4;
 
   z-index: -1; /* 핵심 */
+}
+header {
+  z-index: 50;
+  transition: 0.3s;
+}
+
+body.modal-open header {
+  z-index: 0;
+}
+
+/* 모달 애니메이션 */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .suit {
   font-family: "SUITE", sans-serif;

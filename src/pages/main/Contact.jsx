@@ -22,7 +22,7 @@ const Contact = () => {
           {/* 메시지 */}
           <p className="text-white text-[18px] lg:text-[28px] font-bold leading-relaxed">
             사용자 경험을 완성하는 퍼블리셔,
-            <br className="hidden lg:block" />
+            <br className="block" />
             이은서입니다.
           </p>
 
@@ -45,7 +45,7 @@ const Contact = () => {
               href="https://github.com/hg231049"
               target="_blank"
               rel="noreferrer"
-              className="px-8 py-4 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-all"
+              className="hidden px-8 py-4 rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-all"
             >
               GitHub 보기
             </a>

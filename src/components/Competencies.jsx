@@ -6,7 +6,8 @@ const competencyList = [
     id: 1,
     badge: "+5.2x",
     title: "SEO & Performance",
-    subtitle: "검색 노출 확대 및 웹 성능 지표 개선",
+    subtitle:
+      "검색 노출 확대 및 웹 성능 지표 개선(메인 키워드 노출 5.2배 달성(GSC기준)",
     thumbs: dashboardThumb,
     points: [
       "시맨틱 마크업 구조 개선 및 메타데이터 최적화",
@@ -61,7 +62,7 @@ export const Competencies = () => {
           {/* title */}
           <h3 className="text-xl font-black text-text-color">{item.title}</h3>
 
-          <p className="mt-2 text-sm text-subText-color leading-relaxed min-h-[44px]">
+          <p className="mt-2 text-sm text-subText-color leading-relaxed ">
             {item.subtitle}
           </p>
 

@@ -1,195 +1,286 @@
 import { useState } from "react";
-import { bestWork1, bestWorkMo1 } from "../assets/img";
+import {
+  bestWork1,
+  bestWork2,
+  bestWork3,
+  bestWork4,
+  bestWork5,
+  bestWork6,
+} from "../assets/img";
+
+// 탭
+const categories = ["All", "리뉴얼", "신규 구축"];
+
+// 데이터
+const Work_list = [
+  {
+    id: 1,
+    category: "리뉴얼",
+    name: "슬룸(SLOOM)",
+    date: "2025.04 ~ 2025.05",
+    link: "https://sleeplab.co.kr/home-backup",
+    thumb: bestWork1,
+    summary: "SEO 노출 5배 증가 및 반응형 전환",
+    overview: [
+      "<strong>프로젝트:</strong> 적응형 쇼핑몰 → 반응형 UI/UX 전면 리뉴얼",
+      "<strong>기여도:</strong> 퍼블리싱 100%",
+      "<strong>환경:</strong> 아임웹 기반 E-commerce",
+    ],
+    stack: ["HTML5, CSS3, JavaScript", "Owl Carousel", "Photoshop"],
+    results: [
+      "<strong>반응형 전환:</strong> 유지보수 효율 개선",
+      "<strong>SEO 개선:</strong> 시맨틱 마크업 + 이미지 최적화",
+      "<strong>UX 개선:</strong> 사용자 흐름 기반 구조 재정의",
+      "<strong>성과:</strong> 검색 노출 약 5배 증가",
+    ],
+    notice: [
+      "※ 현재 사이트는 추가 리뉴얼된 상태이며 본 작업은 이전 버전 기준입니다.",
+    ],
+  },
+
+  {
+    id: 2,
+    category: "리뉴얼",
+    name: "심플리케어",
+    date: "2025.01",
+    link: "https://oneqhealthfood.com/",
+    thumb: bestWork2,
+    summary: "UI 구조 개선 및 운영 효율 향상",
+    overview: [
+      "<strong>프로젝트:</strong> 쇼핑몰 UI/UX 리뉴얼",
+      "<strong>기여도:</strong> 퍼블리싱 100%",
+    ],
+    stack: ["HTML, CSS, JavaScript"],
+    results: [
+      "<strong>구조 개선:</strong> 사용자 중심 레이아웃",
+      "<strong>운영 효율:</strong> 컴포넌트화",
+      "<strong>퍼포먼스:</strong> 리소스 최적화",
+    ],
+  },
+
+  {
+    id: 3,
+    category: "신규 구축",
+    name: "피닉스레포츠",
+    date: "2024.04",
+    link: "https://swimgoggle.co.kr/",
+    thumb: bestWork3,
+    summary: "인터랙션 중심 쇼핑몰 구축",
+    overview: [
+      "<strong>프로젝트:</strong> 고도몰 기반 쇼핑몰 구축",
+      "<strong>기여도:</strong> 퍼블리싱 100%",
+    ],
+    stack: ["HTML, CSS, JavaScript", "Swiper"],
+    results: [
+      "<strong>인터랙션:</strong> 애니메이션 구현",
+      "<strong>협업:</strong> 백엔드 연동",
+      "<strong>안정성:</strong> 크로스 브라우징",
+    ],
+  },
+
+  {
+    id: 4,
+    category: "신규 구축",
+    name: "AIR",
+    date: "2024.05",
+    link: "http://sampledesignbook555.godomall.com/",
+    thumb: bestWork4,
+    summary: "템플릿 기반 UI 커스터마이징",
+    overview: [
+      "<strong>프로젝트:</strong> 고도몰 쇼핑몰 구축",
+      "<strong>기여도:</strong> 퍼블리싱 100%",
+    ],
+    stack: ["HTML, CSS, JavaScript"],
+    results: [
+      "<strong>UI 구성:</strong> 커스터마이징",
+      "<strong>구조 설계:</strong> 페이지 구성",
+    ],
+  },
+
+  {
+    id: 5,
+    category: "신규 구축",
+    name: "CYCLE",
+    date: "2024.01",
+    link: "https://ecudemo310794.cafe24.com/",
+    thumb: bestWork5,
+    summary: "유튜브 API 인터랙션 구현",
+    overview: [
+      "<strong>프로젝트:</strong> 반응형 쇼핑몰 구축",
+      "<strong>기여도:</strong> 퍼블리싱 100%",
+    ],
+    stack: ["HTML, CSS, JavaScript", "YouTube API"],
+    results: [
+      "<strong>기능:</strong> 영상 인터랙션 구현",
+      "<strong>UX:</strong> 몰입도 향상",
+    ],
+  },
+
+  {
+    id: 6,
+    category: "신규 구축",
+    name: "CRUSH",
+    date: "2023.04 ~ 2023.06",
+    link: "https://ecudemo283804.cafe24.com/",
+    thumb: bestWork6,
+    summary: "다양한 인터랙션 구현",
+    overview: [
+      "<strong>프로젝트:</strong> 쇼핑몰 구축",
+      "<strong>기여도:</strong> 퍼블리싱 100%",
+    ],
+    stack: ["HTML, CSS, JavaScript"],
+    results: [
+      "<strong>기능:</strong> 영상/애니메이션 구현",
+      "<strong>확장성:</strong> 라이브러리 활용",
+    ],
+  },
+];
 
 const BestWork = () => {
-  const [isMore, setIsMore] = useState(null);
+  const [activeTab, setActiveTab] = useState("All");
+  const [selected, setSelected] = useState(null);
 
-  const openPopup = (work) => {
-    setIsMore(work);
+  const filtered =
+    activeTab === "All"
+      ? Work_list
+      : Work_list.filter((item) => item.category === activeTab);
+
+  // 🔥 모달 열기
+  const openModal = (item) => {
+    setSelected(item);
     document.body.style.overflow = "hidden";
+    document.body.classList.add("modal-open");
   };
 
-  const closePopup = () => {
-    setIsMore(null);
+  // 🔥 모달 닫기
+  const closeModal = () => {
+    setSelected(null);
     document.body.style.overflow = "auto";
+    document.body.classList.remove("modal-open");
   };
-
-  const Work_list = [
-    {
-      id: 1,
-      name: "슬룸(SLOOM) 리뉴얼 및 최적화",
-      date: "2025.04.22 ~ 2025.05.27 (약 5주)",
-      link: "https://sleeplab.co.kr/home-backup",
-      thumb: bestWork1,
-      thumbMo: bestWorkMo1,
-      overview: [
-        "<strong>내용:</strong> 기존 적응형 사이트를 반응형 UI/UX로 전면 리뉴얼 및 SEO 개선",
-        "<strong>플랫폼:</strong> 아임웹 (E-commerce)",
-        "<strong>기여도:</strong> 퍼블리싱 100%",
-      ],
-      stack: [
-        "<strong>언어:</strong> HTML5, CSS3, JavaScript",
-        "<strong>라이브러리:</strong> Owl Carousel",
-        "<strong>툴:</strong> Photoshop",
-      ],
-      results: [
-        "<strong>반응형 전환:</strong> Grid 기반 UI 재설계",
-        "<strong>기능 확장:</strong> 커스텀 스크립트로 마케팅 기능 구현",
-        "<strong>SEO 개선:</strong> 시맨틱 마크업 + 이미지 최적화",
-      ],
-    },
-    {
-      id: 2,
-      name: "날씨 대시보드",
-      date: "2026.04",
-      link: "#",
-      thumb: bestWork1,
-      thumbMo: bestWorkMo1,
-    },
-    {
-      id: 3,
-      name: "슬룸 클론 프로젝트",
-      date: "2026.04",
-      link: "#",
-      thumb: bestWork1,
-      thumbMo: bestWorkMo1,
-    },
-  ];
 
   return (
-    <div className="relative z-10 px-6 lg:px-10 mt-10 lg:mt-16">
+    <section className="">
+      {/* TAB */}
+      <div className="flex gap-3 mb-12 justify-center flex-wrap">
+        {categories.map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-5 py-2 rounded-full text-sm transition
+              ${
+                activeTab === tab
+                  ? "bg-spring-color text-white"
+                  : "bg-white/50 text-gray-500 hover:bg-white/80 hover:text-spring-color"
+              }`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
+
       {/* GRID */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {Work_list.map((item, idx) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filtered.map((item) => (
           <div
             key={item.id}
-            className={`group ${idx === 0 ? "lg:col-span-2" : ""}`}
+            className="group cursor-pointer"
+            onClick={() => openModal(item)}
           >
-            {/* 썸네일 */}
-            <div className="relative w-full aspect-[4/3] lg:aspect-[4/2]">
-              {/* PC */}
-              <div className="w-full h-full border border-white/20 rounded-[15px] overflow-hidden bg-gray-900 shadow-xl">
-                <a href={item.link} target="_blank" rel="noreferrer">
-                  <img
-                    src={item.thumb}
-                    alt={item.name}
-                    className="w-full hover:translate-y-[-50%] transition-transform duration-[3s] ease-in-out"
-                  />
-                </a>
-              </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[8px] bg-gray-900">
+              <img
+                src={item.thumb}
+                alt={item.name}
+                className="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
+              />
 
-              {/* MO */}
-              <div className="hidden lg:block absolute -bottom-5 -right-5 w-[35%] aspect-[9/13] border border-white/20 rounded-[10px] overflow-hidden bg-gray-800 shadow-xl">
-                <img
-                  src={item.thumbMo}
-                  alt=""
-                  className="w-full hover:translate-y-[-50%] transition-transform duration-[3s]"
-                />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-end p-4">
+                <p className="text-white text-sm">{item.summary}</p>
               </div>
             </div>
 
-            {/* 텍스트 */}
-            <div className="mt-8 space-y-2">
-              <h3 className="text-lg lg:text-2xl font-bold text-text-color group-hover:text-spring-color transition-colors">
-                {item.name}
-              </h3>
-              <p className="text-sm text-gray-500 font-mono">{item.date}</p>
-            </div>
-
-            {/* 버튼 */}
             <div className="mt-4">
-              <button
-                onClick={() => openPopup(item)}
-                className="px-5 py-2 text-sm border border-text-color rounded-full hover:bg-spring-color hover:text-white transition"
-              >
-                자세히보기
-              </button>
+              <h3 className="text-lg font-bold">{item.name}</h3>
+              <p className="text-sm text-gray-500">{item.date}</p>
             </div>
           </div>
         ))}
       </div>
 
       {/* MODAL */}
-      {isMore && (
+      {selected && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center p-6">
-          {/* dimmed */}
           <div
-            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-            onClick={closePopup}
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={closeModal}
           />
 
-          {/* popup */}
-          <div className="relative w-full max-w-2xl max-h-[85vh] bg-white rounded-[20px] p-8 overflow-y-auto shadow-2xl z-10">
-            {/* close */}
+          <div className="relative w-full max-w-4xl bg-white rounded-[8px] p-8 max-h-[85vh] overflow-y-auto animate-[fadeUp_0.3s_ease]">
             <button
-              onClick={closePopup}
-              className="absolute top-6 right-6 text-2xl hover:rotate-90 transition"
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-xl"
             >
               ✕
             </button>
 
-            {/* title */}
-            <div className="mb-8 border-b pb-4">
-              <h2 className="text-xl lg:text-3xl font-bold">{isMore.name}</h2>
-              <p className="text-sm text-spring-color font-mono mt-1">
-                {isMore.date}
-              </p>
-            </div>
+            <h2 className="text-2xl font-bold mb-2">{selected.name}</h2>
+            <p className="text-sm text-gray-500 mb-6">{selected.date}</p>
 
-            {/* content */}
-            <div className="space-y-8">
-              {/* overview */}
-              {isMore.overview && (
-                <section>
-                  <h4 className="font-bold mb-3">📌 Overview</h4>
-                  <ul className="list-disc ml-5 space-y-2 text-sm">
-                    {isMore.overview.map((text, i) => (
-                      <li key={i} dangerouslySetInnerHTML={{ __html: text }} />
+            <div className="space-y-6 text-sm">
+              {selected.overview && (
+                <div>
+                  <h4 className="font-bold mb-2">📌 프로젝트 개요</h4>
+                  <ul className="list-disc ml-5 space-y-1">
+                    {selected.overview.map((t, i) => (
+                      <li key={i} dangerouslySetInnerHTML={{ __html: t }} />
                     ))}
                   </ul>
-                </section>
+                </div>
               )}
 
-              {/* stack */}
-              {isMore.stack && (
-                <section>
-                  <h4 className="font-bold mb-3">🛠 Tech Stack</h4>
-                  <ul className="list-disc ml-5 space-y-2 text-sm">
-                    {isMore.stack.map((text, i) => (
-                      <li key={i} dangerouslySetInnerHTML={{ __html: text }} />
+              {selected.stack && (
+                <div>
+                  <h4 className="font-bold mb-2">🛠 기술 스택</h4>
+                  <ul className="list-disc ml-5 space-y-1">
+                    {selected.stack.map((t, i) => (
+                      <li key={i}>{t}</li>
                     ))}
                   </ul>
-                </section>
+                </div>
               )}
 
-              {/* results */}
-              {isMore.results && (
-                <section>
-                  <h4 className="font-bold mb-3">🚀 Results</h4>
-                  <ul className="list-disc ml-5 space-y-2 text-sm">
-                    {isMore.results.map((text, i) => (
-                      <li key={i} dangerouslySetInnerHTML={{ __html: text }} />
+              {selected.results && (
+                <div>
+                  <h4 className="font-bold mb-2">🚀 주요 성과</h4>
+                  <ul className="list-disc ml-5 space-y-1">
+                    {selected.results.map((t, i) => (
+                      <li key={i} dangerouslySetInnerHTML={{ __html: t }} />
                     ))}
                   </ul>
-                </section>
+                </div>
+              )}
+
+              {selected.notice && (
+                <div className="text-xs text-gray-400 border-t pt-3">
+                  {selected.notice.map((t, i) => (
+                    <p key={i}>{t}</p>
+                  ))}
+                </div>
               )}
             </div>
 
-            {/* link */}
-            <div className="mt-10 text-center">
-              <a
-                href={isMore.link}
-                target="_blank"
-                rel="noreferrer"
-                className="px-6 py-3 bg-black text-white rounded-full hover:bg-spring-color transition"
-              >
-                프로젝트 보러가기
-              </a>
-            </div>
+            <a
+              href={selected.link}
+              target="_blank"
+              rel="noreferrer"
+              className="block mt-6 text-center bg-black text-white py-3 rounded-full hover:bg-spring-color transition"
+            >
+              사이트 보기
+            </a>
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

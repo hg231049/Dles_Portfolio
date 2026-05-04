@@ -9,7 +9,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
-import { EtcWork1, EtcWork2, EtcWork3 } from "../assets/img";
+import { EtcWork1, EtcWork2, EtcWork3, EtcWork4 } from "../assets/img";
 
 const EtcWork_List = [
   {
@@ -61,27 +61,27 @@ const EtcWork_List = [
   {
     id: 4,
     name: "포트폴리오",
-    date: "(26.04.24~26.04.30)",
+    date: "(26.04.24~)",
     link: "https://dles-portfolio.vercel.app/",
-    thumb: EtcWork3,
+    thumb: EtcWork4,
     desc: [
-      "React 앱 포트폴리오 - React,Tailwind CSS, GSAP library,shadcn/ui library, vercel",
-      "React & Tailwind CSS와 다양한 라이브러리를 활용해 제작한 포트폴리오 앱입니다.",
-      " GSAP library를 활용해 밤-노을-낮-봄-들판-땅 으로 이어지는 타임라인을 구성했습니다 ",
-      "그리드와 tailwind를 활용해 반응형으로 제작. ",
-      "<strong>데이터 관리:</strong> GitHub와 Vercel을 연동하여 지속적 통합 및 배포(CI/CD) 환경을 구축했습니다",
+      "React 기반 포트폴리오 프로젝트 (React, Tailwind CSS, GSAP, shadcn/ui, Vercel)",
+      "단순 결과물이 아닌 사용자 경험 흐름을 중심으로 인터랙션과 구조를 설계했습니다.",
+      "GSAP을 활용해 '밤 → 노을 → 낮 → 봄 → 들판 → 땅'으로 이어지는 스토리형 타임라인 인터랙션을 구현했습니다.",
+      "Grid와 Tailwind CSS를 기반으로 다양한 디바이스에 대응하는 반응형 레이아웃을 설계했습니다.",
+      "<strong>배포 및 운영:</strong> GitHub와 Vercel을 연동해 CI/CD 환경을 구축하고 지속적인 업데이트가 가능하도록 구성했습니다.",
     ],
   },
 ];
 
 const ToyWork = () => {
   return (
-    <div className="competency grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full mx-auto">
+    <div className="competency grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full mx-auto">
       {EtcWork_List.map((item) => (
         <Drawer key={item.id}>
           {/* 1. 트리거: 카드의 전체 외형을 버튼처럼 사용 */}
           <DrawerTrigger asChild>
-            <div className="card group bg-white/80 border border-green-100 shadow-md rounded-[8px] lg:rounded-[15px] overflow-hidden transition-all duration-300 h-fit cursor-pointer p-5 space-y-4 [&_.date]:text-subText-color [&:nth-child(n+3)_.label]:text-white [&:nth-child(n+3)_.date]:text-white/50 [&_.label]:text-text-color [&_.date]:text-subText-color lg:[&:nth-child(n+3)_.label]:text-text-color lg:[&:nth-child(n+3)_.date]:text-subText-color">
+            <div className="card group bg-white/80 border border-green-100 shadow-md rounded-[8px] lg:rounded-[15px] overflow-hidden transition-all duration-300 h-fit cursor-pointer p-5 space-y-4 [&_.date]:text-subText-color [&_.label]:text-text-color [&_.date]:text-subText-color lg:[&:nth-child(n+3)_.label]:text-text-color lg:[&:nth-child(n+3)_.date]:text-subText-color">
               {/* 썸네일 */}
               <div className="competency-thumb w-full aspect-video bg-white/5 rounded-[8px] lg:rounded-[15px] overflow-hidden">
                 <img
@@ -159,6 +159,20 @@ const ToyWork = () => {
           </DrawerContent>
         </Drawer>
       ))}
+      {/* ✅ Coming Soon 카드 */}
+      <div className="card group flex items-center justify-center bg-white/40 border border-dashed border-gray-300 rounded-[8px] lg:rounded-[15px] p-5 cursor-default relative overflow-hidden">
+        {/* 애니메이션 링 */}
+        <div className="absolute w-20 h-20 border border-gray-300 rounded-full animate-ping opacity-50"></div>
+
+        {/* 메인 아이콘 */}
+        <div className="flex flex-col items-center gap-3 z-10">
+          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md text-2xl font-light text-gray-600 transition-transform duration-300 group-hover:scale-110">
+            +
+          </div>
+
+          <p className="text-sm text-gray-100 tracking-wide">Coming Soon</p>
+        </div>
+      </div>
     </div>
   );
 };
