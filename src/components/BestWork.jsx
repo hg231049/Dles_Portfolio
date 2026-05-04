@@ -79,7 +79,7 @@ const BestWork = () => {
               </div>
 
               {/* MO */}
-              <div className="absolute -bottom-5 -right-5 w-[35%] aspect-[9/13] border border-white/20 rounded-[10px] overflow-hidden bg-gray-800 shadow-xl">
+              <div className="hidden lg:block absolute -bottom-5 -right-5 w-[35%] aspect-[9/13] border border-white/20 rounded-[10px] overflow-hidden bg-gray-800 shadow-xl">
                 <img
                   src={item.thumbMo}
                   alt=""
