@@ -9,7 +9,7 @@ const BestWork = () => {
   const sectionRef = useRef(null);
 
   // 데이터 배열화 (유지보수 용이)
-  const Work_list = [
+  const stats = [
     { id:1, label: "총 클릭수", value: "1,820", prev: "365", icon: "🖱️", diff: "+1,455 click", rate: "399%", width: "100%" },
     { label: "총 노출수", value: "54,000", prev: "10,300", icon: "🔍", diff: "+43,700 UP", rate: "424%", width: "100%" },
     { label: "평균 순위", value: "4.4", prev: "5.0", icon: "🏅", diff: "0.6 상승", rate: "0.6", width: "85%" },

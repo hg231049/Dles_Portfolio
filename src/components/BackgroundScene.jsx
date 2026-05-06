@@ -14,6 +14,7 @@ const BackgroundScene = ({ scrollContainer }) => {
   const fieldRef = useRef(null);
   const groundRef = useRef(null);
 
+  // useMemo 덕분에 컴포넌트가 리렌더링되어도 꽃잎의 위치가 바뀌지 않고 고정
   const petals = useMemo(() => {
     return Array.from({ length: 30 }).map((_, i) => ({
       id: i,
@@ -23,14 +24,16 @@ const BackgroundScene = ({ scrollContainer }) => {
       duration: `${Math.random() * 10 + 10}s`,
     }));
   }, []);
-
-  useGSAP(
+// useGSAP : 리액트 환경에서 GSAP 애니메이션을 안전하게 실행하기 위한 전용 Hook
+    useGSAP(
     () => {
       const refreshGSAP = () => ScrollTrigger.refresh();
-      window.addEventListener("load", refreshGSAP);
-
-      const timer = setTimeout(() => {
+      // 모든 이미지와 리소스가 로드된 후 계산
+    window.addEventListener("load", () => ScrollTrigger.refresh());
+      // 폰트나 이미지가 늦게 뜰 때를 대비해 1초 뒤에 한 번 더 갱신
+      const refreshTimer = setTimeout(() => {
         if (!scrollContainer.current) return;
+        // 각 콘텐츠 섹션들을 찾아내어, 그 섹션이 화면에 들어올 때 배경 레이어를 하나씩 활성화
         const sections =
           scrollContainer.current.querySelectorAll(".section-step");
 
@@ -46,9 +49,6 @@ const BackgroundScene = ({ scrollContainer }) => {
             const target = targets[index];
             if (!target) return;
 
-            const isHorizontal = section.id === "horizontal-section";
-            const track = section.querySelector("#horizontal-track");
-
             gsap.to(target, {
               opacity: 1,
               ease: "none",
@@ -56,20 +56,18 @@ const BackgroundScene = ({ scrollContainer }) => {
                 trigger: section,
                 start: "top top",
                 // ★ 포인트: BestWork 내부의 end 설정(+1000)과 동일하게 맞춰줍니다.
-                end:
-                  isHorizontal && track
-                    ? () => `+=${track.scrollWidth + 1000}`
-                    : "bottom center",
-                scrub: 1.5,
+                end: "bottom top",
+                scrub: 1.5, //스크롤 속도에 맞춰 애니메이션이 재생되도록 함
               },
             });
           });
         }
+        ScrollTrigger.refresh();
       }, 100);
 
       return () => {
         window.removeEventListener("load", refreshGSAP);
-        clearTimeout(timer);
+        clearTimeout(refreshTimer);
       };
     },
     { dependencies: [scrollContainer] },
