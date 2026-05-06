@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const menuItems = [
   { id: "home", label: "홈", sub: "Night", color: "bg-[#232323]" },
@@ -20,7 +20,27 @@ const menuItems = [
 ];
 
 const HeaderQuickMenu = () => {
-  const [hovered, setHovered] = useState(null);
+  const [actived, setActived] = useState("home");
+
+   useEffect(() => {
+    const handleScroll = () => {
+      // 각 섹션의 위치를 파악하여 현재 활성화된 섹션 찾기
+      menuItems.forEach((item) => {
+        const section = document.getElementById(item.id);
+        if (!section) return;
+
+        const rect = section.getBoundingClientRect();
+        
+        // 섹션이 화면 상단 부근(0 ~ 300px 사이)에 들어오면 활성화
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          setActived(item.id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const moveToSection = (id) => {
     const target = document.getElementById(id);
@@ -40,9 +60,10 @@ const HeaderQuickMenu = () => {
             <li key={item.id} className="relative">
               <button
                 onClick={() => moveToSection(item.id)}
-                onMouseEnter={() => setHovered(item.id)}
-                onMouseLeave={() => setHovered(null)}
-                className="relative py-2 rounded-full text-sm lg:text-base text-text-color hover:font-bold hover:${item.color} transition-all duration-300 cursor-pointer "
+                className={`
+                  relative px-3 py-2 text-sm lg:text-base transition-all duration-300 cursor-pointer
+                  ${actived === item.id ? `font-bold` : ""}
+                `}
               >
                 {item.label}
 
@@ -54,11 +75,7 @@ const HeaderQuickMenu = () => {
                     px-2 py-1 text-[11px] tracking-[0.25em]
                     ${item.color} text-white/80 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]
                     transition-all duration-300 pointer-events-none
-                    ${
-                      hovered === item.id
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-2"
-                    }
+                    ${actived === item.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
                   `}
                 >
                   {item.sub}

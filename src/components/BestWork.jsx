@@ -73,7 +73,7 @@ const Work_list = [
     stack: ["HTML, CSS, JavaScript", "Swiper"],
     results: [
       "<strong>인터랙션:</strong> 애니메이션 구현",
-      "<strong>협업:</strong> 백엔드 연동",
+      "<strong>협업:</strong> 상품리스트 페이지 필터기능 백엔드 연동",
       "<strong>안정성:</strong> 크로스 브라우징",
     ],
   },
@@ -218,7 +218,7 @@ const BestWork = () => {
           <div className="relative w-full max-w-4xl bg-white rounded-[8px] p-8 max-h-[85vh] overflow-y-auto animate-[fadeUp_0.3s_ease]">
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 text-xl"
+              className="absolute top-4 right-4 text-xl cursor-pointer"
             >
               ✕
             </button>
