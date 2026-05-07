@@ -28,10 +28,10 @@ const Work_list = [
     ],
     stack: ["HTML5, CSS3, JavaScript", "Owl Carousel", "Photoshop"],
     results: [
-      "<strong>반응형 전환:</strong> 유지보수 효율 개선",
-      "<strong>SEO 개선:</strong> 시맨틱 마크업 + 이미지 최적화",
-      "<strong>UX 개선:</strong> 사용자 흐름 기반 구조 재정의",
-      "<strong>성과:</strong> 검색 노출 약 5배 증가",
+      "<strong>반응형 전환:</strong> PC/모바일 분리 구조를 반응형 구조로 통합해 유지보수 효율 개선",
+      "<strong>SEO 개선:</strong> 시맨틱 마크업 및 이미지 최적화를 통해 검색 노출 향상",
+      "<strong>UX 개선:</strong> 사용자 동선 기준으로 메인 구조와 콘텐츠 우선순위 재정의",
+      "<strong>성과:</strong> Google Search Console 기준 주요 키워드 검색 노출 약 5.2배 증가",
     ],
     notice: [
       "※ 현재 사이트는 추가 리뉴얼된 상태이며 본 작업은 이전 버전 기준입니다.",
@@ -52,9 +52,9 @@ const Work_list = [
     ],
     stack: ["HTML, CSS, JavaScript"],
     results: [
-      "<strong>구조 개선:</strong> 사용자 중심 레이아웃",
-      "<strong>운영 효율:</strong> 컴포넌트화",
-      "<strong>퍼포먼스:</strong> 리소스 최적화",
+      "<strong>구조 개선:</strong> 정보 우선순위를 재배치해 가독성 향상",
+      "<strong>운영 효율:</strong> 반복 UI를 정리해 유지보수 부담 감소",
+      "<strong>퍼포먼스:</strong> 이미지 최적화 및 불필요 리소스 정리",
     ],
   },
 
@@ -72,9 +72,9 @@ const Work_list = [
     ],
     stack: ["HTML, CSS, JavaScript", "Swiper"],
     results: [
-      "<strong>인터랙션:</strong> 애니메이션 구현",
-      "<strong>협업:</strong> 상품리스트 페이지 필터기능 백엔드 연동",
-      "<strong>안정성:</strong> 크로스 브라우징",
+      "<strong>인터랙션:</strong> 스크롤 및 hover 기반 애니메이션 구현",
+      "<strong>협업:</strong> 상품 필터 기능 백엔드 데이터 연동 및 QA 진행",
+      "<strong>안정성:</strong> 디바이스 및 브라우저별 크로스 브라우징 대응",
     ],
   },
 
@@ -92,8 +92,9 @@ const Work_list = [
     ],
     stack: ["HTML, CSS, JavaScript"],
     results: [
-      "<strong>UI 구성:</strong> 커스터마이징",
-      "<strong>구조 설계:</strong> 페이지 구성",
+      "<strong>UI 구성:</strong> 디자인 컨셉에 맞춘 템플릿 스타일 커스터마이징",
+      "<strong>반응형 대응:</strong> 디바이스별 레이아웃 최적화",
+      "<strong>구조 설계:</strong> 메인/리스트/상세 페이지 UI 구축",
     ],
   },
 
@@ -111,8 +112,9 @@ const Work_list = [
     ],
     stack: ["HTML, CSS, JavaScript", "YouTube API"],
     results: [
-      "<strong>기능:</strong> 영상 인터랙션 구현",
-      "<strong>UX:</strong> 몰입도 향상",
+      "<strong>기능 구현:</strong> YouTube API 기반 영상 인터랙션 구현",
+      "<strong>사용자 경험:</strong> 클릭 흐름에 맞춘 콘텐츠 몰입도 강화",
+      "<strong>반응형 대응:</strong> 영상 UI 및 레이아웃 최적화",
     ],
   },
 
@@ -130,8 +132,9 @@ const Work_list = [
     ],
     stack: ["HTML, CSS, JavaScript"],
     results: [
-      "<strong>기능:</strong> 영상/애니메이션 구현",
-      "<strong>확장성:</strong> 라이브러리 활용",
+       "<strong>기능 구현:</strong> 영상 팝업 및 인터랙션 애니메이션 구현",
+      "<strong>애니메이션:</strong> keyframes 기반 동작 설계",
+      "<strong>라이브러리 활용:</strong> Swiper 및 다양한 플러그인 커스터마이징 경험",
     ],
   },
 ];
