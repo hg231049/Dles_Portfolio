@@ -170,7 +170,7 @@ const BestWork = () => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-5 py-2 rounded-full text-sm transition
+            className={`px-5 py-2 rounded-full text-sm transition cursor-pointer
               ${
                 activeTab === tab
                   ? "bg-spring-color text-white"
@@ -203,8 +203,8 @@ const BestWork = () => {
             </div>
 
             <div className="mt-4">
-              <h3 className="text-lg font-bold">{item.name}</h3>
-              <p className="text-sm text-gray-500">{item.date}</p>
+              <h3 className="text-xl font-bold">{item.name}</h3>
+              <p className="text-sm text-subText-color">{item.date}</p>
             </div>
           </div>
         ))}

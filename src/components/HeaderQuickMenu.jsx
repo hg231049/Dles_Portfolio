@@ -78,7 +78,7 @@ const HeaderQuickMenu = () => {
                     absolute left-1/2 -translate-x-1/2 -bottom-6
                     whitespace-nowrap rounded-full
                     px-2 py-1 text-[11px] tracking-[0.25em]
-                    ${item.color} text-white/80 [text-shadow:0_1px_2px_rgba(0,0,0,0.9)]
+                    ${item.color} text-white/80 
                     transition-all duration-300 pointer-events-none
                     ${actived === item.id ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}
                   `}
