@@ -50,7 +50,7 @@ const EtcWork_List = [
     link: "https://sloom-eight.vercel.app/",
     thumb: EtcWork3,
     desc: [
-      "React 토이 프로젝트 - React,Tailwind CSS, vscode, github",
+      "React 토이 프로젝트 - React,Tailwind CSS, vscode, github, React Router 라이브러리",
       "React & Tailwind CSS 학습을 목적으로 진행한 쇼핑몰 클론 코딩 프로젝트입니다.",
       "복잡한 이커머스 UI를 재사용 가능한 컴포넌트 단위로 구조화하는 데 집중했습니다.",
       "<strong>컴포넌트 추상화 및 재사용성 극대화:</strong>동일한 Product 데이터를 활용하여 Best(카드형)와 New(가로 리스트형) 레이아웃으로 분기 처리하는 공통 컴포넌트를 설계했습니다.",
