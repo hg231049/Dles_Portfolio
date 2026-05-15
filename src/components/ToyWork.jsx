@@ -50,12 +50,14 @@ const EtcWork_List = [
     link: "https://sloom-eight.vercel.app/",
     thumb: EtcWork3,
     desc: [
-      "React 토이 프로젝트 - React,Tailwind CSS, vscode, github, React Router 라이브러리",
+      "React 토이 프로젝트 - React,Tailwind CSS, vscode, vercel, React Router",
       "React & Tailwind CSS 학습을 목적으로 진행한 쇼핑몰 클론 코딩 프로젝트입니다.",
       "복잡한 이커머스 UI를 재사용 가능한 컴포넌트 단위로 구조화하는 데 집중했습니다.",
-      "<strong>컴포넌트 추상화 및 재사용성 극대화:</strong>동일한 Product 데이터를 활용하여 Best(카드형)와 New(가로 리스트형) 레이아웃으로 분기 처리하는 공통 컴포넌트를 설계했습니다.",
-      "<strong>Tailwind CSS를 활용한 효율적인 스타일링: </strong>복합 선택자(variant)와 임의 값 문법을 활용하여 CSS 파일 없이도 정교한 디자인 시스템을 구현했습니다.",
-      "<strong>상태 관리 최적화:</strong> 부모 컴포넌트에서 Props 전달을 통해 섹션별 디자인 옵션(순위 노출 여부, 요약 설명 등)을 선언적으로 제어했습니다.",
+      "<strong>컴포넌트 추상화 및 레이아웃 분기 처리:</strong>동일한 상품 데이터(ProductData)를 활용하여 Best(Grid형), New(Horizontal형), List(검색형) 등 다양한 레이아웃으로 분기 처리하는 공통 컴포넌트를 설계하여 코드 중복을 최소화했습니다.",
+      "<strong>React Router를 활용한 멀티 페이지 구현:</strong>react-router-dom 라이브러리를 도입하여 홈, 전체 목록, 검색 결과 페이지 등을 라우팅하고, 페이지 간 상태(검색어, 장바구니 카운트)를 안정적으로 유지했습니다.",
+      "<strong>Tailwind CSS 기반의 효율적인 디자인 시스템: </strong>복합 선택자(Variant)와 임의 값(Arbitrary values) 문법을 적극 활용하여 일관성 있고 정교한 디자인 시스템을 구현했습니다.",
+      "<strong>상태 관리 및 데이터 흐름 최적화:</strong> State Lifting(상태 끌어올리기) 기법을 사용하여 부모 컴포넌트에서 상태를 관리하고, Props 전달을 통해 하위 섹션의 디자인 옵션(순위 노출, 요약 설명 등)을 선언적으로 제어했습니다.",
+      "<strong>사용자 경험(UX) 중심 기능 구현:</strong> 로딩 스플래시 화면, 실시간 검색 필터링, 모바일 반응형 슬라이드 메뉴 등을 구현하여 실제 서비스 수준의 UI/UX를 경험할 수 있도록 구성했습니다.",
     ],
   },
   {
