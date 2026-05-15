@@ -45,9 +45,9 @@ const EtcWork_List = [
   },
   {
     id: 3,
-    name: "슬룸 메인페이지 앱 ",
+    name: "슬룸 사이트 클론 앱 ",
     date: "(26.04.13~26.04.21)",
-    link: "https://hg231049.github.io/sloom/",
+    link: "https://sloom-eight.vercel.app/",
     thumb: EtcWork3,
     desc: [
       "React 토이 프로젝트 - React,Tailwind CSS, vscode, github",
