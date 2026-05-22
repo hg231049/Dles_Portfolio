@@ -21,7 +21,11 @@ import EtcWork1 from "./todolist_app_thumb.png";
 import EtcWork2 from "./forecast_app_thumb.jpg";
 import EtcWork3 from "./sloom_app_thumb.jpg";
 import EtcWork4 from "./portfolio-thumb.jpg";
-
+import seoAfter from "./seo-after.png";
+import seoBefore from "./seo-before.png";
+import seoThumb from "./seo-thumb.png";
+import performanceBefore from "./performance-before.png"
+import performanceAfter from "./performance-after.png"
 export {
   skill1,
   skill2,
@@ -46,4 +50,9 @@ export {
   EtcWork2,
   EtcWork3,
   EtcWork4,
+  seoAfter,
+  seoBefore,
+  seoThumb,
+  performanceBefore,
+  performanceAfter
 };

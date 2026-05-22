@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import { dashboardThumb, codeThumb, proposalThumb } from "../assets/img";
 
 const competencyList = [
@@ -9,6 +11,7 @@ const competencyList = [
     subtitle:
       "검색 노출 확대 및 웹 성능 지표 개선(메인 키워드 노출 5.2배 달성(GSC기준)",
     thumbs: dashboardThumb,
+    link:"./Dashboard",
     points: [
       "시맨틱 마크업 구조 개선 및 메타데이터 최적화",
       "Lighthouse 기준 LCP / CLS 등 핵심 지표 개선",
@@ -49,8 +52,13 @@ export const Competencies = () => {
           key={item.id}
           className="rounded-md md:rounded-xl bg-white/45 backdrop-blur-md border border-white/40 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
         >
-          <div className="thumbs mb-4 overflow-hidden rounded-sm md:rounded-sm">
+          <div className="relative thumbs mb-4 overflow-hidden rounded-sm md:rounded-sm">
             <img src={item.thumbs} alt={item.title} />
+            {item.link && (
+              <div className="view-btn absolute bottom-3 right-3 flex justify-center items-center w-10 h-10 text-lg font-bold rounded-4xl bg-white shadow-md cursor-pointer">
+                <Link to={item.link}>+</Link>
+              </div>
+            )}
           </div>
           {/* badge */}
           <div className="mb-4">
