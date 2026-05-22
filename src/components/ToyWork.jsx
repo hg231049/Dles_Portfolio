@@ -20,7 +20,7 @@ const EtcWork_List = [
     thumb: EtcWork3,
     desc: [
       "React 토이 프로젝트 - React,Tailwind CSS, vscode, vercel, React Router",
-      "React & Tailwind CSS 학습을 목적으로 진행한 쇼핑몰 클론 코딩 프로젝트입니다. - 메인, 리스트, 햄버거메뉴, 검색페이지,상세페이지",
+      "React & Tailwind CSS 학습을 목적으로 진행한 쇼핑몰 클론 코딩 프로젝트입니다. - 메인, 리스트, 햄버거메뉴, 검색페이지,상세페이지,장바구니",
       "복잡한 이커머스 UI를 재사용 가능한 컴포넌트 단위로 구조화하는 데 집중했습니다.",
       "<strong>컴포넌트 추상화 및 레이아웃 분기 처리:</strong>동일한 상품 데이터(ProductData)를 활용하여 Best(Grid형), New(Horizontal형), List(검색형) 등 다양한 레이아웃으로 분기 처리하는 공통 컴포넌트를 설계하여 코드 중복을 최소화했습니다.",
       "<strong>React Router를 활용한 멀티 페이지 구현:</strong>react-router-dom 라이브러리를 도입하여 홈, 전체 목록, 검색 결과 페이지 등을 라우팅하고, 페이지 간 상태(검색어, 장바구니 카운트)를 안정적으로 유지했습니다.",
