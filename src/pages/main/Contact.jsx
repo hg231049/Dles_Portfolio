@@ -21,7 +21,7 @@ const Contact = () => {
         <div className="mt-14 max-w-4xl mx-auto rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-md p-8 lg:p-14 text-center shadow-xl">
           {/* 메시지 */}
           <p className="text-white text-[18px] lg:text-[28px] font-bold leading-relaxed">
-            사용자 경험을 완성하는 퍼블리셔,
+            사용자 경험을 완성하는 개발자,
             <br className="block" />
             이은서입니다.
           </p>
