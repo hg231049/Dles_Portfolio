@@ -52,9 +52,9 @@ const History = () => {
               </p>
 
               {/* 타이틀 */}
-              <h4 className="text-white text-[16px] lg:text-[20px] font-bold mb-2 group-hover:text-sunrise-color transition-colors">
+              <h3 className="text-white text-[16px] lg:text-[20px] font-bold mb-2 group-hover:text-sunrise-color transition-colors">
                 {step.title}
-              </h4>
+              </h3>
 
               {/* 기간 */}
               <p className="text-white/60 text-sm mb-4">{step.period}</p>
