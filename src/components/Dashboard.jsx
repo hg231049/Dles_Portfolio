@@ -103,7 +103,7 @@ const Dashboard = () => {
                   </div>
                 </div>
 
-                {/* 📊 카드 하단에 쏙 들어가는 미니 라인 차트 영역 */}
+                {/* 📊 미니 라인 차트 영역 */}
                 <div className="h-[70px] w-full my-3">
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={metric.lineData} margin={{ top: 5, right: 10, left: 10, bottom: 5 }}>

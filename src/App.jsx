@@ -1,11 +1,12 @@
 import "./App.css";
 import { createPortal } from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import React, { useRef, useEffect, useState } from "react";
 import BackgroundScene from "./components/BackgroundScene";
 import Main from "./pages/main/Main";
 import Header from "./pages/layout/Header";
 import Dashboard from "./components/Dashboard";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const mainRef = useRef(null);
@@ -29,12 +30,14 @@ function App() {
 
   return (
     <>
-      <Header visible={showHeader} />
+     <ScrollToTop/>
+      
         <Routes>
           <Route 
             path="/" 
             element={
               <div ref={mainRef} className="relative w-full">
+                <Header visible={showHeader} />
                 <BackgroundScene scrollContainer={mainRef} />
                 <Main />
               </div>
