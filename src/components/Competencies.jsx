@@ -19,15 +19,17 @@ export const Competencies = () => {
                 {item.badge}
               </span>
             </div>
-          <div className="relative">
-            {/* title */}
-            <h3 className="text-xl font-black text-text-color">{item.title}</h3>
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              {/* title */}
+              <h3 className="text-xl font-black text-text-color">{item.title}</h3>
 
-            <p className="mt-2 text-sm text-subText-color leading-relaxed whitespace-pre-line">
-              {item.subtitle}
-            </p>
+              <p className="mt-2 text-sm text-subText-color leading-relaxed whitespace-pre-line">
+                {item.subtitle}
+              </p>
+            </div>
             {item.link && (
-                <div className="view-btn absolute bottom-3 right-3 flex justify-center items-center w-10 h-10 text-lg font-bold rounded-4xl bg-white shadow-md cursor-pointer">
+                <div className="view-btn flex justify-center items-center w-10 h-10 text-lg font-bold rounded-4xl bg-white shadow-md cursor-pointer">
                   <Link to={item.link}>+</Link>
                 </div>
               )}

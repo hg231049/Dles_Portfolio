@@ -48,7 +48,7 @@ const HeaderQuickMenu = () => {
               <button
                 onClick={() => moveToSection(item.id)}
                 className={`
-                  relative px-3 py-2 text-sm lg:text-base transition-all duration-300 cursor-pointer
+                  relative px-1 lg:px-3 py-2 text-sm lg:text-base transition-all duration-300 cursor-pointer
                   ${actived === item.id ? `font-bold` : ""}
                 `}
               >

@@ -101,7 +101,7 @@ const BestWork = () => {
                   <h4 className="font-bold mb-2">📌 프로젝트 개요</h4>
                   <ul className="list-disc ml-5 space-y-1">
                     {selected.overview.map((t, i) => (
-                      <li key={i} className="flex gap-1">
+                      <li key={i} className="flex flex-wrap gap-1">
                         {t.title && (
                           <strong className="">
                             {t.title}
