@@ -29,7 +29,7 @@ export const Competencies = () => {
               </p>
             </div>
             {item.link && (
-                <div className="view-btn flex justify-center items-center w-10 h-10 text-lg font-bold rounded-4xl bg-white shadow-md cursor-pointer">
+                <div className="view-btn text-xl font-light text-subText w-8 h-8 flex items-center justify-center bg-white rounded-full cursor-pointer">
                   <Link to={item.link}>+</Link>
                 </div>
               )}

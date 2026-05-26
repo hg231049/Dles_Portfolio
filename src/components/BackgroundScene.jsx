@@ -77,7 +77,7 @@ const BackgroundScene = ({ scrollContainer }) => {
     <div className="background-wrap">
       {/* 1. 밤 (가장 밑바닥 - 베이스) */}
       <div
-        className="fixed inset-0 stars-effect -z-[60]"
+        className="fixed inset-0 stars-effect -z-60"
         style={{
           background: "linear-gradient(180deg, #0f0f0f 0%, #232323 100%)",
         }}
@@ -86,7 +86,7 @@ const BackgroundScene = ({ scrollContainer }) => {
       {/* 2. 노을 (밤 위에 올라옴) */}
       <div
         ref={sunriseRef}
-        className="fixed inset-0 -z-[50] opacity-0"
+        className="fixed inset-0 -z-50 opacity-0"
         style={{
           background: "linear-gradient(180deg, #201e30 15%, #ff9e80 100%)",
         }}
@@ -95,7 +95,7 @@ const BackgroundScene = ({ scrollContainer }) => {
       {/* 3. 낮 (노을 위에 올라옴) */}
       <div
         ref={dayRef}
-        className="fixed inset-0 -z-[40] opacity-0"
+        className="fixed inset-0 -z-40 opacity-0"
         style={{
           background: "linear-gradient(180deg, #87CEEB 0%, #E0F7FA 100%)",
         }}
@@ -104,7 +104,7 @@ const BackgroundScene = ({ scrollContainer }) => {
       {/* 4. 봄 (낮 위에 올라옴 - 가로 스크롤 섹션) */}
       <div
         ref={springRef}
-        className="fixed inset-0 -z-[30] opacity-0"
+        className="fixed inset-0 -z-30 opacity-0"
         style={{
           background: "linear-gradient(180deg, #accef9 0%, #FFF1EB 100%)",
         }}
@@ -129,7 +129,7 @@ const BackgroundScene = ({ scrollContainer }) => {
       {/* 5. 들판 (봄 위에 올라옴) */}
       <div
         ref={fieldRef}
-        className="fixed inset-0 -z-[20] opacity-0"
+        className="fixed inset-0 -z-20 opacity-0"
         style={{
           background: "linear-gradient(180deg, #D4FC79 0%, #96E6A1 100%)",
         }}
@@ -138,7 +138,7 @@ const BackgroundScene = ({ scrollContainer }) => {
       {/* 6. 땅 (가장 마지막에 들판 위에 올라옴) */}
       <div
         ref={groundRef}
-        className="fixed inset-0 -z-[10] opacity-0 ground-effect"
+        className="fixed inset-0 -z-10 opacity-0 ground-effect"
         style={{
           background: "linear-gradient(180deg, #3d2b1f 0%, #1a120b 100%)",
         }}

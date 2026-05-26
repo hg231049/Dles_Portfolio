@@ -1,4 +1,4 @@
-import BestWork from "../../components/BestWork";
+import BestWork from "../../components/best/BestWork";
 import SectionTitle from "../../components/SectionTitle";
 import React, { useRef } from "react";
 

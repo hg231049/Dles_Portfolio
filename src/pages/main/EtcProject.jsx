@@ -1,4 +1,4 @@
-import ToyWork from "../../components/ToyWork";
+import ToyWork from "../../components/toy/ToyWork";
 import SectionTitle from "../../components/SectionTitle";
 
 const EtcProject = () => {
