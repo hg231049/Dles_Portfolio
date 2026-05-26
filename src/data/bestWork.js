@@ -34,7 +34,7 @@ export const bestWork = [
          {
             title: "SEO 구조 개선",
             text:
-                "div 기반 구조를 semantic 태그(header, section, article)로 재구성하고 이미지 lazy loading 및 alt 최적화를 적용하여 Lighthouse SEO 점수와 검색 노출을 개선"
+                "div 기반 구조를 semantic 태그(header, section, article)로 재구성하고 \n이미지 lazy loading 및 alt 최적화를 적용하여 Lighthouse SEO 점수와 검색 노출을 개선"
         },
         {
             title: "반응형 구조 개선",
@@ -130,7 +130,7 @@ export const bestWork = [
     results: [
         {
             title: "UI/UX 개선",
-            text: "정적인 상품 리스트 구조에서 사용자가 정보를 빠르게 스캔할 수 있도록 hover 및 scroll 기반 인터랙션을 적용하여 탐색 경험 개선"
+            text: "정적인 상품 리스트 구조에서 사용자가 정보를 빠르게 스캔할 수 있도록 \nhover 및 scroll 기반 인터랙션을 적용하여 탐색 경험 개선"
         },
         {
             title: "협업 구조",

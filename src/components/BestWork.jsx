@@ -135,7 +135,7 @@ const BestWork = () => {
                   <h4 className="font-bold mb-2">🚀 주요 성과</h4>
                   <ul className="list-disc ml-5 space-y-1">
                     {selected.results.map((t, i) => (
-                      <li key={i} className="flex gap-1">
+                      <li key={i} className="flex flex-wrap gap-1 lg:flex-row">
                         {t.title && (
                           <strong className="">
                             {t.title}
@@ -143,7 +143,7 @@ const BestWork = () => {
                         )}
                         :
                         {t.text && (
-                          <p className="">
+                          <p className="whitespace-pre-line">
                             {t.text}
                           </p>
                         )}

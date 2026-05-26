@@ -5,7 +5,7 @@ export const competencies = [
     badge: "+5.2x",
     title: "SEO & Performance",
     subtitle:
-      "검색 노출 확대 및 웹 성능 지표 개선(메인 키워드 노출 5.2배 달성(GSC기준)",
+      "검색 노출 확대 및 웹 성능 지표 개선 \n (메인 키워드 노출 5.2배 달성(GSC기준)",
     thumbs: dashboardThumb,
     link:"./Dashboard",
     points: [
