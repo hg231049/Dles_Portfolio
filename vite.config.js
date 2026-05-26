@@ -7,7 +7,6 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 export default defineConfig({
-  base: "/Dles_Portfolio/",   // ⭐️ 이거 추가 (repo 이름)
   plugins: [react()],
   resolve: {
     alias: {
