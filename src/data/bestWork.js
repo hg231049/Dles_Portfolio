@@ -22,7 +22,7 @@ export const bestWork = [
         },
         {
             title:"기여도",
-            text:"퍼블리싱 100%"
+            text:"퍼블리싱 100% (UI 구조 설계 + 반응형 + 인터랙션 구현)"
         },
         {
             title:"환경",
@@ -32,20 +32,24 @@ export const bestWork = [
     stack: ["HTML5, CSS3, JavaScript", "Owl Carousel", "Photoshop"],
     results: [
          {
-            title:"반응형 전환",
-            text:"PC/모바일 분리 구조를 반응형 구조로 통합해 유지보수 효율 개선"
+            title: "SEO 구조 개선",
+            text:
+                "div 기반 구조를 semantic 태그(header, section, article)로 재구성하고 이미지 lazy loading 및 alt 최적화를 적용하여 Lighthouse SEO 점수와 검색 노출을 개선"
         },
         {
-            title:"SEO 개선",
-            text:"시맨틱 마크업 및 이미지 최적화를 통해 검색 노출 향상"
+            title: "반응형 구조 개선",
+            text:
+                "PC/모바일로 분리되어 있던 UI를 breakpoint 기반 단일 구조로 통합하여 코드 중복을 제거하고 유지보수 비용을 감소"
         },
         {
-            title:"UX 개선",
-            text:"사용자 동선 기준으로 메인 구조와 콘텐츠 우선순위 재정의"
+            title: "성능 최적화",
+            text:
+                "불필요한 DOM 구조를 정리하고 이미지 최적화를 적용하여 Lighthouse 기준 성능 점수 개선"
         },
         {
-            title:"성과",
-            text:"Google Search Console 기준 주요 키워드 검색 노출 약 5.2배 증가"
+            title: "성과",
+            text:
+                "Google Search Console 기준 주요 키워드 노출 약 5.2배 증가 / Lighthouse SEO 100점 / Performance 약 2배 개선"
         },
     ],
     notice: [
@@ -68,7 +72,7 @@ export const bestWork = [
         },
         {
             title:"기여도",
-            text:"퍼블리싱 100%"
+            text:"퍼블리싱 100% (UI 구조 설계)"
         },
         {
             title:"환경",
@@ -78,16 +82,24 @@ export const bestWork = [
     stack: ["HTML, CSS, JavaScript"],
     results: [
         {
-            title:"구조 개선",
-            text:"정보 우선순위를 재배치해 가독성 향상"
+            title: "UI 구조 개선",
+            text:
+                "모바일 환경에서 정보 밀도가 과도하게 집중되는 문제를 해결하기 위해 콘텐츠 우선순위를 재정의하고 레이아웃 구조를 재설계"
         },
         {
-            title:"운영 효율",
-            text:"반복 UI를 정리해 유지보수 부담 감소"
+            title: "컴포넌트 추상화",
+            text:
+                "반복되는 UI 요소를 공통 컴포넌트로 분리하여 페이지 확장 시 유지보수 비용과 코드 중복을 최소화"
         },
         {
-            title:"퍼포먼스",
-            text:"이미지 최적화 및 불필요 리소스 정리"
+            title: "성능 최적화",
+            text:
+                "이미지 용량 최적화 및 불필요한 리소스 제거를 통해 초기 로딩 속도 개선"
+        },
+        {
+            title: "트러블슈팅",
+            text:
+                "고도몰 기본 스크립트와 커스텀 슬라이더 이벤트 충돌 문제를 해결하기 위해 이벤트 실행 순서와 DOM 로딩 타이밍을 재조정"
         },
     ],
   },
@@ -117,16 +129,16 @@ export const bestWork = [
     stack: ["HTML, CSS, JavaScript", "Swiper"],
     results: [
         {
-            title:"인터랙션",
-            text:"스크롤 및 hover 기반 애니메이션 구현"
+            title: "UI/UX 개선",
+            text: "정적인 상품 리스트 구조에서 사용자가 정보를 빠르게 스캔할 수 있도록 hover 및 scroll 기반 인터랙션을 적용하여 탐색 경험 개선"
         },
         {
-            title:"협업",
-            text:" 상품 필터 기능 백엔드 데이터 연동 및 QA 진행"
+            title: "협업 구조",
+            text: "백엔드 개발자와 상품 필터 데이터 구조를 사전에 조율하여 API 응답 형태에 맞는 UI 컴포넌트 구조를 설계"
         },
         {
-            title:"안정성",
-            text:"디바이스 및 브라우저별 크로스 브라우징 대응"
+            title: "데이터 연동 대응",
+            text: "API 데이터 구조 변경에도 유연하게 대응할 수 있도록 UI를 모듈화하여 유지보수성을 확보"
         },
     ],
   },
@@ -156,16 +168,20 @@ export const bestWork = [
     stack: ["HTML, CSS, JavaScript"],
     results: [
         {
-            title:"UI 구성",
-            text:"디자인 컨셉에 맞춘 템플릿 스타일 커스터마이징"
+            title: "템플릿 구조 개선",
+            text: "고도몰 기본 템플릿 구조의 한계를 개선하기 위해 섹션 단위 UI 구조로 재설계하여 디자인 커스터마이징 범위 확장"
         },
         {
-            title:"반응형 대응",
-            text:"디바이스별 레이아웃 최적화"
+            title: "반응형 UI 설계",
+            text: "모바일 환경에서 정보 계층이 무너지는 문제를 해결하기 위해 breakpoint 기준으로 레이아웃 우선순위를 재구성"
         },
         {
-            title:"구조 설계",
-            text:"메인/리스트/상세 페이지 UI 구축"
+            title: "페이지 구조 설계",
+            text: "메인/리스트/상세 페이지 간 UI 흐름을 통일하여 사용자 경험의 일관성을 확보"
+        },
+        {
+            title: "유지보수 개선",
+            text: "반복되는 UI 요소를 공통 구조로 정리하여 수정 시 영향 범위를 최소화"
         },
     ],
   },
@@ -196,15 +212,15 @@ export const bestWork = [
     results: [
         {
             title:"기능 구현",
-            text:"YouTube API 기반 영상 인터랙션 구현"
+            text:"YouTube API를 활용해 영상 콘텐츠를 동적으로 불러오도록 구현하여 정적 영상 구조의 유지보수 문제를 해결"
         },
         {
-            title:"사용자 경험",
-            text:"클릭 흐름에 맞춘 콘텐츠 몰입도 강화"
+            title:"UX 설계",
+            text:"영상 클릭 시 페이지 이동 없이 모달 형태로 재생되도록 구성하여 사용자 이탈 없이 콘텐츠 몰입도를 유지"
         },
         {
             title:"반응형 대응",
-            text:"영상 UI 및 레이아웃 최적화"
+            text:"영상 UI 및 레이아웃 최적화를 통해 유지보수 및 사용자 경험 상승"
         },
     ],
   },
@@ -234,16 +250,20 @@ export const bestWork = [
     stack: ["HTML, CSS, JavaScript"],
     results: [
         {
-            title:"기능 구현",
-            text:"영상 팝업 및 인터랙션 애니메이션 구현"
+            title: "인터랙션 구현",
+            text: "스크롤 및 hover 기반 인터랙션을 적용해 정적인 쇼핑몰 UI를 동적인 탐색 경험으로 개선"
         },
         {
-            title:"애니메이션",
-            text:"keyframes 기반 동작 설계"
+            title: "UI 구조 개선",
+            text: "메인 콘텐츠 중심의 시각 흐름을 설계하여 사용자가 상품 정보를 자연스럽게 탐색하도록 UX 흐름 재구성"
         },
         {
-            title:"라이브러리 활용",
-            text:"Swiper 및 다양한 플러그인 커스터마이징 경험"
+            title: "라이브러리 활용",
+            text: "Swiper를 커스터마이징하여 기본 동작을 확장하고 다양한 디바이스 환경에서 일관된 UX 제공"
+        },
+        {
+            title: "트러블슈팅",
+            text: "keyframes 애니메이션과 Swiper 충돌 문제를 해결하기 위해 z-index 및 이벤트 타이밍을 조정"
         },
     ],
   },
