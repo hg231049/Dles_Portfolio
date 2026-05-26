@@ -35,7 +35,7 @@ const ToyWorkCard = ({item}) => {
               </div>
             </div>
           </DrawerTrigger>
-        <ToyWorkDrawer item={item}/>
+          <ToyWorkDrawer item={item}/>
           
         </Drawer>
     )
