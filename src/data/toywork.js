@@ -1,7 +1,44 @@
 import { EtcWork1, EtcWork2, EtcWork3, EtcWork4 } from "../assets/img";
 export const toyWork = [
-  {
+   {
     id: 1,
+    name: "포트폴리오",
+    date: "(26.04.24~)",
+    link: "https://dles-portfolio.vercel.app/",
+    thumb: EtcWork4,
+    desc: [
+      {
+        title: "React 기반 인터랙티브 포트폴리오",
+        text: "React, Tailwind CSS, GSAP, shadcn/ui, Vercel 기반으로 SPA 구조의 포트폴리오를 설계 및 구현"
+      },
+      {
+        title: "스토리 기반 인터랙션 설계",
+        text: "GSAP ScrollTrigger를 활용하여 '밤 → 노을 → 낮 → 봄 → 들판 → 땅'으로 이어지는 타임라인형 스크롤 경험을 구현"
+      },
+      {
+        title: "UX 중심 구조 설계",
+        text: "단순 정보 나열이 아닌 사용자 흐름 중심의 섹션 구조로 재배치하여 콘텐츠 몰입도를 강화"
+      },
+      {
+        title: "반응형 UI 설계",
+        text: "Tailwind CSS Grid 시스템을 기반으로 모바일, 태블릿, 데스크톱 환경에 최적화된 레이아웃 구현"
+      },
+      {
+        title: "컴포넌트 및 데이터 구조 분리",
+        text: "섹션별 데이터와 UI를 분리하여 유지보수성과 확장성을 고려한 구조 설계"
+      },
+      {
+        title: "배포 및 운영",
+        text: "GitHub–Vercel CI/CD를 구축하여 코드 변경 시 자동 배포가 가능한 환경 구성"
+      },
+      {
+        title: "UI 컴포넌트 활용",
+        text: "shadcn/ui 기반 카드 컴포넌트를 활용하여 일관된 디자인 시스템 구축"
+      }
+    ]
+  },
+  {
+    id: 2,
     name: "슬룸 사이트 클론 앱 ",
     date: "(26.04.13~26.05.18)",
     link: "https://sloom-eight.vercel.app/",
@@ -39,43 +76,6 @@ export const toyWork = [
         text:"로딩 스플래시 화면, 실시간 검색 필터링, 모바일 반응형 슬라이드 메뉴 등을 구현하여 실제 서비스 수준의 UI/UX를 경험할 수 있도록 구성"
       },
     ],
-  },
-  {
-    id: 2,
-    name: "포트폴리오",
-    date: "(26.04.24~)",
-    link: "https://dles-portfolio.vercel.app/",
-    thumb: EtcWork4,
-    desc: [
-      {
-        title: "React 기반 인터랙티브 포트폴리오",
-        text: "React, Tailwind CSS, GSAP, shadcn/ui, Vercel 기반으로 SPA 구조의 포트폴리오를 설계 및 구현"
-      },
-      {
-        title: "스토리 기반 인터랙션 설계",
-        text: "GSAP ScrollTrigger를 활용하여 '밤 → 노을 → 낮 → 봄 → 들판 → 땅'으로 이어지는 타임라인형 스크롤 경험을 구현"
-      },
-      {
-        title: "UX 중심 구조 설계",
-        text: "단순 정보 나열이 아닌 사용자 흐름 중심의 섹션 구조로 재배치하여 콘텐츠 몰입도를 강화"
-      },
-      {
-        title: "반응형 UI 설계",
-        text: "Tailwind CSS Grid 시스템을 기반으로 모바일, 태블릿, 데스크톱 환경에 최적화된 레이아웃 구현"
-      },
-      {
-        title: "컴포넌트 및 데이터 구조 분리",
-        text: "섹션별 데이터와 UI를 분리하여 유지보수성과 확장성을 고려한 구조 설계"
-      },
-      {
-        title: "배포 및 운영",
-        text: "GitHub–Vercel CI/CD를 구축하여 코드 변경 시 자동 배포가 가능한 환경 구성"
-      },
-      {
-        title: "UI 컴포넌트 활용",
-        text: "shadcn/ui 기반 카드 컴포넌트를 활용하여 일관된 디자인 시스템 구축"
-      }
-    ]
   },
   {
     id: 3,

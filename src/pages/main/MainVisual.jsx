@@ -69,11 +69,11 @@ const MainVisual = () => {
       <div className="text-center mt-[-80px] z-10 px-4">
         {/* 상단 카피 */}
         <p className="intro-sub text-blue-400 tracking-[0.3em] mb-6 text-[14px] lg:text-base font-light uppercase opacity-80">
-          From Publisher To Frontend Developer
+          From Publisher To UIUX Developer
         </p>
 
         {/* 메인 타이틀 */}
-        <h1 className="intro-title text-white text-3xl lg:text-6xl leading-[1.2] tracking-tight">
+        <h1 className="intro-title text-white text-3xl lg:text-5xl leading-[1.5] tracking-tight">
           <div className="mb-2">{splitText("밤, 가장 선명한 시작")}</div>
 
           <span className="highlight-text inline-block  font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-purple-500">

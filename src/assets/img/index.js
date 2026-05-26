@@ -20,7 +20,7 @@ import bestWork6 from "./crush-thumb.jpg";
 import EtcWork1 from "./todolist_app_thumb.png";
 import EtcWork2 from "./forecast_app_thumb.jpg";
 import EtcWork3 from "./sloom_app_thumb.jpg";
-import EtcWork4 from "./portfolio-thumb.jpg";
+import EtcWork4 from "./portfolio-thumb.png";
 import seoAfter from "./seo-after.png";
 import seoBefore from "./seo-before.png";
 import seoThumb from "./seo-thumb.png";
