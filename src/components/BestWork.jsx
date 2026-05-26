@@ -1,143 +1,9 @@
 import { useState } from "react";
-import {
-  bestWork1,
-  bestWork2,
-  bestWork3,
-  bestWork4,
-  bestWork5,
-  bestWork6,
-} from "../assets/img";
+import {bestWork} from '../data/bestWork'
 
 // 탭
 const categories = ["All", "리뉴얼", "신규 구축"];
 
-// 데이터
-const Work_list = [
-  {
-    id: 1,
-    category: "리뉴얼",
-    name: "슬룸(SLOOM)",
-    date: "2025.04 ~ 2025.05",
-    link: "https://sleeplab.co.kr/home-backup",
-    thumb: bestWork1,
-    summary: "SEO 노출 5배 증가 및 반응형 전환",
-    overview: [
-      "<strong>프로젝트:</strong> 적응형 쇼핑몰 → 반응형 UI/UX 전면 리뉴얼",
-      "<strong>기여도:</strong> 퍼블리싱 100%",
-      "<strong>환경:</strong> 아임웹 기반 E-commerce",
-    ],
-    stack: ["HTML5, CSS3, JavaScript", "Owl Carousel", "Photoshop"],
-    results: [
-      "<strong>반응형 전환:</strong> PC/모바일 분리 구조를 반응형 구조로 통합해 유지보수 효율 개선",
-      "<strong>SEO 개선:</strong> 시맨틱 마크업 및 이미지 최적화를 통해 검색 노출 향상",
-      "<strong>UX 개선:</strong> 사용자 동선 기준으로 메인 구조와 콘텐츠 우선순위 재정의",
-      "<strong>성과:</strong> Google Search Console 기준 주요 키워드 검색 노출 약 5.2배 증가",
-    ],
-    notice: [
-      "※ 현재 사이트는 추가 리뉴얼된 상태이며 본 작업은 이전 버전 기준입니다.",
-    ],
-  },
-
-  {
-    id: 2,
-    category: "리뉴얼",
-    name: "심플리케어",
-    date: "2025.01",
-    link: "https://oneqhealthfood.com/",
-    thumb: bestWork2,
-    summary: "UI 구조 개선 및 운영 효율 향상",
-    overview: [
-      "<strong>프로젝트:</strong> 쇼핑몰 UI/UX 리뉴얼",
-      "<strong>기여도:</strong> 퍼블리싱 100%",
-    ],
-    stack: ["HTML, CSS, JavaScript"],
-    results: [
-      "<strong>구조 개선:</strong> 정보 우선순위를 재배치해 가독성 향상",
-      "<strong>운영 효율:</strong> 반복 UI를 정리해 유지보수 부담 감소",
-      "<strong>퍼포먼스:</strong> 이미지 최적화 및 불필요 리소스 정리",
-    ],
-  },
-
-  {
-    id: 3,
-    category: "신규 구축",
-    name: "피닉스레포츠",
-    date: "2024.04",
-    link: "https://swimgoggle.co.kr/",
-    thumb: bestWork3,
-    summary: "인터랙션 중심 쇼핑몰 구축",
-    overview: [
-      "<strong>프로젝트:</strong> 고도몰 기반 쇼핑몰 구축",
-      "<strong>기여도:</strong> 퍼블리싱 100%",
-    ],
-    stack: ["HTML, CSS, JavaScript", "Swiper"],
-    results: [
-      "<strong>인터랙션:</strong> 스크롤 및 hover 기반 애니메이션 구현",
-      "<strong>협업:</strong> 상품 필터 기능 백엔드 데이터 연동 및 QA 진행",
-      "<strong>안정성:</strong> 디바이스 및 브라우저별 크로스 브라우징 대응",
-    ],
-  },
-
-  {
-    id: 4,
-    category: "신규 구축",
-    name: "AIR",
-    date: "2024.05",
-    link: "http://sampledesignbook555.godomall.com/",
-    thumb: bestWork4,
-    summary: "템플릿 기반 UI 커스터마이징",
-    overview: [
-      "<strong>프로젝트:</strong> 고도몰 쇼핑몰 구축",
-      "<strong>기여도:</strong> 퍼블리싱 100%",
-    ],
-    stack: ["HTML, CSS, JavaScript"],
-    results: [
-      "<strong>UI 구성:</strong> 디자인 컨셉에 맞춘 템플릿 스타일 커스터마이징",
-      "<strong>반응형 대응:</strong> 디바이스별 레이아웃 최적화",
-      "<strong>구조 설계:</strong> 메인/리스트/상세 페이지 UI 구축",
-    ],
-  },
-
-  {
-    id: 5,
-    category: "신규 구축",
-    name: "CYCLE",
-    date: "2024.01",
-    link: "https://ecudemo310794.cafe24.com/",
-    thumb: bestWork5,
-    summary: "유튜브 API 인터랙션 구현",
-    overview: [
-      "<strong>프로젝트:</strong> 반응형 쇼핑몰 구축",
-      "<strong>기여도:</strong> 퍼블리싱 100%",
-    ],
-    stack: ["HTML, CSS, JavaScript", "YouTube API"],
-    results: [
-      "<strong>기능 구현:</strong> YouTube API 기반 영상 인터랙션 구현",
-      "<strong>사용자 경험:</strong> 클릭 흐름에 맞춘 콘텐츠 몰입도 강화",
-      "<strong>반응형 대응:</strong> 영상 UI 및 레이아웃 최적화",
-    ],
-  },
-
-  {
-    id: 6,
-    category: "신규 구축",
-    name: "CRUSH",
-    date: "2023.04 ~ 2023.06",
-    link: "https://ecudemo283804.cafe24.com/",
-    thumb: bestWork6,
-    summary: "다양한 인터랙션 구현",
-    overview: [
-      "<strong>프로젝트:</strong> 쇼핑몰 구축",
-      "<strong>기여도:</strong> 퍼블리싱 100%",
-    ],
-    stack: ["HTML, CSS, JavaScript"],
-    results: [
-       "<strong>기능 구현:</strong> 영상 팝업 및 인터랙션 애니메이션 구현",
-      "<strong>애니메이션:</strong> keyframes 기반 동작 설계",
-      "<strong>라이브러리 활용:</strong> Swiper 및 다양한 플러그인 커스터마이징 경험",
-    ],
-  },
-];
 
 const BestWork = () => {
   const [activeTab, setActiveTab] = useState("All");
@@ -145,8 +11,8 @@ const BestWork = () => {
 
   const filtered =
     activeTab === "All"
-      ? Work_list
-      : Work_list.filter((item) => item.category === activeTab);
+      ? bestWork
+      : bestWork.filter((item) => item.category === activeTab);
 
   // 🔥 모달 열기
   const openModal = (item) => {
@@ -235,7 +101,19 @@ const BestWork = () => {
                   <h4 className="font-bold mb-2">📌 프로젝트 개요</h4>
                   <ul className="list-disc ml-5 space-y-1">
                     {selected.overview.map((t, i) => (
-                      <li key={i} dangerouslySetInnerHTML={{ __html: t }} />
+                      <li key={i} className="flex gap-1">
+                        {t.title && (
+                          <strong className="">
+                            {t.title}
+                          </strong>
+                        )}
+                        :
+                        {t.text && (
+                          <p className="">
+                            {t.text}
+                          </p>
+                        )}
+                    </li>
                     ))}
                   </ul>
                 </div>
@@ -257,7 +135,19 @@ const BestWork = () => {
                   <h4 className="font-bold mb-2">🚀 주요 성과</h4>
                   <ul className="list-disc ml-5 space-y-1">
                     {selected.results.map((t, i) => (
-                      <li key={i} dangerouslySetInnerHTML={{ __html: t }} />
+                      <li key={i} className="flex gap-1">
+                        {t.title && (
+                          <strong className="">
+                            {t.title}
+                          </strong>
+                        )}
+                        :
+                        {t.text && (
+                          <p className="">
+                            {t.text}
+                          </p>
+                        )}
+                    </li>
                     ))}
                   </ul>
                 </div>
