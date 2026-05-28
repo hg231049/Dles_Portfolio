@@ -101,7 +101,7 @@ const BackgroundScene = ({ scrollContainer }) => {
         }}
       />
 
-      {/* 4. 봄 (낮 위에 올라옴 - 가로 스크롤 섹션) */}
+      {/* 4. 봄 (낮 위에 올라옴) */}
       <div
         ref={springRef}
         className="fixed inset-0 -z-30 opacity-0"

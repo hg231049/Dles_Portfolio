@@ -19,7 +19,7 @@ export const history = [
   },
   {
     company: "Self Growth",
-    title: "React · Tailwind 학습",
+    title: "React · Tailwind · TypeScript 학습",
     period: "2025.08 ~ 현재",
     desc: ["토이 프로젝트 제작", "컴포넌트 구조 학습", "배포 경험 축적"],
   },

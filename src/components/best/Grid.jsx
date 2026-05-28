@@ -7,7 +7,7 @@ const Grid = ({filtered,openModal}) => {
             className="group cursor-pointer"
             onClick={() => openModal(item)}
           >
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[8px] bg-gray-900">
+            <div className="relative aspect-4/3 overflow-hidden rounded-[8px] bg-gray-900">
               <img
                 src={item.thumb}
                 alt={item.name}

@@ -20,7 +20,7 @@ export const Stack = () => {
                 <div className="w-12 h-12 lg:w-14 lg:h-14 mx-auto rounded-xl bg-white flex items-center justify-center overflow-hidden">
                   <img
                     src={item.icon}
-                    className="w-full h-full object-contain" alt={item.name}
+                    className="w-full h-full object-contain" alt="" aria-hidden="true"
                   />
                 </div>
 
