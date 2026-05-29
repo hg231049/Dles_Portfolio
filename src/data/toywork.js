@@ -39,41 +39,42 @@ export const toyWork = [
   },
   {
     id: 2,
-    name: "슬룸 사이트 클론 앱 ",
-    date: "(26.04.13~26.05.18)",
+    name: "슬룸 사이트 클론 앱",
+    date: "(26.04.13 ~ 26.05.18)",
     link: "https://sloom-eight.vercel.app/",
     thumb: EtcWork3,
     desc: [
       {
-        title:"React 토이 프로젝트",
-        text:"React,Tailwind CSS, vscode, vercel, React Router"
+        title: "React 토이 프로젝트",
+        text: "TypeScript, React, Tailwind CSS, React Router, Vercel"
       },
       {
-        title:"React & Tailwind CSS 학습을 목적으로 진행한 쇼핑몰 클론 코딩 프로젝트",
-        text:"메인, 리스트, 햄버거메뉴, 검색페이지,상세페이지,장바구니"
+        title: "React · Tailwind CSS · TypeScript 학습을 목표로 제작한 쇼핑몰 클론 프로젝트",
+        text: "메인 페이지, 상품 리스트, 검색, 상세 페이지, 장바구니, 모바일 햄버거 메뉴 등을 구현"
       },
       {
-        title:"복잡한 이커머스 UI를 재사용 가능한 컴포넌트 단위로 구조화하는 데 집중",
+        title: "재사용 가능한 컴포넌트 구조 설계",
+        text: "하나의 상품 데이터를 다양한 UI 형태(Grid / Horizontal / Search List)로 재사용할 수 있도록 공통 컴포넌트 형태로 구성"
       },
       {
-        title:"컴포넌트 추상화 및 레이아웃 분기 처리",
-        text:"동일한 상품 데이터(ProductData)를 활용하여 Best(Grid형), New(Horizontal형), List(검색형) 등 다양한 레이아웃으로 분기 처리하는 공통 컴포넌트를 설계하여 코드 중복을 최소화"
+        title: "React Router 기반 페이지 구성",
+        text: "홈, 상품 목록, 검색 결과 페이지 등을 라우팅하고 검색어 및 장바구니 상태를 페이지 이동 간 유지"
       },
       {
-        title:"React Router를 활용한 멀티 페이지 구현",
-        text:"react-router-dom 라이브러리를 도입하여 홈, 전체 목록, 검색 결과 페이지 등을 라우팅하고, 페이지 간 상태(검색어, 장바구니 카운트)를 안정적으로 유지"
+        title: "Tailwind CSS 기반 UI 구현",
+        text: "Variant와 Arbitrary Value 문법을 활용해 반복 스타일을 줄이고 반응형 레이아웃을 구성"
       },
       {
-        title:"Tailwind CSS 기반의 효율적인 디자인 시스템",
-        text:"복합 선택자(Variant)와 임의 값(Arbitrary values) 문법을 적극 활용하여 일관성 있고 정교한 디자인 시스템을 구현"
+        title: "JavaScript → TypeScript 마이그레이션 경험",
+        text: "기존 JS 프로젝트를 TS로 전환하며 Props Interface 정의, .jsx → .tsx 변경 및 타입 에러 수정 경험"
       },
       {
-        title:"상태 관리 및 데이터 흐름 최적화",
-        text:"State Lifting(상태 끌어올리기) 기법을 사용하여 부모 컴포넌트에서 상태를 관리하고, Props 전달을 통해 하위 섹션의 디자인 옵션(순위 노출, 요약 설명 등)을 선언적으로 제어"
+        title: "상태 관리 구조 개선",
+        text: "State Lifting 방식으로 상위 컴포넌트에서 상태를 관리하고 Props로 필요한 데이터만 전달하도록 구성"
       },
       {
-        title:"사용자 경험(UX) 중심 기능 구현",
-        text:"로딩 스플래시 화면, 실시간 검색 필터링, 모바일 반응형 슬라이드 메뉴 등을 구현하여 실제 서비스 수준의 UI/UX를 경험할 수 있도록 구성"
+        title: "사용자 경험 중심 기능 구현",
+        text: "로딩 화면, 실시간 검색 필터링, 모바일 슬라이드 메뉴 등 실제 서비스 흐름을 고려한 UI/UX 구현"
       },
     ],
   },

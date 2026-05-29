@@ -9,6 +9,7 @@ import {
   skill8,
   skill9,
   skill10,
+  skill11,
 } from "../assets/img";
 
 export const skillGroups = [
@@ -18,6 +19,7 @@ export const skillGroups = [
       { id: 1, name: "JavaScript", icon: skill1 },
       { id: 2, name: "React", icon: skill2 },
       { id: 3, name: "Tailwind CSS", icon: skill3 },
+      { id: 4, name: "TypeScript", icon: skill11 },
     ],
   },
   {

@@ -8,6 +8,7 @@ import skill7 from "./skill-figma.png";
 import skill8 from "./skill-photoshop.png";
 import skill9 from "./skill-adobexd.png";
 import skill10 from "./skill-editplus.jpg";
+import skill11 from "./skill-typescript.png";
 import dashboardThumb from "./dashboard-thumb.png";
 import codeThumb from "./code-thumb.png";
 import proposalThumb from "./Proposal-thumb.png";
@@ -37,6 +38,7 @@ export {
   skill8,
   skill9,
   skill10,
+  skill11,
   dashboardThumb,
   codeThumb,
   proposalThumb,
