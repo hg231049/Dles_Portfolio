@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
-import { menuItems } from '../data/menuItems'
+import { menuItems,HeaderMenuItems } from '../data/menuItems'
+
 
 const HeaderQuickMenu = () => {
   const [actived, setActived] = useState("home");
@@ -29,7 +30,7 @@ const HeaderQuickMenu = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const moveToSection = (id) => {
+  const moveToSection = (id:string) => {
     const target = document.getElementById(id);
     if (!target) return;
 

@@ -1,4 +1,11 @@
-export const menuItems = [
+interface HeaderMenuItems {
+  id: string,
+  label: string,
+  sub: string,
+  color: string,
+}
+
+export const menuItems:HeaderMenuItems[] = [
   { id: "home", label: "홈", sub: "Night", color: "bg-[#232323]" },
   {
     id: "introduce",

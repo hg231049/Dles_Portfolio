@@ -1,4 +1,4 @@
-import { maindset } from '../data/mindset';
+import { mindset,MindsetItems } from '@/data/mindset';
 const Mindset = () => {
   return (
     <div className="space-y-12">
@@ -7,7 +7,7 @@ const Mindset = () => {
       </div>
 
       <div className="space-y-6">
-        {maindset.map((item) => (
+        {mindset.map((item:MindsetItems) => (
           <div
             key={item.id}
             className="rounded-2xl border-l border-white/30 p-5 lg:p-6 border border-white/10"

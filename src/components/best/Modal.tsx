@@ -1,4 +1,10 @@
-const Modal = ({selected,closeModal}) => {
+import { BestWorkItems,OverviewItems,ResultsItems } from '../../data/bestWork'
+interface ModalProps {
+   selected:BestWorkItems| null;
+   closeModal:() => void;
+}
+
+const Modal = ({selected,closeModal}:ModalProps) => {
     return (
       <>
         {selected && (
@@ -24,7 +30,7 @@ const Modal = ({selected,closeModal}) => {
                   <div>
                     <h4 className="font-bold mb-2">📌 프로젝트 개요</h4>
                     <ul className="list-disc ml-5 space-y-1">
-                      {selected.overview.map((t, i) => (
+                      {selected.overview.map((t:OverviewItems, i:number) => (
                         <li key={i} className="flex flex-wrap gap-1">
                           {t.title && (
                             <strong className="">
@@ -47,7 +53,7 @@ const Modal = ({selected,closeModal}) => {
                   <div>
                     <h4 className="font-bold mb-2">🛠 기술 스택</h4>
                     <ul className="list-disc ml-5 space-y-1">
-                      {selected.stack.map((t, i) => (
+                      {selected.stack.map((t:string, i:number) => (
                         <li key={i}>{t}</li>
                       ))}
                     </ul>
@@ -58,7 +64,7 @@ const Modal = ({selected,closeModal}) => {
                   <div>
                     <h4 className="font-bold mb-2">🚀 주요 성과</h4>
                     <ul className="list-disc ml-5 space-y-1">
-                      {selected.results.map((t, i) => (
+                      {selected.results.map((t:ResultsItems, i:number) => (
                         <li key={i} className="flex flex-wrap gap-1 lg:flex-row">
                           {t.title && (
                             <strong className="">
@@ -79,7 +85,7 @@ const Modal = ({selected,closeModal}) => {
 
                 {selected.notice && (
                   <div className="text-xs text-gray-400 border-t pt-3">
-                    {selected.notice.map((t, i) => (
+                    {selected.notice.map((t:string, i:number) => (
                       <p key={i}>{t}</p>
                     ))}
                   </div>

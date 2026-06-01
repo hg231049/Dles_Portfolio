@@ -12,7 +12,17 @@ import {
   skill11,
 } from "../assets/img";
 
-export const skillGroups = [
+interface SkillItems {
+  id: number;
+  name: string; 
+  icon:string;
+}
+interface SkillGroupsItems {
+  title:string;
+  items:SkillItems[];
+}
+
+export const skillGroups:SkillGroupsItems[] = [
   {
     title: "Frontend",
     items: [

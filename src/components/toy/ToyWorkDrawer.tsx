@@ -7,9 +7,13 @@ import {
   DrawerClose,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
+import { ToyWorkItems,DescItems } from '../../data/toywork';
 
+interface ToyWorkDrawerProps {
+  item:ToyWorkItems;
+}
 
-const ToyWorkDrawer  = ({item}) => {
+const ToyWorkDrawer  = ({item}:ToyWorkDrawerProps) => {
     return (
           <DrawerContent className="bg-white/70 backdrop-blur-md border-none text-text-color ">
             <div className="mx-auto w-full max-w-[860px] p-6 overflow-y-scroll scroll-hidden">
@@ -25,7 +29,7 @@ const ToyWorkDrawer  = ({item}) => {
               {/* 리스트 상세 내용 */}
               <div className="py-6 border-t border-white/10">
                 <ul className="list-disc list-outside ml-4 space-y-4 text-sm leading-relaxed">
-                  {item.desc.map((descItem, idx) => (
+                  {item.desc.map((descItem:DescItems, idx:number) => (
                     <li key={idx}>
                       {descItem.title && (
                         <strong className="block mb-1">

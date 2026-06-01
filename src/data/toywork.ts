@@ -1,5 +1,21 @@
 import { EtcWork1, EtcWork2, EtcWork3, EtcWork4 } from "../assets/img";
-export const toyWork = [
+
+interface DescItems {
+  title: string;
+  text:string;
+}
+
+interface ToyWorkItems {
+  id: number;
+  name: string;
+  date: string;
+  link: string;
+  thumb:string;
+  desc:DescItems[];
+}
+
+
+export const toyWork:ToyWorkItems[] = [
    {
     id: 1,
     name: "포트폴리오",
@@ -9,11 +25,15 @@ export const toyWork = [
     desc: [
       {
         title: "React 기반 인터랙티브 포트폴리오",
-        text: "React, Tailwind CSS, GSAP, shadcn/ui, Vercel 기반으로 SPA 구조의 포트폴리오를 설계 및 구현"
+        text: "React, TypeScript, Tailwind CSS, GSAP, shadcn/ui, Vercel 기반으로 SPA 구조의 포트폴리오를 설계 및 구현"
       },
       {
         title: "스토리 기반 인터랙션 설계",
         text: "GSAP ScrollTrigger를 활용하여 '밤 → 노을 → 낮 → 봄 → 들판 → 땅'으로 이어지는 타임라인형 스크롤 경험을 구현"
+      },
+       {
+        title: "JavaScript → TypeScript 마이그레이션 경험",
+        text: "기존 JS 프로젝트를 TS로 전환하며 Props Interface 정의, .jsx → .tsx 변경 및 타입 에러 수정 경험"
       },
       {
         title: "UX 중심 구조 설계",

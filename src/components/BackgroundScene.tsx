@@ -7,12 +7,16 @@ import "../css/BackgroundScene.css";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 ScrollTrigger.config({ ignoreMobileResize: true });
 
-const BackgroundScene = ({ scrollContainer }) => {
-  const sunriseRef = useRef(null);
-  const dayRef = useRef(null);
-  const springRef = useRef(null);
-  const fieldRef = useRef(null);
-  const groundRef = useRef(null);
+interface BackgroundSceneProps {
+  scrollContainer: React.RefObject<HTMLDivElement>;
+}
+
+const BackgroundScene = ({ scrollContainer }: BackgroundSceneProps) => {
+  const sunriseRef = useRef<HTMLDivElement>(null);
+  const dayRef = useRef<HTMLDivElement>(null);
+  const springRef = useRef<HTMLDivElement>(null);
+  const fieldRef = useRef<HTMLDivElement>(null);
+  const groundRef = useRef<HTMLDivElement>(null);
 
   // useMemo 덕분에 컴포넌트가 리렌더링되어도 꽃잎의 위치가 바뀌지 않고 고정
   const petals = useMemo(() => {
@@ -24,18 +28,22 @@ const BackgroundScene = ({ scrollContainer }) => {
       duration: `${Math.random() * 10 + 10}s`,
     }));
   }, []);
-// useGSAP : 리액트 환경에서 GSAP 애니메이션을 안전하게 실행하기 위한 전용 Hook
-    useGSAP(
+
+  // useGSAP : 리액트 환경에서 GSAP 애니메이션을 안전하게 실행하기 위한 전용 Hook
+  useGSAP(
     () => {
+
       const refreshGSAP = () => ScrollTrigger.refresh();
-      // 모든 이미지와 리소스가 로드된 후 계산
-    window.addEventListener("load", () => ScrollTrigger.refresh());
-      // 폰트나 이미지가 늦게 뜰 때를 대비해 1초 뒤에 한 번 더 갱신
+      
+      // 🌟 버그 수정: 등록할 때와 해제할 때 완벽하게 'refreshGSAP' 한 우물만 파도록 맞춥니다!
+      window.addEventListener("load", refreshGSAP);
+      
+      // 폰트나 이미지가 늦게 뜰 때를 대비해 0.1초 뒤에 한 번 더 갱신
       const refreshTimer = setTimeout(() => {
         if (!scrollContainer.current) return;
+        
         // 각 콘텐츠 섹션들을 찾아내어, 그 섹션이 화면에 들어올 때 배경 레이어를 하나씩 활성화
-        const sections =
-          scrollContainer.current.querySelectorAll(".section-step");
+        const sections = scrollContainer.current.querySelectorAll(".section-step");
 
         if (sections.length > 0) {
           sections.forEach((section, index) => {
@@ -55,9 +63,8 @@ const BackgroundScene = ({ scrollContainer }) => {
               scrollTrigger: {
                 trigger: section,
                 start: "top top",
-                // ★ 포인트: BestWork 내부의 end 설정(+1000)과 동일하게 맞춰줍니다.
                 end: "bottom top",
-                scrub: 1.5, //스크롤 속도에 맞춰 애니메이션이 재생되도록 함
+                scrub: 1.5, // 스크롤 속도에 맞춰 애니메이션이 재생되도록 함
               },
             });
           });
@@ -66,7 +73,7 @@ const BackgroundScene = ({ scrollContainer }) => {
       }, 100);
 
       return () => {
-        window.removeEventListener("load", refreshGSAP);
+        window.removeEventListener("load", refreshGSAP); // 🌟 이제 메모리 누수 없이 완벽하게 청소됩니다.
         clearTimeout(refreshTimer);
       };
     },

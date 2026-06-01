@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const MainVisual = () => {
-  const container = React.useRef();
+  const container = React.useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
@@ -52,7 +52,7 @@ const MainVisual = () => {
     { scope: container },
   );
 
-  const splitText = (text) => {
+  const splitText = (text:string) => {
     return text.split("").map((char, index) => (
       <span key={index} className="char inline-block">
         {char === " " ? "\u00A0" : char}

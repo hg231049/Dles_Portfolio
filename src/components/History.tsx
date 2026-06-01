@@ -1,5 +1,5 @@
 import React from "react";
-import { history } from "@/data/history";
+import { history,HistoryItems } from "@/data/history";
 
 const History = () => {
   return (
@@ -9,7 +9,7 @@ const History = () => {
       </div>
 
       <ol className="relative border-l border-white/20 ml-4 space-y-10">
-        {history.map((step, index) => (
+        {history.map((step:HistoryItems, index:number) => (
           <li key={index} className="relative pl-6 lg:pl-12 group">
             {/* dot */}
             <div className="absolute -left-[6px] lg:-left-[9px] top-1">
@@ -36,7 +36,7 @@ const History = () => {
               {/* 설명 */}
               {step.desc && (
                 <ul className="list-disc ml-4 space-y-2 text-white text-[13px] lg:text-[15px]">
-                  {step.desc.map((item, i) => (
+                  {step.desc.map((item:string, i:number) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>

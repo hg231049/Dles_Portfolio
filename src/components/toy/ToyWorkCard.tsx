@@ -3,8 +3,13 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import ToyWorkDrawer from "./ToyWorkDrawer";
+import { ToyWorkItems} from '../../data/toywork';
 
-const ToyWorkCard = ({item}) => {
+interface ToyWorkCardProps {
+   item:ToyWorkItems;
+}
+
+const ToyWorkCard = ({item}:ToyWorkCardProps) => {
     return (
         <Drawer key={item.id}>
           {/* 1. 트리거: 카드의 전체 외형을 버튼처럼 사용 */}

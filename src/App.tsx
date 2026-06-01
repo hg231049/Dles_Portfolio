@@ -9,7 +9,7 @@ import Dashboard from "./components/Dashboard";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-  const mainRef = useRef(null);
+  const mainRef = useRef<HTMLDivElement>(null);
   const [showHeader, setShowHeader] = useState(false);
 
   useEffect(() => {

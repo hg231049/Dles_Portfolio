@@ -1,5 +1,15 @@
 import { dashboardThumb, codeThumb, proposalThumb } from "../assets/img";
-export const competencies = [
+
+interface CompetenciesItems {
+    id:number ;
+    badge:string;
+    title: string;
+    subtitle: string;
+    thumbs: string,
+    points:string[];
+}
+
+export const competencies:CompetenciesItemsp[] = [
   {
     id: 1,
     badge: "+5.2x",

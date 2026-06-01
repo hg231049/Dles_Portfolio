@@ -1,4 +1,10 @@
-const Tab = ({categories,activeTab,setActiveTab}) => {
+interface TabProps {
+    categories:string[];
+    activeTab:string;
+    setActiveTab:React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Tab = ({categories,activeTab,setActiveTab}:TabProps) => {
     return (
         <div className="flex gap-3 mb-12 justify-center flex-wrap">
             {categories.map((tab) => (

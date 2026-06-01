@@ -1,3 +1,12 @@
+interface SectionTitleItems {
+  step:string;
+  label:string;
+  title:string;
+  align:string;
+  subColor:string;
+  color:string;
+}
+
 const SectionTitle = ({
   step,
   label,
@@ -5,7 +14,7 @@ const SectionTitle = ({
   align = "center",
   subColor = "text-white",
   color = "text-white",
-}) => {
+}:SectionTitleItems) => {
   const isCenter = align === "center";
 
   return (

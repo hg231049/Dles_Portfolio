@@ -1,4 +1,11 @@
-export const history = [
+interface HistoryItems {
+    company: string,
+    title: string,
+    period:string,
+    desc:string[];
+}
+
+export const history:HistoryItems[] = [
   {
     company: "이젠컴퓨터학원",
     title: "웹퍼블리싱 과정 수료",

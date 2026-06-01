@@ -1,5 +1,9 @@
 import HeaderQuickMenu from "@/components/HeaderQuickMenu";
-const Header = ({ visible }) => {
+  interface HeaderProps {
+  visible:boolean;
+}
+
+const Header = ({ visible }:HeaderProps) => {
   return (
     <header
       id="header"

@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { competencies } from "@/data/competencies";
+import { competencies,CompetenciesItems } from "@/data/competencies";
 
 export const Competencies = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      {competencies.map((item) => (
+      {competencies.map((item:CompetenciesItems) => (
         <div
           key={item.id}
           className="rounded-md md:rounded-xl bg-white/45 backdrop-blur-md border border-white/40 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
@@ -41,7 +41,7 @@ export const Competencies = () => {
 
           {/* list */}
           <ul className="space-y-3">
-            {item.points.map((point, idx) => (
+            {item.points.map((point:string, idx:number) => (
               <li
                 key={idx}
                 className="flex gap-3 text-sm leading-relaxed text-text-color"

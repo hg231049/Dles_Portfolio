@@ -1,4 +1,10 @@
-export const maindset = [
+interface MindsetItems {
+    id: number,
+    question: string,
+    answer:string;
+}
+
+export const mindset:MindsetItems[] = [
   {
     id: 1,
     question: "Q. 포트폴리오를 React로 리뉴얼한 이유는?",

@@ -6,7 +6,32 @@ import {
   bestWork5,
   bestWork6,
 } from "../assets/img";
-export const bestWork = [
+
+interface OverviewItems {
+    title:string,
+    text:string;
+}
+interface ResultsItems {
+    title:string,
+    text:string;
+}
+interface BestWorkItems {
+    id: number,
+    category: string,
+    name: string,
+    date: string,
+    link: string,
+    thumb: string,
+    summary: string,
+    overview: OverviewItems[];
+    stack: string[],
+    results: ResultsItems[];
+    notice?:string[];
+}
+
+
+
+export const bestWork:BestWorkItems[] = [
   {
     id: 1,
     category: "리뉴얼",
