@@ -1,26 +1,34 @@
 {
   "ts-node": {
-    "esm": true,
+    "esm": true
   },
-  // include : 컴파일 할 범위 지정
-  "include":["src"],
+  // include: 컴파일(감시)할 소스 코드 범위 지정
+  "include": ["src"],
   "compilerOptions": {
-    // target : 컴파일해서 만들어진 js 파일의 버전
+    // target: 컴파일해서 만들어진 js 파일의 문법 버전
     "target": "ESNext",
-    // 모듈옵션
+    // module: 모듈 시스템 종류 설정
     "module": "ESNext",
-    // js파일들이 위치했으면 하는 폴더(ts파일과 분리)
+    // outDir: 빌드된 최종 js 파일들이 위치할 폴더
     "outDir": "./dist",
-    // 실제 소스 코드가 들어있는 폴더
+    // rootDir: 실제 원본 소스 코드가 들어있는 폴더
     "rootDir": "./src",
-    // 타입스크립트 컴파일러가 검사할 때 얼마나 엄격하게 할건지npm run dev
+    
+    // strict: 모든 엄격한 타입 검사 옵션을 일괄 활성화 (매우 권장)
     "strict": true,
-    // 전역모듈을 개별 모듈로 변환
+
+    
+    // moduleDetection: 전역 모듈의 독립성을 보장하기 위해 개별 모듈 변환 강제
     "moduleDetection": "force",
+    
+    // skipLibCheck: node_modules에 있는 외부 라이브러리들의 타입 검사는 생략 (빌드 속도 향상)
     "skipLibCheck": true,
-    // 임시로 null값을 할당하도록
-    "strictNullChecks": false,
+    
+    // jsx: 리액트 JSX 문법을 어떻게 컴파일할지 설정
     "jsx": "react-jsx",
-  },
-  
+
+    /* 🌟 실무 필수 안전장치 추가 2가지 */
+    "moduleResolution": "Bundler",      // Vite 환경에서 가끔 import 경로를 못 찾는 현상 방지
+    "allowSyntheticDefaultImports": true // React를 import할 때 문법 호환성 대폭 상승
+  }
 }
