@@ -5,7 +5,7 @@ import React, { useRef, useEffect, useState } from "react";
 import BackgroundScene from "./components/BackgroundScene";
 import Main from "./pages/main/Main";
 import Header from "./pages/layout/Header";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
