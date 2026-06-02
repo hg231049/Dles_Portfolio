@@ -2,7 +2,7 @@ import { EtcWork1, EtcWork2, EtcWork3, EtcWork4 } from "../assets/img";
 
 interface DescItems {
   title: string;
-  text:string;
+  text?:string;
 }
 
 interface ToyWorkItems {
@@ -11,6 +11,7 @@ interface ToyWorkItems {
   date: string;
   link: string;
   thumb:string;
+  badge?:string[];
   desc:DescItems[];
 }
 
@@ -22,6 +23,7 @@ export const toyWork:ToyWorkItems[] = [
     date: "(26.04.24~)",
     link: "https://dles-portfolio.vercel.app/",
     thumb: EtcWork4,
+    badge:["React","TypeScipt","Tailwind CSS"],
     desc: [
       {
         title: "React 기반 인터랙티브 포트폴리오",
@@ -63,6 +65,7 @@ export const toyWork:ToyWorkItems[] = [
     date: "(26.04.13 ~ 26.05.18)",
     link: "https://sloom-eight.vercel.app/",
     thumb: EtcWork3,
+    badge:["React","TypeScipt","Tailwind CSS"],
     desc: [
       {
         title: "React 토이 프로젝트",
@@ -104,6 +107,7 @@ export const toyWork:ToyWorkItems[] = [
     date: "(26.04.22~26.04.24)",
     link: "https://forecast-app-chi-ebon.vercel.app/",
     thumb: EtcWork2,
+    badge:["React","Tailwind CSS"],
     desc: [
       {
         title:"React 토이 프로젝트",
@@ -139,6 +143,7 @@ export const toyWork:ToyWorkItems[] = [
     date: "(25.10.05~25.10.28)",
     link: "https://todolist-5d758.web.app/",
     thumb: EtcWork1,
+    badge:["React"],
     desc: [
       {
         title:"React 토이 프로젝트",

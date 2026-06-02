@@ -26,12 +26,22 @@ const ToyWorkCard = ({item}:ToyWorkCardProps) => {
 
               {/* 타이틀 영역 */}
               <div className="relative space-y-2 text-left">
+                <div>
+                  {item.badge && (
+                    <ul className="flex gap-2 text-xs ">
+                      {item.badge.map((i:string, idx:number) => (
+                        <li key={idx} className="px-2 py-1 text-white rounded-2xl bg-field-color">{i}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
                 <h3 className="label text-[16px] lg:text-xl font-bold leading-tight">
                   {item.name}
                 </h3>
-                <p className="date w-[85%] min-h-[45.5px] text-[14px] lg:text-sm whitespace-pre-line leading-relaxed ">
+                <p className="date w-[85%] text-[14px] lg:text-sm whitespace-pre-line leading-relaxed ">
                   {item.date}
                 </p>
+                
                 <div className="absolute bottom-0 right-0">
                   <div className="text-xl font-light text-subText w-8 h-8 flex items-center justify-center bg-white rounded-full">
                     +
