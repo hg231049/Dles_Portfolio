@@ -121,7 +121,7 @@ export const toyWork:ToyWorkItems[] = [
         text:"fetch API와 useEffect를 활용해 OpenWeatherMap의 실시간 날씨 및 5일 예보 데이터를 비동기 호출"
       },
       {
-        title:"useState를 통해 검색된 도시의 상태를 관리하고, 데이터 로딩 상태에 따른 예외 처리를 구현했습니다.",
+        title:"검색 도시 상태 및 API 응답 데이터를 관리하고 로딩·에러 상태를 처리",
       },
       {
         title:"Recharts를 이용한 데이터 시각화",

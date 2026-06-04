@@ -6,16 +6,17 @@ interface CompetenciesItems {
     title: string;
     subtitle: string;
     thumbs: string,
+    link?:string;
     points:string[];
 }
 
-export const competencies:CompetenciesItemsp[] = [
+export const competencies:CompetenciesItems[] = [
   {
     id: 1,
     badge: "+5.2x",
     title: "SEO & Performance",
     subtitle:
-      "검색 노출 확대 및 웹 성능 지표 개선 \n (메인 키워드 노출 5.2배 달성(GSC기준)",
+      "검색 노출 확대 및 웹 성능 개선\n메인 키워드 노출 5.2배 증가 (GSC 기준)",
     thumbs: dashboardThumb,
     link:"./Dashboard",
     points: [
@@ -26,9 +27,9 @@ export const competencies:CompetenciesItemsp[] = [
   },
   {
     id: 2,
-    badge: "-40%",
-    title: "Reusable UI System",
-    subtitle: "반복 요소 공통화로 운영 효율 향상",
+    badge: "Component",
+    title: "Reusable UI Architecture",
+    subtitle: "컴포넌트 기반 구조 설계 및 유지보수성 향상",
     thumbs: codeThumb,
     points: [
       "이벤트 / 상품 영역 공통 컴포넌트화",
@@ -38,7 +39,7 @@ export const competencies:CompetenciesItemsp[] = [
   },
   {
     id: 3,
-    badge: "Lead",
+    badge: "QA",
     title: "Strategic Collaboration",
     subtitle: "기획 단계부터 참여하는 퍼블리셔",
     thumbs: proposalThumb,

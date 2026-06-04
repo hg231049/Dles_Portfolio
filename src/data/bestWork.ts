@@ -59,7 +59,7 @@ export const bestWork:BestWorkItems[] = [
          {
             title: "SEO 구조 개선",
             text:
-                "div 기반 구조를 semantic 태그(header, section, article)로 재구성하고 \n이미지 lazy loading 및 alt 최적화를 적용하여 Lighthouse SEO 점수와 검색 노출을 개선"
+                "div 기반 구조를 semantic 태그(header, section, article)로 재구성하고 \n이미지 lazy loading 및 alt 최적화를 적용하여 검색 엔진이 콘텐츠 구조를 보다 명확하게 인식할 수 있도록 개선"
         },
         {
             title: "반응형 구조 개선",
@@ -74,7 +74,7 @@ export const bestWork:BestWorkItems[] = [
         {
             title: "성과",
             text:
-                "Google Search Console 기준 주요 키워드 노출 약 5.2배 증가 / Lighthouse SEO 100점 / Performance 약 2배 개선"
+                "Google Search Console 기준 주요 키워드 노출 약 5.2배 증가 / Lighthouse SEO 100점 / Performance 개선"
         },
     ],
     notice: [
@@ -112,7 +112,7 @@ export const bestWork:BestWorkItems[] = [
         },
         {
             title: "협업 구조",
-            text: "백엔드 개발자와 상품 필터 데이터 구조를 사전에 조율하여 API 응답 형태에 맞는 UI 컴포넌트 구조를 설계"
+            text: "백엔드 개발자와 상품 필터 데이터 구조를 사전에 조율하여 데이터 구조를 고려해 퍼블리싱 마크업 및 UI 구조 설계"
         },
         {
             title: "데이터 연동 대응",
@@ -147,7 +147,7 @@ export const bestWork:BestWorkItems[] = [
     results: [
         {
             title:"기능 구현",
-            text:"YouTube API를 활용해 영상 콘텐츠를 동적으로 불러오도록 구현하여 정적 영상 구조의 유지보수 문제를 해결"
+            text:"YouTube API를 활용해 운영자가 영상 URL만 교체해도 콘텐츠를 쉽게 관리할 수 있도록 구현"
         },
         {
             title:"UX 설계",
