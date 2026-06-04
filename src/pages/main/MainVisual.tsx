@@ -69,7 +69,7 @@ const MainVisual = () => {
       <div className="text-center mt-[-80px] z-10 px-4">
         {/* 상단 카피 */}
         <p className="intro-sub text-blue-400 tracking-[0.3em] mb-6 text-[14px] lg:text-base font-light uppercase opacity-80">
-          From Publisher To UIUX Developer
+          UI Publishing · Frontend Development
         </p>
 
         {/* 메인 타이틀 */}
@@ -77,16 +77,16 @@ const MainVisual = () => {
           <div className="mb-2">{splitText("밤, 가장 선명한 시작")}</div>
 
           <span className="highlight-text inline-block  font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-purple-500">
-            {splitText("구현을 넘어 경험을 만드는")} <br />
-            {splitText("UIUX 개발자를 향합니다")}
+            {splitText("구현을 넘어 경험을 설계하는")} <br />
+            {splitText("UIUX Developer")}
           </span>
         </h1>
 
         {/* 서브 설명 */}
         <p className="intro-desc text-gray-400 mt-10 text-[12px] lg:text-lg font-light tracking-wide leading-relaxed">
-          퍼블리싱 경험으로 다져온 구조 이해를 바탕으로
+          퍼블리싱 경험을 기반으로
           <br />
-          React 기반 UIUX 개발자로 성장하고 있습니다.
+          React와 TypeScript를 활용해 더 나은 사용자 경험을 구현합니다.
         </p>
       </div>
 
