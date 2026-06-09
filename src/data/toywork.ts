@@ -69,7 +69,7 @@ export const toyWork:ToyWorkItems[] = [
     desc: [
       {
         title: "React 토이 프로젝트",
-        text: "TypeScript, React, Tailwind CSS, React Router, Vercel"
+        text: "TypeScript, React, Tailwind CSS, React Router, Vercel,DummyJSON API"
       },
       {
         title: "React · Tailwind CSS · TypeScript 학습을 목표로 제작한 쇼핑몰 클론 프로젝트",
@@ -98,6 +98,10 @@ export const toyWork:ToyWorkItems[] = [
       {
         title: "사용자 경험 중심 기능 구현",
         text: "로딩 화면, 실시간 검색 필터링, 모바일 슬라이드 메뉴 등 실제 서비스 흐름을 고려한 UI/UX 구현"
+      },
+      {
+        title: "DummyJSON API 활용",
+        text: "오픈 API를 연동하여 저작권 문제를 해결하고, 실시간 데이터를 포맷팅하여 구현"
       },
     ],
   },
