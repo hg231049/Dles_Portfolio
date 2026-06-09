@@ -7,6 +7,7 @@ interface CompetenciesItems {
     subtitle: string;
     thumbs: string,
     link?:string;
+    linkToolTip?:string;
     points:string[];
 }
 
@@ -19,6 +20,7 @@ export const competencies:CompetenciesItems[] = [
       "검색 노출 확대 및 웹 성능 개선\n메인 키워드 노출 5.2배 증가 (GSC 기준)",
     thumbs: dashboardThumb,
     link:"./Dashboard",
+    linkToolTip:"대시보드 보러가기",
     points: [
       "시맨틱 마크업 구조 개선 및 메타데이터 최적화",
       "Lighthouse 기준 LCP / CLS 등 핵심 지표 개선",

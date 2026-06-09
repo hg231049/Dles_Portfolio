@@ -10,8 +10,27 @@ export const Competencies = () => {
           key={item.id}
           className="rounded-md md:rounded-xl bg-white/45 backdrop-blur-md border border-white/40 p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
         >
-          <div className="thumbs mb-4 overflow-hidden rounded-sm md:rounded-sm">
+       <div className="relative thumbs mb-4">
+          <span className="overflow-hidden rounded-sm md:rounded-sm">
             <img src={item.thumbs} alt={item.title} />
+          </span>
+  
+            {item.link && (
+              <>
+                <div className="view-btn absolute bottom-3 right-3">
+                  <div className="text-xl font-light text-subText w-8 h-8 flex items-center justify-center bg-white rounded-full cursor-pointer">
+                    <Link to={item.link}>+</Link>
+                  </div>
+                </div>
+                
+                <div className="inline-block absolute bottom-[-35px] lg:bottom-[-10%] right-[-2%] px-2 py-1 text-xs bg-white/70 backdrop-blur-xl rounded-2xl text-black shadow-sm whitespace-nowrap pointer-events-none
+                                animate-bounce-slow
+                                after:content-[''] after:absolute after:bottom-full after:right-[30px] 
+                                after:border-[6px] after:border-transparent after:border-b-white/70 after:backdrop-blur-xl">
+                  {item.linkToolTip}
+                </div>
+              </>
+            )}
           </div>
           {/* badge */}
             <div className="mb-4">
@@ -19,7 +38,8 @@ export const Competencies = () => {
                 {item.badge}
               </span>
             </div>
-          <div className="flex items-end justify-between gap-4">
+            
+          <div className="flex flex-col gap-2">
             <div>
               {/* title */}
               <h3 className="text-xl font-black text-text-color">{item.title}</h3>
@@ -28,11 +48,6 @@ export const Competencies = () => {
                 {item.subtitle}
               </p>
             </div>
-            {item.link && (
-                <div className="view-btn text-xl font-light text-subText w-8 h-8 flex items-center justify-center bg-white rounded-full cursor-pointer">
-                  <Link to={item.link}>+</Link>
-                </div>
-              )}
           </div>
           
 
