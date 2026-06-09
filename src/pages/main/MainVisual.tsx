@@ -84,9 +84,9 @@ const MainVisual = () => {
 
         {/* 서브 설명 */}
         <p className="intro-desc text-gray-400 mt-10 text-[12px] lg:text-lg font-light tracking-wide leading-relaxed">
-          퍼블리싱 경험을 기반으로
+          웹 표준과 사용자 경험을 기반으로
           <br />
-          React와 TypeScript를 활용해 더 나은 사용자 경험을 구현합니다.
+          프론트엔드 역량을 확장하고 있는 웹 퍼블리셔입니다.
         </p>
       </div>
 
