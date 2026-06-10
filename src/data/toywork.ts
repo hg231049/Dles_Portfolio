@@ -63,7 +63,7 @@ export const toyWork:ToyWorkItems[] = [
     id: 2,
     name: "사이트 클론 앱",
     date: "(26.04.13 ~ 26.05.18)",
-    link: "https://sloom-eight.vercel.app/",
+    link: "https://dlesshopping-eight.vercel.app/",
     thumb: EtcWork3,
     badge:["React","TypeScipt","Tailwind CSS"],
     desc: [
