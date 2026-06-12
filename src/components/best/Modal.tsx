@@ -1,4 +1,4 @@
-import { BestWorkItems,OverviewItems,ResultsItems } from '../../data/bestWork'
+import { BestWorkItems,OverviewItems,ResultsItems,SolutionItems,ProblemItems } from '../../data/bestWork'
 interface ModalProps {
    selected:BestWorkItems| null;
    closeModal:() => void;
@@ -59,7 +59,50 @@ const Modal = ({selected,closeModal}:ModalProps) => {
                     </ul>
                   </div>
                 )}
-
+                {selected.problem && (
+                  <div>
+                    <h4 className="font-bold mb-2">📝 문제 정의</h4>
+                    <ul className="list-disc ml-5 space-y-1">
+                      {selected.problem.map((t:ProblemItems, i:number) => (
+                        <li key={i} className="flex flex-wrap gap-1 lg:flex-row">
+                          {t.title && (
+                            <strong className="">
+                              {t.title}
+                            </strong>
+                          )}
+                          :
+                          {t.text && (
+                            <p className="whitespace-pre-line">
+                              {t.text}
+                            </p>
+                          )}
+                      </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {selected.solution && (
+                  <div>
+                    <h4 className="font-bold mb-2">✔️ 해결 과정</h4>
+                    <ul className="list-disc ml-5 space-y-1">
+                      {selected.solution.map((t:SolutionItems, i:number) => (
+                        <li key={i} className="flex flex-wrap gap-1 lg:flex-row">
+                          {t.title && (
+                            <strong className="">
+                              {t.title}
+                            </strong>
+                          )}
+                          :
+                          {t.text && (
+                            <p className="whitespace-pre-line">
+                              {t.text}
+                            </p>
+                          )}
+                      </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
                 {selected.results && (
                   <div>
                     <h4 className="font-bold mb-2">🚀 주요 성과</h4>
@@ -82,6 +125,7 @@ const Modal = ({selected,closeModal}:ModalProps) => {
                     </ul>
                   </div>
                 )}
+
 
                 {selected.notice && (
                   <div className="text-xs text-gray-400 border-t pt-3">
