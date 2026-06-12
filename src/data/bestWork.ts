@@ -102,16 +102,16 @@ export const bestWork:BestWorkItems[] = [
 
     results: [
             {
-                title: "SEO",
-                text: "Lighthouse SEO 100점"
+                title: "SEO / GSC",
+                text: "Lighthouse SEO 100점 / 검색 노출 5.2배 증가"
             },
             {
                 title: "운영 효율",
-                text: "이벤트 제작 리드타임 단축"
+                text: "공통 UI 구조를 구축하여 이벤트 페이지 제작 시 반복 작업을 줄이고 유지보수 시간을 단축"
             },
             {
                 title: "유지보수",
-                text: "공통 컴포넌트 적용으로 관리 효율 향상"
+                text: "PC·모바일 분리 구조를 통합하여 수정 포인트를 단일화하고 운영 부담을 감소"
             }
         ],
 
