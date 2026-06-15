@@ -69,7 +69,7 @@ export const toyWork:ToyWorkItems[] = [
     desc: [
       {
         title: "React 토이 프로젝트",
-        text: "TypeScript, React, Tailwind CSS, React Router, Vercel,DummyJSON API"
+        text: "TypeScript, React, Tailwind CSS, React Router,Context API, Vercel, DummyJSON API"
       },
       {
         title: "React · Tailwind CSS · TypeScript 학습을 목표로 제작한 쇼핑몰 클론 프로젝트",
@@ -106,6 +106,10 @@ export const toyWork:ToyWorkItems[] = [
       {
         title: "합법적 오픈소스 활용 및 합리적 라이선스 관리",
         text: "기존 사이트의 에셋 도용을 지양하고 Unsplash, React Icons 등 오픈소스 라이브러리와 무료 에셋을 활용하여 저작권 및 상표권 문제가 없는 안전한 배포 환경 구축"
+      },
+      {
+        title: "Context API 전역 상태 관리",
+        text: "Context API를 사용해 장바구니 데이터와 수량 변경 함수들에서 일어난 Props Drilling 현상 해결. 중간 컴포넌트들의 재사용성을 높이고 전역 상태 관리로 독립"
       },
     ],
   },
