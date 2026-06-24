@@ -47,7 +47,7 @@ export const bestWork:BestWorkItems[] = [
     category: "리뉴얼",
     name: "슬룸(SLOOM)",
     date: "2025.04 ~ 2025.05",
-    link: "https://sleeplab.co.kr",
+    link: "https://sleeplab.co.kr/home-backup",
     thumb: bestWork1,
     summary: "반응형 리뉴얼 및 SEO·성능 최적화 체계 구축",
     overview: [
