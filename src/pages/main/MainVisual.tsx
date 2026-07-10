@@ -52,7 +52,7 @@ const MainVisual = () => {
     { scope: container },
   );
 
-  const splitText = (text:string) => {
+  const splitText = (text: string) => {
     return text.split("").map((char, index) => (
       <span key={index} className="char inline-block">
         {char === " " ? "\u00A0" : char}
@@ -78,7 +78,7 @@ const MainVisual = () => {
 
           <span className="highlight-text inline-block  font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-purple-500">
             {splitText("구현을 넘어 경험을 설계하는")} <br />
-            {splitText("UIUX Developer")}
+            {splitText("퍼블리셔")}
           </span>
         </h1>
 
