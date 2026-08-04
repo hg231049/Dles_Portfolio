@@ -24,13 +24,14 @@ interface ProblemItems {
     text:string;
 }
 interface BestWorkItems {
-    id: number,
-    category: string,
-    name: string,
-    date: string,
-    link: string,
-    thumb: string,
-    summary: string,
+    id: number;
+    category: string;
+    name: string;
+    date: string;
+    link: string;
+    thumb: string;
+    summary?: string;
+    badge?:string[];
     overview: OverviewItems[];
     stack: string[],
     results: ResultsItems[];
@@ -49,7 +50,7 @@ export const bestWork:BestWorkItems[] = [
     date: "2025.04 ~ 2025.05",
     link: "https://sleeplab.co.kr/home-backup",
     thumb: bestWork1,
-    summary: "반응형 리뉴얼 및 SEO·성능 최적화 체계 구축",
+    badge:["SEO/성능","리뉴얼","운영 자동화"],
     overview: [
         {
         title: "프로젝트",
@@ -106,8 +107,8 @@ export const bestWork:BestWorkItems[] = [
                 text: "Lighthouse SEO 100점 / 검색 노출 5.2배 증가"
             },
             {
-                title: "운영 효율",
-                text: "공통 UI 구조를 구축하여 이벤트 페이지 제작 시 반복 작업을 줄이고 유지보수 시간을 단축"
+                title: "운영 효율 개선",
+                text: "공통 컴포넌트 구조를 구축하여 이벤트 페이지 제작 시 중복 작업을 줄이고 유지보수 시간을 단축"
             },
             {
                 title: "유지보수",
@@ -128,7 +129,7 @@ export const bestWork:BestWorkItems[] = [
     date: "2024.04",
     link: "https://swimgoggle.co.kr/",
     thumb: bestWork3,
-    summary: "UX 인터랙션과 확장성을 고려한 E-commerce 구축",
+    badge:["협업","데이터 구조","컴포넌트 설계"],
     overview: [
         {
             title:"프로젝트",
@@ -189,7 +190,7 @@ export const bestWork:BestWorkItems[] = [
     date: "2024.01",
     link: "https://ecudemo310794.cafe24.com/",
     thumb: bestWork5,
-    summary: "영상 콘텐츠 운영 효율과 사용자 경험을 고려한 반응형 쇼핑몰 구축",
+    badge:["반응형","API","운영 자동화"],
     overview: [
         {
             title:"프로젝트",

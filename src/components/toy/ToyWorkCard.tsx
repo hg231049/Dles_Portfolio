@@ -28,7 +28,7 @@ const ToyWorkCard = ({item}:ToyWorkCardProps) => {
               <div className="relative space-y-2 text-left">
                 <div>
                   {item.badge && (
-                    <ul className="flex gap-2 text-xs ">
+                    <ul className="flex gap-2 text-xs">
                       {item.badge.map((i:string, idx:number) => (
                         <li key={idx} className="px-2 py-1 text-white rounded-2xl bg-spring-color">{i}</li>
                       ))}

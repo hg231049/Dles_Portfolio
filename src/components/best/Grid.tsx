@@ -20,15 +20,20 @@ const Grid = ({filtered,openModal}:GridProps) => {
                 alt={item.name}
                 className="w-full h-full object-cover object-top transition duration-500 group-hover:scale-105"
               />
-
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-end p-4">
-                <p className="text-white text-sm">{item.summary}</p>
-              </div>
             </div>
 
             <div className="mt-4">
               <h3 className="text-xl font-bold">{item.name}</h3>
-              <p className="text-sm text-subText-color">{item.date}</p>
+              <p className="text-sm text-subText-color">({item.date})</p>
+              <div>
+                {item.badge && (
+                  <ul className="flex gap-2 text-xs  mt-3">
+                    {item.badge.map((i:string, idx:number) => (
+                      <li key={idx} className="px-2 py-1 text-white rounded-2xl bg-day-color">{i}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
           </div>
         ))}
