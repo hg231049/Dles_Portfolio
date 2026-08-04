@@ -9,12 +9,12 @@ const EtcProject = () => {
     >
       <div className="inner">
         <SectionTitle
-          step="04"
+          step="03"
           label="멈추지 않고 이어가는 성장"
           title="Learning by Building"
           align="center"
-          color="text-[#16351F]"
-          subColor="text-field-color"
+          color="text-[#1E1E1E]"
+          subColor="text-spring-color"
         />
         <ToyWork />
       </div>

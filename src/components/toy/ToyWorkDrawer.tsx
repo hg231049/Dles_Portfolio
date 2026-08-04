@@ -55,7 +55,7 @@ const ToyWorkDrawer  = ({item}:ToyWorkDrawerProps) => {
                   rel="noreferrer"
                   className="w-full"
                 >
-                  <Button className="w-full  bg-field-color hover:text-white cursor-pointer hover:bg-white hover:text-text-color">
+                  <Button className="w-full  bg-spring-color hover:text-white cursor-pointer hover:bg-white hover:text-text-color">
                     프로젝트 상세보기
                   </Button>
                 </a>

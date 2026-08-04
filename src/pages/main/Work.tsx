@@ -10,12 +10,12 @@ const Work = () => {
     >
       <div className="inner">
         <SectionTitle
-          step="03"
+          step="02"
           label="실력으로 피워낸 작업물"
           title="Main Projects"
           align="center"
-          color="text-[#1E1E1E]"
-          subColor="text-spring-color"
+          color="text-[#0F172A]"
+          subColor="text-day-color"
         />
         <BestWork />
       </div>

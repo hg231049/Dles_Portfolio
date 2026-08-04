@@ -140,7 +140,7 @@ const Modal = ({selected,closeModal}:ModalProps) => {
                 href={selected.link}
                 target="_blank"
                 rel="noreferrer"
-                className="block mt-6 text-center bg-black text-white py-3 rounded-full hover:bg-spring-color transition"
+                className="block mt-6 text-center bg-black text-white py-3 rounded-full hover:bg-day-color transition"
               >
                 사이트 보기
               </a>

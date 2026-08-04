@@ -30,7 +30,7 @@ const ToyWorkCard = ({item}:ToyWorkCardProps) => {
                   {item.badge && (
                     <ul className="flex gap-2 text-xs ">
                       {item.badge.map((i:string, idx:number) => (
-                        <li key={idx} className="px-2 py-1 text-white rounded-2xl bg-field-color">{i}</li>
+                        <li key={idx} className="px-2 py-1 text-white rounded-2xl bg-spring-color">{i}</li>
                       ))}
                     </ul>
                   )}

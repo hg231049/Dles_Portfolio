@@ -34,7 +34,7 @@ export const Competencies = () => {
           </div>
           {/* badge */}
             <div className="mb-4">
-              <span className="inline-flex items-center rounded-full bg-day-color px-3 py-1 text-xs font-bold text-white tracking-wider">
+              <span className="inline-flex items-center rounded-full bg-sunrise-color px-3 py-1 text-xs font-bold text-white tracking-wider">
                 {item.badge}
               </span>
             </div>

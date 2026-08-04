@@ -77,9 +77,10 @@ const MainVisual = () => {
           <div className="mb-2">{splitText("밤, 가장 선명한 시작")}</div>
 
           <span className="highlight-text inline-block  font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-purple-500">
-            {splitText("구현을 넘어 경험을 설계하는")} <br />
-            {splitText("퍼블리셔")}
+            {splitText("사용자 경험과 성능 개선을 통해")} <br />
+            {splitText("서비스 성과를 만드는 퍼블리셔")}
           </span>
+
         </h1>
 
         {/* 서브 설명 */}

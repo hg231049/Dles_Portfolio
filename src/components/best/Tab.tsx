@@ -14,8 +14,8 @@ const Tab = ({categories,activeTab,setActiveTab}:TabProps) => {
                 className={`px-5 py-2 rounded-full text-sm transition cursor-pointer
                 ${
                     activeTab === tab
-                    ? "bg-spring-color text-white"
-                    : "bg-white/50 text-gray-500 hover:bg-white/80 hover:text-spring-color"
+                    ? "bg-day-color text-white"
+                    : "bg-white/50 text-gray-500 hover:bg-white/80 hover:text-day-color"
                 }`}
             >
                 {tab}

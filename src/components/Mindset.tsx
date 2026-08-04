@@ -2,7 +2,7 @@ import { mindset,MindsetItems } from '@/data/mindset';
 const Mindset = () => {
   return (
     <div className="space-y-12">
-      <div className="mb-10 pb-6 border-b border-white/20 text-sunrise-color text-[18px] lg:text-[20px] font-bold">
+      <div className="mb-10 pb-6 border-b border-white/20 text-field-color text-[18px] lg:text-[20px] font-bold">
         Q&A (Identity)
       </div>
 

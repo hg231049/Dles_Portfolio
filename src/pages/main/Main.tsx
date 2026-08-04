@@ -11,13 +11,14 @@ const Main = () => {
       <div className="main-wrap relative z-10">
         <MainVisual />
 
-        <Introduce />
+        
 
         <Skill />
 
         <Work />
 
         <EtcProject />
+        <Introduce />
 
         <Contact />
       </div>

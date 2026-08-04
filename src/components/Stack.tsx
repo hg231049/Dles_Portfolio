@@ -6,7 +6,7 @@ export const Stack = () => {
       {skillGroups.map((group:SkillGroupsItems, idx:number) => (
         <div key={idx}>
           <div className="mb-5 text-center">
-            <p className="inline-block text-day-color text-sm lg:text-base font-bold tracking-[0.25em] uppercase">
+            <p className="inline-block text-sunrise-color text-sm lg:text-base font-bold tracking-[0.25em] uppercase">
               {group.title}
             </p>
           </div>
@@ -24,7 +24,7 @@ export const Stack = () => {
                   />
                 </div>
 
-                <p className="mt-3 text-[13px] lg:text-sm font-semibold text-text-color group-hover:text-day-color transition-colors">
+                <p className="mt-3 text-[13px] lg:text-sm font-semibold text-text-color group-hover:text-sunrise-color transition-colors">
                   {item.name}
                 </p>
               </li>

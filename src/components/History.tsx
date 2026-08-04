@@ -3,8 +3,8 @@ import { history,HistoryItems } from "@/data/history";
 
 const History = () => {
   return (
-    <div className="[text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
-      <div className="mb-10 pb-6 border-b border-white/20 text-sunrise-color text-[18px] lg:text-[20px] font-bold">
+    <div className="">
+      <div className="mb-10 pb-6 border-b border-white/20 text-field-color text-[18px] lg:text-[20px] font-bold">
         HISTORY
       </div>
 
@@ -14,19 +14,19 @@ const History = () => {
             {/* dot */}
             <div className="absolute -left-[6px] lg:-left-[9px] top-1">
               <span className="relative flex h-3 w-3 lg:h-4 lg:w-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sunrise-color opacity-60"></span>
-                <span className="relative inline-flex h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-sunrise-color"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-field-color opacity-60"></span>
+                <span className="relative inline-flex h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-field-color"></span>
               </span>
             </div>
 
             <div>
               {/* 회사명 */}
-              <p className="text-sunrise-color text-sm lg:text-base font-semibold mb-1">
+              <p className="text-field-color text-sm lg:text-base font-semibold mb-1">
                 {step.company}
               </p>
 
               {/* 타이틀 */}
-              <h3 className="text-white text-[16px] lg:text-[20px] font-bold mb-2 group-hover:text-sunrise-color transition-colors">
+              <h3 className="text-white text-[16px] lg:text-[20px] font-bold mb-2 group-hover:text-field-color transition-colors">
                 {step.title}
               </h3>
 

@@ -11,12 +11,12 @@ const Introduce = () => {
     >
       <div className="inner">
         <SectionTitle
-          step="01"
+          step="04"
           label="지금의 나를 만든 시간들"
           title="Root & Route"
           align="center"
-          color="text-[#FFF8F0]"
-          subColor="text-sunrise-color"
+          color="text-[#16351F]"
+          subColor="text-field-color"
         />
         <div className="grid grid-cols-1 items-baseline lg:grid-cols-2 gap-10">
           <Mindset />
