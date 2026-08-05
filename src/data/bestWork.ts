@@ -125,7 +125,7 @@ export const bestWork:BestWorkItems[] = [
   id: 2,
   category: "리뉴얼",
   name: "심플리케어",
-  date: "2025.01 ~ 2026.01",
+  date: "2026.01",
   link: "https://oneqhealthfood.com/",
   thumb: bestWork2,
   badge: ["반응형", "리뉴얼", "운영 개선"],
