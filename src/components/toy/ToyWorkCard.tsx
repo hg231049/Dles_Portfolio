@@ -3,57 +3,61 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import ToyWorkDrawer from "./ToyWorkDrawer";
-import { ToyWorkItems} from '../../data/toywork';
+import { ToyWorkItems } from '../../data/toywork';
 
 interface ToyWorkCardProps {
-   item:ToyWorkItems;
+  item: ToyWorkItems;
 }
 
-const ToyWorkCard = ({item}:ToyWorkCardProps) => {
-    return (
-        <Drawer key={item.id}>
-          {/* 1. 트리거: 카드의 전체 외형을 버튼처럼 사용 */}
-          <DrawerTrigger asChild>
-            <div className="card group bg-white/80 border border-green-100 shadow-md rounded-[8px] lg:rounded-[15px] overflow-hidden transition-all duration-300 h-fit cursor-pointer p-5 space-y-4 [&_.date]:text-subText-color [&_.label]:text-text-color [&_.date]:text-subText-color lg:[&:nth-child(n+3)_.label]:text-text-color lg:[&:nth-child(n+3)_.date]:text-subText-color">
-              {/* 썸네일 */}
-              <div className="competency-thumb w-full aspect-video bg-white/5 rounded-[8px] lg:rounded-[15px] overflow-hidden">
-                <img
-                  src={item.thumb}
-                  alt={item.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
+const ToyWorkCard = ({ item }: ToyWorkCardProps) => {
+  return (
+    <Drawer key={item.id}>
+      {/* 1. 트리거: asChild 내부의 자식을 <button>으로 변경하여 접근성 준수 */}
+      <DrawerTrigger asChild>
+        <button
+          type="button"
+          className="card group w-full text-left bg-white/80 border border-green-100 shadow-md rounded-[8px] lg:rounded-[15px] overflow-hidden transition-all duration-300 h-fit cursor-pointer p-5 space-y-4 [&_.date]:text-subText-color [&_.label]:text-text-color lg:[&:nth-child(n+3)_.label]:text-text-color lg:[&:nth-child(n+3)_.date]:text-subText-color focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-spring-color"
+        >
+          {/* 썸네일 */}
+          <div className="competency-thumb w-full aspect-video bg-white/5 rounded-[8px] lg:rounded-[15px] overflow-hidden">
+            <img
+              src={item.thumb}
+              alt={item.name}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
 
-              {/* 타이틀 영역 */}
-              <div className="relative space-y-2 text-left">
-                <div>
-                  {item.badge && (
-                    <ul className="flex gap-2 text-xs">
-                      {item.badge.map((i:string, idx:number) => (
-                        <li key={idx} className="px-2 py-1 text-white rounded-2xl bg-spring-color">{i}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-                <h3 className="label text-[16px] lg:text-xl font-bold leading-tight">
-                  {item.name}
-                </h3>
-                <p className="date w-[85%] text-[14px] lg:text-sm whitespace-pre-line leading-relaxed ">
-                  {item.date}
-                </p>
-                
-                <div className="absolute bottom-0 right-0">
-                  <div className="text-xl font-light text-subText w-8 h-8 flex items-center justify-center bg-white rounded-full">
-                    +
-                  </div>
-                </div>
+          {/* 타이틀 영역 */}
+          <div className="relative space-y-2 text-left">
+            <div>
+              {item.badge && (
+                <ul className="flex gap-2 text-xs">
+                  {item.badge.map((i: string, idx: number) => (
+                    <li key={idx} className="px-2 py-1 text-white rounded-2xl bg-spring-color">
+                      {i}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            <h3 className="label text-[16px] lg:text-xl font-bold leading-tight">
+              {item.name}
+            </h3>
+            <p className="date w-[85%] text-[14px] lg:text-sm whitespace-pre-line leading-relaxed">
+              {item.date}
+            </p>
+
+            <div className="absolute bottom-0 right-0">
+              <div className="text-xl font-light text-subText w-8 h-8 flex items-center justify-center bg-white rounded-full">
+                +
               </div>
             </div>
-          </DrawerTrigger>
-          <ToyWorkDrawer item={item}/>
-          
-        </Drawer>
-    )
-}
+          </div>
+        </button>
+      </DrawerTrigger>
+      <ToyWorkDrawer item={item} />
+    </Drawer>
+  );
+};
 
 export default ToyWorkCard;
