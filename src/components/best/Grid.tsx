@@ -9,7 +9,7 @@ const Grid = ({filtered,openModal}:GridProps) => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filtered.map((item) => (
-          <div
+          <article
             key={item.id}
             className="group cursor-pointer"
             onClick={() => openModal(item)}
@@ -35,7 +35,7 @@ const Grid = ({filtered,openModal}:GridProps) => {
                 )}
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     )
