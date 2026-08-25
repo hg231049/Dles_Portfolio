@@ -48,14 +48,13 @@ const ToyWorkDrawer  = ({item}:ToyWorkDrawerProps) => {
               </div>
 
               <DrawerFooter className="px-0 pt-2 pb-6">
-                {/* 링크 이동 버튼 (기존 화살표 링크 기능을 여기 넣으세요) */}
                 <a
                   href={item.link}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full"
                 >
-                  <Button className="w-full  bg-spring-color hover:text-white cursor-pointer hover:bg-white hover:text-text-color">
+                  <Button className="w-full bg-spring-color hover:text-white cursor-pointer hover:bg-white hover:text-text-color">
                     프로젝트 상세보기
                   </Button>
                 </a>

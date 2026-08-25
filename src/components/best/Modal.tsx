@@ -1,4 +1,4 @@
-import { BestWorkItems,OverviewItems,ResultsItems,SolutionItems,ProblemItems } from '../../data/bestWork'
+import { BestWorkItems,OverviewItems,ResultsItems,SolutionItems,ProblemItems,additionalItems } from '../../data/bestWork'
 interface ModalProps {
    selected:BestWorkItems| null;
    closeModal:() => void;
@@ -125,7 +125,21 @@ const Modal = ({selected,closeModal}:ModalProps) => {
                     </ul>
                   </div>
                 )}
+                {selected.additionalWork && (
+                  <div>
+                    <h4 className="font-bold mb-2">🪄 추가 개발</h4>
 
+                    <ul className="list-disc ml-5 space-y-1">
+                      {selected.additionalWork.map((item, i) => (
+                        <li key={i} className="flex flex-wrap gap-1">
+                          <strong>{item.title}</strong>
+                          :
+                          <p>{item.text}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {selected.notice && (
                   <div className="text-xs text-gray-400 border-t pt-3">

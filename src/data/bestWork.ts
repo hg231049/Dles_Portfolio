@@ -23,6 +23,10 @@ interface ProblemItems {
     title:string,
     text:string;
 }
+interface additionalItems {
+  title:string,
+  text:string;
+}
 interface BestWorkItems {
     id: number;
     category: string;
@@ -37,6 +41,7 @@ interface BestWorkItems {
     results: ResultsItems[];
     solution?:SolutionItems[];
     problem:ProblemItems[];
+    additionalWork?:additionalItems[];
     notice?:string[];
 }
 
@@ -45,12 +50,12 @@ interface BestWorkItems {
 export const bestWork:BestWorkItems[] = [
   {
     id: 1,
-    category: "리뉴얼",
+    category: "리뉴얼 · 서비스 개발",
     name: "슬룸(SLOOM)",
-    date: "2025.04 ~ 2025.05",
+    date: "2025.04 ~ 현재",
     link: "https://sleeplab.co.kr/home-backup",
     thumb: bestWork1,
-    badge:["SEO/성능","리뉴얼","운영 자동화"],
+    badge:["SEO/성능","리뉴얼","운영 자동화","UIUX 디벨롭"],
     overview: [
         {
         title: "프로젝트",
@@ -84,7 +89,7 @@ export const bestWork:BestWorkItems[] = [
             title: "성능 최적화 미흡",
             text: "대용량 GIF와 불필요한 리소스로 인해 모바일 로딩 속도 저하"
         }
-        ],
+    ],
 
     solution: [
         {
@@ -115,9 +120,22 @@ export const bestWork:BestWorkItems[] = [
                 text: "PC·모바일 분리 구조를 통합하여 수정 포인트를 단일화하고 운영 부담을 감소"
             }
         ],
-
+    additionalWork: [
+        {
+          title: "UIUX 디벨롭",
+          text: "2026 리뉴얼 사이트를 기반으로 메인, 마이페이지, 상품 상세 등 주요 화면 UIUX 추가 개발"
+        },
+        {
+          title: "제품 추천 기능",
+          text: "사용자가 제품을 탐색하고 추천받을 수 있도록 관련 UI 및 기능을 개발"
+        },
+        {
+          title: "운영 및 UI 개선",
+          text: "서비스 운영 과정에서 발생하는 요구사항을 반영하여 UI와 기능을 지속적으로 개선"
+        }
+      ] ,
     notice: [
-        "※ 현재 사이트는 추가 개편된 상태이며 본 프로젝트는 리뉴얼 당시 작업 기준입니다.",
+        "※ 현재 사이트는 추가 개편된 상태이며 본 프로젝트는 2025 리뉴얼 당시 작업 기준입니다.",
         "※ SEO 및 성능 개선 수치는 Google Search Console 및 Lighthouse 측정 결과를 기반으로 작성되었습니다."
     ],
   },
