@@ -1,47 +1,85 @@
-import {
-  skill1,
-  skill2,
-  skill3,
-  skill4,
-  skill5,
-  skill6,
-  skill7,
-  skill8,
-  skill9,
-  skill10,
-  skill11,
-} from "../assets/img";
-
 interface SkillItems {
   id: number;
-  name: string; 
-  icon:string;
-}
-interface SkillGroupsItems {
-  title:string;
-  items:SkillItems[];
+  name: string;
+  description?: string;
 }
 
-export const skillGroups:SkillGroupsItems[] = [
+interface SkillGroupsItems {
+  title: string;
+  items: SkillItems[];
+}
+
+export const skillGroups: SkillGroupsItems[] = [
+  {
+    title: "Core",
+    items: [
+      {
+        id: 1,
+        name: "HTML5",
+        description: "Semantic Markup · Web Accessibility",
+      },
+      {
+        id: 2,
+        name: "CSS3",
+        description: "Responsive Web · Flex/Grid · Animation",
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+        description: "DOM · Event · UI Interaction",
+      },
+      {
+        id: 4,
+        name: "jQuery",
+        description: "Dynamic UI · Interaction",
+      },
+    ],
+  },
+
   {
     title: "Frontend",
     items: [
-      { id: 1, name: "JavaScript", icon: skill1 },
-      { id: 2, name: "React", icon: skill2 },
-      { id: 3, name: "Tailwind CSS", icon: skill3 },
-      { id: 4, name: "TypeScript", icon: skill11 },
+      {
+        id: 5,
+        name: "React",
+        description: "Component · Hooks · API 연동",
+      },
+      {
+        id: 6,
+        name: "TypeScript",
+        description: "Type · Interface · Props",
+      },
+      {
+        id: 7,
+        name: "Tailwind CSS",
+        description: "Utility CSS · Responsive UI",
+      },
     ],
   },
+
   {
     title: "Tools",
     items: [
-      { id: 4, name: "VSCode", icon: skill4 },
-      { id: 5, name: "Vercel", icon: skill5 },
-      { id: 6, name: "GitHub", icon: skill6 },
-      { id: 7, name: "Figma", icon: skill7 },
-      { id: 8, name: "Photoshop", icon: skill8 },
-      { id: 9, name: "Adobe XD", icon: skill9 },
-      { id: 10, name: "EditPlus", icon: skill10 },
+      {
+        id: 8,
+        name: "GitHub",
+      },
+      {
+        id: 9,
+        name: "Vercel",
+      },
+      {
+        id: 10,
+        name: "Figma",
+      },
+      {
+        id: 11,
+        name: "Photoshop",
+      },
+      {
+        id: 12,
+        name: "Adobe XD",
+      },
     ],
   },
 ];
