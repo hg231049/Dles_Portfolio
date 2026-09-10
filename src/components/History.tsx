@@ -4,38 +4,38 @@ import { history,HistoryItems } from "@/data/history";
 const History = () => {
   return (
     <div className="">
-      <div className="mb-10 pb-6 border-b border-white/20 text-field-color text-[18px] lg:text-[20px] font-bold">
+      <div className="mb-10 pb-6 border-b border-white/20 text-white [text-shadow:0_2px_5px_rgba(22,53,31,0.45)] text-[18px] lg:text-[20px] font-bold">
         HISTORY
       </div>
 
-      <ol className="relative border-l border-white/20 ml-4 space-y-10">
+      <ol className="relative border-l border-[#fff]/15 ml-4 space-y-10">
         {history.map((step:HistoryItems, index:number) => (
           <li key={index} className="relative pl-6 lg:pl-12 group">
             {/* dot */}
             <div className="absolute -left-[6px] lg:-left-[9px] top-1">
               <span className="relative flex h-3 w-3 lg:h-4 lg:w-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-field-color opacity-60"></span>
-                <span className="relative inline-flex h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-field-color"></span>
+                <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-60"></span>
+                <span className="relative inline-flex h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-white"></span>
               </span>
             </div>
 
             <div>
               {/* 회사명 */}
-              <p className="text-field-color text-sm lg:text-base font-semibold mb-1">
+              <p className="text-white/80 text-sm lg:text-base font-semibold mb-1 [text-shadow:0_2px_5px_rgba(22,53,31,0.45)]">
                 {step.company}
               </p>
 
               {/* 타이틀 */}
-              <h3 className="text-white text-[16px] lg:text-[20px] font-bold mb-2 group-hover:text-field-color transition-colors">
+              <h3 className="text-white text-[16px] lg:text-[20px] font-bold mb-2 [text-shadow:0_1px_3px_rgba(22,53,31,0.3)]">
                 {step.title}
               </h3>
 
               {/* 기간 */}
-              <p className="text-white/60 text-sm mb-4">{step.period}</p>
+              <p className="text-white/80 text-sm mb-4">{step.period}</p>
 
               {/* 설명 */}
               {step.desc && (
-                <ul className="list-disc ml-4 space-y-2 text-white text-[13px] lg:text-[15px]">
+                <ul className="list-disc ml-4 space-y-2 text-white/80 text-[13px] lg:text-[15px]">
                   {step.desc.map((item:string, i:number) => (
                     <li key={i}>{item}</li>
                   ))}

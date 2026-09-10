@@ -11,7 +11,7 @@ interface ToyWorkCardProps {
 
 const ToyWorkCard = ({ item }: ToyWorkCardProps) => {
   return (
-    <Drawer key={item.id}>
+    <Drawer>
       {/* 1. 트리거: asChild 내부의 자식을 <button>으로 변경하여 접근성 준수 */}
       <DrawerTrigger asChild>
         <button

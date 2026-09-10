@@ -138,7 +138,7 @@ const BackgroundScene = ({ scrollContainer }: BackgroundSceneProps) => {
         ref={fieldRef}
         className="fixed inset-0 -z-20 opacity-0"
         style={{
-          background: "linear-gradient(180deg, #D4FC79 0%, #96E6A1 100%)",
+          background: "linear-gradient(180deg,#BFEF8A 0%,#72C482 100%)",
         }}
       />
 

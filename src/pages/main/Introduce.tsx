@@ -1,4 +1,3 @@
-import { Icons } from "../../components/Icons";
 import Mindset from "../../components/Mindset";
 import History from "../../components/History";
 import SectionTitle from "../../components/SectionTitle";
@@ -18,7 +17,8 @@ const Introduce = () => {
           color="text-[#16351F]"
           subColor="text-field-color"
         />
-        <div className="grid grid-cols-1 items-baseline lg:grid-cols-2 gap-10">
+
+        <div className="grid grid-cols-1 items-baseline gap-10 lg:grid-cols-2">
           <Mindset />
           <History />
         </div>
