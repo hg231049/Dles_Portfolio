@@ -32,9 +32,7 @@ const Modal = ({
           ✕
         </button>
 
-        {/* =====================================================
-            Header
-        ===================================================== */}
+        {/* Header */}
         <header className="mb-8 pr-8">
           <h2 className="mb-2 text-2xl font-bold">
             {selected.name}
@@ -44,7 +42,6 @@ const Modal = ({
             {selected.date}
           </p>
 
-          {/* Badge */}
           {selected.badge && (
             <div className="mt-4 flex flex-wrap gap-2">
               {selected.badge.map((badge) => (
@@ -61,14 +58,14 @@ const Modal = ({
 
         <div className="space-y-8 text-sm">
 
-          {/* =====================================================
-              01. 프로젝트 개요
-          ===================================================== */}
+          {/* 01. 프로젝트 개요 */}
           {selected.overview && selected.overview.length > 0 && (
             <section>
-              <h3 className="mb-3 font-bold">
-                📌 프로젝트 개요
-              </h3>
+              <SectionTitle
+                number="01"
+                english="PROJECT OVERVIEW"
+                korean="프로젝트 개요"
+              />
 
               <ul className="space-y-2">
                 {selected.overview.map((item, index) => (
@@ -91,15 +88,14 @@ const Modal = ({
             </section>
           )}
 
-          {/* =====================================================
-              02. 프로젝트 진행 단계
-              -> SLOOM에만 표시
-          ===================================================== */}
+          {/* 02. 프로젝트 진행 단계 */}
           {selected.phases && selected.phases.length > 0 && (
             <section>
-              <h3 className="mb-4 font-bold">
-                📅 프로젝트 진행 단계
-              </h3>
+              <SectionTitle
+                number="02"
+                english="PROJECT PHASE"
+                korean="프로젝트 진행 단계"
+              />
 
               <div className="space-y-5">
                 {selected.phases.map((phase, index) => (
@@ -124,14 +120,14 @@ const Modal = ({
             </section>
           )}
 
-          {/* =====================================================
-              03. 문제 정의
-          ===================================================== */}
+          {/* 03. 문제 정의 */}
           {selected.problem && selected.problem.length > 0 && (
             <section>
-              <h3 className="mb-3 font-bold">
-                📝 문제 정의
-              </h3>
+              <SectionTitle
+                number="03"
+                english="PROBLEM"
+                korean="문제 정의"
+              />
 
               <ul className="space-y-3">
                 {selected.problem.map((item, index) => (
@@ -145,7 +141,7 @@ const Modal = ({
 
                     <span>:</span>
 
-                    <p className="whitespace-pre-line leading-6 text-gray-600">
+                    <p className="leading-6 text-gray-600">
                       {item.text}
                     </p>
                   </li>
@@ -154,14 +150,14 @@ const Modal = ({
             </section>
           )}
 
-          {/* =====================================================
-              04. 해결 과정
-          ===================================================== */}
+          {/* 04. 해결 과정 */}
           {selected.solution && selected.solution.length > 0 && (
             <section>
-              <h3 className="mb-3 font-bold">
-                ✔️ 해결 과정
-              </h3>
+              <SectionTitle
+                number="04"
+                english="SOLUTION"
+                korean="해결 과정"
+              />
 
               <ul className="space-y-3">
                 {selected.solution.map((item, index) => (
@@ -175,7 +171,7 @@ const Modal = ({
 
                     <span>:</span>
 
-                    <p className="whitespace-pre-line leading-6 text-gray-600">
+                    <p className="leading-6 text-gray-600">
                       {item.text}
                     </p>
                   </li>
@@ -184,14 +180,14 @@ const Modal = ({
             </section>
           )}
 
-          {/* =====================================================
-              05. 주요 성과
-          ===================================================== */}
+          {/* 05. 주요 성과 */}
           {selected.results && selected.results.length > 0 && (
             <section>
-              <h3 className="mb-3 font-bold">
-                🚀 주요 성과
-              </h3>
+              <SectionTitle
+                number="05"
+                english="RESULTS"
+                korean="주요 성과"
+              />
 
               <ul className="space-y-3">
                 {selected.results.map((item, index) => (
@@ -205,7 +201,7 @@ const Modal = ({
 
                     <span>:</span>
 
-                    <p className="whitespace-pre-line leading-6 text-gray-600">
+                    <p className="leading-6 text-gray-600">
                       {item.text}
                     </p>
                   </li>
@@ -214,14 +210,14 @@ const Modal = ({
             </section>
           )}
 
-          {/* =====================================================
-              06. 기술 스택
-          ===================================================== */}
+          {/* 06. 기술 스택 */}
           {selected.stack && selected.stack.length > 0 && (
             <section>
-              <h3 className="mb-3 font-bold">
-                🛠 기술 스택
-              </h3>
+              <SectionTitle
+                number="06"
+                english="TECH STACK"
+                korean="기술 스택"
+              />
 
               <div className="flex flex-wrap gap-2">
                 {selected.stack.map((stack) => (
@@ -236,14 +232,14 @@ const Modal = ({
             </section>
           )}
 
-          {/* =====================================================
-              07. 참고사항
-          ===================================================== */}
+          {/* 07. 참고사항 */}
           {selected.notice && selected.notice.length > 0 && (
-            <section className="border-t pt-4">
-              <h3 className="mb-2 text-xs font-bold text-gray-400">
-                참고사항
-              </h3>
+            <section className="border-t pt-5">
+              <SectionTitle
+                number="07"
+                english="NOTE"
+                korean="참고사항"
+              />
 
               <div className="space-y-1">
                 {selected.notice.map((notice, index) => (
@@ -259,9 +255,7 @@ const Modal = ({
           )}
         </div>
 
-        {/* =====================================================
-            Site Link
-        ===================================================== */}
+        {/* Site Link */}
         <a
           href={selected.link}
           target="_blank"
@@ -271,6 +265,39 @@ const Modal = ({
           사이트 보기
         </a>
       </div>
+    </div>
+  );
+};
+
+
+/* =========================================================
+   Section Title
+========================================================= */
+
+interface SectionTitleProps {
+  number: string;
+  english: string;
+  korean: string;
+}
+
+const SectionTitle = ({
+  number,
+  english,
+  korean,
+}: SectionTitleProps) => {
+  return (
+    <div className="mb-4 flex items-end gap-3 border-b border-gray-100 pb-2">
+      <span className="text-xs font-medium text-gray-400">
+        {number}
+      </span>
+
+      <h3 className="text-sm font-bold">
+        {korean}
+      </h3>
+
+      <span className="text-[10px] tracking-[0.08em] text-gray-300">
+        {english}
+      </span>
     </div>
   );
 };
