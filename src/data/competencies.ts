@@ -45,6 +45,8 @@ export const competencies:CompetenciesItems[] = [
     title: "Strategic Collaboration",
     subtitle: "기획 단계부터 참여하는 퍼블리셔",
     thumbs: proposalThumb,
+    link:"https://www.figma.com/design/SjVNvAIlA0Fyprz9D92kdF/%EC%BB%A4%EB%A8%B8%EC%8A%A4-%EB%A9%94%EC%9D%B8%ED%8E%98%EC%9D%B4%EC%A7%80-UX-%EA%B0%9C%EC%84%A0-%EA%B8%B0%ED%9A%8D?node-id=0-1&t=KditUneoD3yzTQI7-1",
+    linkToolTip:"기획안 보러가기",
     points: [
       "디자인 시안 구현 가능성 사전 검토",
       "UX 관점의 개선안 제안",
